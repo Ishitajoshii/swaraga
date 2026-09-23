@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swaraga"
+version = "1.0.0"
+description = "Cleanup and preprocessing pipeline for a Carnatic composition dataset"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0", "pyarrow>=14.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+swaraga-preprocess = "swaraga.pipeline:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
