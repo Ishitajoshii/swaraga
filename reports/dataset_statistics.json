@@ -1,0 +1,182 @@
+{
+  "n_compositions": 20,
+  "n_unique_composers": 8,
+  "n_trinity_compositions": 8,
+  "n_unique_ragas": 20,
+  "n_unique_talas": 6,
+  "n_unique_melakartas": 10,
+  "sequence_length": {
+    "mean": 50.9,
+    "median": 51.5,
+    "min": 32,
+    "max": 84,
+    "std": 12.45,
+    "total_tokens": 1018
+  },
+  "swara_count": {
+    "mean": 45.35,
+    "min": 27,
+    "max": 68,
+    "total": 907
+  },
+  "missing_values": {
+    "composer_attribution_note": 19,
+    "period_century": 3,
+    "composer_birth_year": 9,
+    "composer_death_year": 9
+  },
+  "duplicate_counts": {
+    "duplicate_ids": 0,
+    "duplicate_titles": 0,
+    "duplicate_swara_sequences": 0
+  },
+  "distribution_by_composer": {
+    "Traditional": 5,
+    "Muthuswami Dikshitar": 3,
+    "Papanasam Sivan": 3,
+    "Tyagaraja": 3,
+    "Syama Sastri": 2,
+    "Purandaradasa": 2,
+    "Lalgudi Jayaraman": 1,
+    "Pachimiriam Adiyappiah": 1
+  },
+  "distribution_by_composer_group": {
+    "Trinity": 8,
+    "Other Known Composers": 7,
+    "Unknown / Unclassified": 5
+  },
+  "distribution_by_raga": {
+    "Abhogi": 1,
+    "Bhairavi": 1,
+    "Bilahari": 1,
+    "Charukesi": 1,
+    "Hindolam": 1,
+    "Dhanyasi": 1,
+    "Kalyani": 1,
+    "Kharaharapriya": 1,
+    "Mohanam": 1,
+    "Natabhairavi": 1,
+    "Nattai": 1,
+    "Reethigowla": 1,
+    "Sahana": 1,
+    "Mayamalavagowla": 1,
+    "Saveri": 1,
+    "Shankarabharanam": 1,
+    "Suddha Saveri": 1,
+    "Todi": 1,
+    "Varali": 1,
+    "Hamsadhwani": 1
+  },
+  "distribution_by_tala": {
+    "Adi": 12,
+    "Rupaka": 3,
+    "Misra Chapu": 2,
+    "Chaturasra Dhruva": 1,
+    "Khanda Ata": 1,
+    "Free (Alapana)": 1
+  },
+  "distribution_by_melakarta": {
+    "8": 2,
+    "15": 2,
+    "20": 3,
+    "22": 3,
+    "26": 1,
+    "28": 2,
+    "29": 4,
+    "36": 1,
+    "39": 1,
+    "65": 1
+  },
+  "distribution_by_length_flag": {
+    "ok": 18,
+    "unusually_long": 2
+  },
+  "distribution_by_composer_certainty": {
+    "attested": 14,
+    "traditional": 4,
+    "attributed": 2
+  },
+  "trinity_by_composer": {
+    "Muthuswami Dikshitar": 3,
+    "Tyagaraja": 3,
+    "Syama Sastri": 2
+  },
+  "swara_vocabulary": {
+    "D1": 55,
+    "D1'": 1,
+    "D2": 39,
+    "G1": 7,
+    "G2": 56,
+    "G3": 61,
+    "G3'": 3,
+    "M1": 115,
+    "M1'": 1,
+    "M2": 13,
+    "N2": 60,
+    "N2'": 1,
+    "N3": 48,
+    "N3'": 2,
+    "P": 126,
+    "P'": 1,
+    "R1": 31,
+    "R2": 65,
+    "R2'": 15,
+    "R3": 8,
+    "R3'": 2,
+    "S": 106,
+    "S'": 91,
+    "[REST]": 111
+  },
+  "token_vocabulary_size": 41,
+  "token_vocabulary": {
+    "D1": 56,
+    "D2": 39,
+    "G1": 7,
+    "G2": 56,
+    "G3": 64,
+    "M1": 116,
+    "M2": 13,
+    "N2": 61,
+    "N3": 50,
+    "P": 127,
+    "R1": 31,
+    "R2": 80,
+    "R3": 10,
+    "S": 197,
+    "[BAR]": 252,
+    "[BOS]": 20,
+    "[EOS]": 20,
+    "[OCTAVE_DOWN]": 67,
+    "[OCTAVE_UP]": 67,
+    "[REST]": 111,
+    "[SBAR]": 62,
+    "[SECTION:Anupallavi]": 18,
+    "[SECTION:Arohanam_exercise]": 1,
+    "[SECTION:Charanam]": 12,
+    "[SECTION:Charanam_1]": 1,
+    "[SECTION:Charanam_2]": 1,
+    "[SECTION:Charanam_3]": 1,
+    "[SECTION:Muktayi_Swaram]": 1,
+    "[SECTION:Muktayi_swara]": 2,
+    "[SECTION:Pallavi]": 16,
+    "[SECTION:Pallavi_(Tanam)]": 2,
+    "[SECTION:Poorvanga_(lower_tetrachord)]": 1,
+    "[SECTION:Swara_passage]": 1,
+    "[SECTION:Uttaranga_(upper_tetrachord)]": 1,
+    "[SECTION:Variation_1]": 1,
+    "[TALA:Adi]": 12,
+    "[TALA:Chaturasra_Dhruva]": 1,
+    "[TALA:Free_(Alapana)]": 1,
+    "[TALA:Khanda_Ata]": 1,
+    "[TALA:Misra_Chapu]": 2,
+    "[TALA:Rupaka]": 3
+  },
+  "lyrics_coverage": {
+    "compositions_with_lyrics": 18,
+    "compositions_without_lyrics": 2
+  },
+  "license_distribution": {
+    "public_domain": 19,
+    "cc_by_attribution": 1
+  }
+}

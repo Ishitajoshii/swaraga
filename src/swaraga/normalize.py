@@ -35,6 +35,17 @@ from .period import parse_period
 STAGE = "normalize"
 
 
+def _as_list(value: Any) -> List[Any]:
+    """Coerce a cell that may be None, a numpy array or a list into a list."""
+    if value is None:
+        return []
+    if hasattr(value, "tolist"):
+        return list(value.tolist())
+    if isinstance(value, (list, tuple)):
+        return list(value)
+    return [value]
+
+
 def _log_issues(log: QualityLog, record_id: str, issues: List[str], field_name: str) -> None:
     for issue in issues:
         code = issue.partition(":")[0]
@@ -173,7 +184,7 @@ def normalize(
                 "sections": sections,
                 "has_lyrics": has_lyrics,
                 "gamaka_annotations": gamakas,
-                "tags": list(row.get("tags") or []),
+                "tags": _as_list(row.get("tags")),
                 "source": row.get("source"),
                 "license": row.get("license"),
             }

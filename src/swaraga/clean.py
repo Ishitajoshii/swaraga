@@ -2,7 +2,9 @@
 
 This stage is about *integrity*, not vocabulary:
 
-- repair lossy-decode artefacts and strip formatting characters
+- normalise Unicode, fold dash / quote variants, strip formatting characters
+  (and repair lossy-decode artefacts if any ever appear - the current raw
+  file is clean UTF-8, so that guard does not fire today)
 - collapse whitespace in every text field
 - drop exact duplicate records
 - drop records whose musical notation is missing or unparseable

@@ -6,13 +6,15 @@ import re
 import unicodedata
 from typing import List, Tuple
 
-#: Unicode replacement character left behind by a lossy decode upstream.
+#: Unicode replacement character, left behind when text is decoded lossily.
 REPLACEMENT_CHAR = "\ufffd"
 
-#: Every surviving REPLACEMENT_CHAR in this dataset sits either between two
-#: digits (``1775<?>1835``), between two century labels (``18th<?>19th``) or
-#: between two words (``Traditional <?> Thyagaraja``).  All three are en-dash
-#: positions, so a single substitution restores them.
+#: The current raw dataset is clean UTF-8 and contains no replacement
+#: characters, so this repair is a guard for future ingests rather than
+#: something that fires today.  Where it does fire, the dash positions this
+#: corpus uses (``1775<?>1835``, ``18th<?>19th``, ``Traditional <?> Tyagaraja``)
+#: are all en-dash positions, so a single substitution is the right default.
+#: Any occurrence is logged, so a wrong guess is visible rather than silent.
 MOJIBAKE_SUBSTITUTE = "\u2013"  # EN DASH
 
 #: Formatting characters that carry no information in this dataset.

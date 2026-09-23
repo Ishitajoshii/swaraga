@@ -26,7 +26,7 @@ class QualityEvent:
     code: str                       # stable machine-readable code
     severity: str                   # info / warning / error
     message: str
-    field: Optional[str] = None
+    field_name: Optional[str] = None
     before: Optional[Any] = None
     after: Optional[Any] = None
     details: Dict[str, Any] = field(default_factory=dict)
@@ -63,7 +63,7 @@ class QualityLog:
                 code=code,
                 severity=severity,
                 message=message,
-                field=field_name,
+                field_name=field_name,
                 before=before,
                 after=after,
                 details=details,
@@ -144,8 +144,8 @@ class QualityLog:
             for event in events:
                 target = f"`{event.record_id}`" if event.record_id else "_dataset_"
                 detail = f"{target} - {event.message}"
-                if event.field:
-                    detail += f" (field: `{event.field}`)"
+                if event.field_name:
+                    detail += f" (field: `{event.field_name}`)"
                 lines.append(f"- {detail}")
             lines.append("")
 
