@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "description": "Controlled tala mapping. 'aksharas' is the authoritative akshara count for the canonical tala and is used to validate the dataset's tala_aksharas column. 'metered': false marks free / anibaddha material that carries no tala.",
+    "suladi_sapta_reference": "Dhruva, Matya, Rupaka, Jhampa, Triputa, Ata, Eka with the five jaatis"
+  },
+  "talas": {
+    "Adi": {
+      "aksharas": 8, "metered": true, "structure": "laghu(4) + drutam(2) + drutam(2)",
+      "aliases": ["Adi", "Aadi", "Adi Tala", "Adi Talam", "Chaturasra Triputa"]
+    },
+    "Rupaka": {
+      "aksharas": 6, "metered": true, "structure": "drutam(2) + laghu(4)",
+      "aliases": ["Rupaka", "Roopaka", "Rupakam", "Chaturasra Rupaka", "Rupaka Tala"]
+    },
+    "Misra Chapu": {
+      "aksharas": 7, "metered": true, "structure": "3 + 4",
+      "aliases": ["Misra Chapu", "Mishra Chapu", "Misra Chaapu", "Misrachapu"]
+    },
+    "Khanda Ata": {
+      "aksharas": 14, "metered": true, "structure": "laghu(5) + laghu(5) + drutam(2) + drutam(2)",
+      "aliases": ["Khanda Ata", "Ata", "Atta", "Ata Tala", "Khanda Ata Tala", "Attatala"]
+    },
+    "Chaturasra Dhruva": {
+      "aksharas": 14, "metered": true, "structure": "laghu(4) + drutam(2) + laghu(4) + laghu(4)",
+      "aliases": ["Chaturasra Dhruva", "Chaturashra Dhruvam", "Chaturasra Dhruvam", "Dhruva", "Dhruvam"]
+    },
+    "Free (Alapana)": {
+      "aksharas": 0, "metered": false, "structure": "anibaddha - no tala cycle",
+      "aliases": ["Free (Alapana)", "Free", "Alapana", "Anibaddha", "None", "Nil"]
+    }
+  }
+}

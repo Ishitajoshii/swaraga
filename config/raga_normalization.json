@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "Controlled raga mapping. Canonical spellings follow the spellings used in preprocessing.md section 9 where that document names a raga; otherwise the dataset spelling is kept as canonical. 'mela' is the parent melakarta number and is the authority used to resolve swara variants.",
+    "canonical_source": "preprocessing.md section 9 > dataset spelling"
+  },
+  "ragas": {
+    "Abhogi":           {"mela": 22, "aliases": ["Abhogi", "Abheri Abhogi", "Aabhogi"]},
+    "Bhairavi":         {"mela": 20, "aliases": ["Bhairavi", "Bhairavee"], "notes": "Bhashanga raga: takes D2 in arohana and D1 in avarohana. The parent mela (20) only yields D1, so arohana D2 is not recoverable from the mela alone."},
+    "Bilahari":         {"mela": 29, "aliases": ["Bilahari", "Bilhari", "Bilahari Ragam"]},
+    "Charukesi":        {"mela": 26, "aliases": ["Charukesi", "Charukeshi"]},
+    "Dhanyasi":         {"mela": 8,  "aliases": ["Dhanyasi", "Dhanyaasi", "Dhanasi"]},
+    "Hamsadhwani":      {"mela": 29, "aliases": ["Hamsadhwani", "Hamsadhvani", "Hamsadwani", "Hansadhwani"]},
+    "Hindolam":         {"mela": 20, "aliases": ["Hindolam", "Hindola", "Hindholam"]},
+    "Kalyani":          {"mela": 65, "aliases": ["Kalyani", "Kalyaani", "Mechakalyani"]},
+    "Kharaharapriya":   {"mela": 22, "aliases": ["Kharaharapriya", "Khara Hara Priya", "Kharaharapriyaa"]},
+    "Mayamalavagowla":  {"mela": 15, "aliases": ["Mayamalavagowla", "Mayamalavagoula", "Maya Malava Gowla", "Mayamalavagaula"]},
+    "Mohanam":          {"mela": 28, "aliases": ["Mohanam", "Mohana", "Mohanaam"]},
+    "Natabhairavi":     {"mela": 20, "aliases": ["Natabhairavi", "Nata Bhairavi", "Natabhairavee"]},
+    "Nattai":           {"mela": 36, "aliases": ["Nattai", "Nata", "Naatai", "Naattai"]},
+    "Reethigowla":      {"mela": 22, "aliases": ["Reethigowla", "Ritigowla", "Ritigaula", "Reetigowla", "Reethigoula"]},
+    "Sahana":           {"mela": 28, "aliases": ["Sahana", "Saahana"]},
+    "Saveri":           {"mela": 15, "aliases": ["Saveri", "Savery", "Saaveri"]},
+    "Shankarabharanam": {"mela": 29, "aliases": ["Shankarabharanam", "Sankarabharanam", "Dheerasankarabharanam", "Dhirasankarabharanam"]},
+    "Suddha Saveri":    {"mela": 29, "aliases": ["Suddha Saveri", "Shuddha Saveri", "Suddhasaveri", "Shuddhasaveri", "Udayaravichandrika"]},
+    "Todi":             {"mela": 8,  "aliases": ["Todi", "Thodi", "Hanumatodi", "Hanumathodi"]},
+    "Varali":           {"mela": 39, "aliases": ["Varali", "Varaali", "Jhalavarali"]}
+  }
+}

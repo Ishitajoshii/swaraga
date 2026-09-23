@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "description": "Controlled composer mapping. Canonical names, Trinity membership and provenance certainty. Trinity membership is asserted here explicitly and is NEVER inferred from spelling similarity (PRD 2).",
+    "groups": ["Trinity", "Other Known Composers", "Unknown / Unclassified"],
+    "certainty_values": ["attested", "attributed", "traditional", "unknown"]
+  },
+  "composers": {
+    "Tyagaraja": {
+      "group": "Trinity",
+      "certainty": "attested",
+      "aliases": ["Tyagaraja", "Thyagaraja", "Tyagaraja Swami", "Thyagaraja Swami", "Sri Tyagaraja", "Sri Thyagaraja", "Tyagaraja Swamigal", "Saint Tyagaraja", "Thiagaraja", "Tyagayya"]
+    },
+    "Muthuswami Dikshitar": {
+      "group": "Trinity",
+      "certainty": "attested",
+      "aliases": ["Muthuswami Dikshitar", "Muthuswamy Dikshitar", "Muthuswami Dikshithar", "Muttuswami Dikshitar", "Dikshitar", "Deekshitar", "Sri Muthuswami Dikshitar", "Muthuswami Deekshitar"]
+    },
+    "Syama Sastri": {
+      "group": "Trinity",
+      "certainty": "attested",
+      "aliases": ["Syama Sastri", "Shyama Sastri", "Syama Sastrigal", "Shyama Shastri", "Syama Sastry", "Shyama Sastry", "Sri Syama Sastri", "Syaama Saastri"]
+    },
+    "Purandaradasa": {
+      "group": "Other Known Composers",
+      "certainty": "attested",
+      "aliases": ["Purandaradasa", "Purandara Dasa", "Purandaradasar", "Sri Purandaradasa"]
+    },
+    "Papanasam Sivan": {
+      "group": "Other Known Composers",
+      "certainty": "attested",
+      "aliases": ["Papanasam Sivan", "Papanasham Sivan", "Papanasam Shivan"]
+    },
+    "Lalgudi Jayaraman": {
+      "group": "Other Known Composers",
+      "certainty": "attested",
+      "aliases": ["Lalgudi Jayaraman", "Lalgudi G Jayaraman", "Lalgudi G. Jayaraman"]
+    },
+    "Pachimiriam Adiyappiah": {
+      "group": "Other Known Composers",
+      "certainty": "attested",
+      "aliases": ["Pachimiriam Adiyappiah", "Pacchimiriam Adiappayya", "Pachimiriam Adiappayya", "Adiyappiah"]
+    },
+    "Traditional": {
+      "group": "Unknown / Unclassified",
+      "certainty": "traditional",
+      "aliases": ["Traditional", "Anonymous", "Unknown", "Traditional Carnatic", "Public Domain Traditional"]
+    }
+  },
+  "attributed_forms": {
+    "_note": "Sources that name a composer but hedge the attribution. Canonical name is kept, certainty is downgraded to 'attributed', and the hedge is preserved verbatim in composer_raw / attribution_note.",
+    "Purandaradasa (attributed)": {"canonical": "Purandaradasa", "certainty": "attributed"},
+    "Traditional (attributed to Purandaradasa school)": {"canonical": "Traditional", "certainty": "attributed", "attribution_note": "attributed to Purandaradasa school"}
+  }
+}
