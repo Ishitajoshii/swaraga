@@ -1,0 +1,157 @@
+{
+  "seed": 42,
+  "window_stats": {
+    "T1": {
+      "total": 718,
+      "compositions_contributing": 20,
+      "ragas_covered": 20
+    },
+    "T2": {
+      "total": 558,
+      "compositions_contributing": 20,
+      "ragas_covered": 20
+    },
+    "T3": {
+      "total": 59,
+      "compositions_contributing": 6,
+      "ragas_covered": 6
+    }
+  },
+  "results": {
+    "T1": [
+      {
+        "model": "GT",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.5454545454545454,
+        "contour_distance": 0.0,
+        "exact_match": 1.0,
+        "novelty": 0.12121212121212122,
+        "perplexity": null
+      },
+      {
+        "model": "B0",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.42424242424242425,
+        "contour_distance": 3.409090909090909,
+        "exact_match": 0.06818181818181818,
+        "novelty": 0.9848484848484849,
+        "perplexity": null
+      },
+      {
+        "model": "B0.5",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.45454545454545453,
+        "contour_distance": 1.2045454545454546,
+        "exact_match": 0.23106060606060605,
+        "novelty": 0.8181818181818182,
+        "perplexity": null
+      },
+      {
+        "model": "B1",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.5454545454545454,
+        "contour_distance": 0.898989898989899,
+        "exact_match": 0.4583333333333333,
+        "novelty": 0.19696969696969696,
+        "perplexity": 2.206450076484213
+      },
+      {
+        "model": "B2",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.45454545454545453,
+        "contour_distance": 1.4040404040404042,
+        "exact_match": 0.36363636363636365,
+        "novelty": 0.696969696969697,
+        "perplexity": null
+      }
+    ],
+    "T2": [
+      {
+        "model": "GT",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.5,
+        "contour_distance": 0.0,
+        "exact_match": 1.0,
+        "novelty": 0.132,
+        "perplexity": null
+      },
+      {
+        "model": "B0",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.42,
+        "contour_distance": 3.206666666666667,
+        "exact_match": 0.0875,
+        "novelty": 0.996,
+        "perplexity": null
+      },
+      {
+        "model": "B0.5",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.36,
+        "contour_distance": 1.4475238095238094,
+        "exact_match": 0.155,
+        "novelty": 0.872,
+        "perplexity": null
+      },
+      {
+        "model": "B1",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.56,
+        "contour_distance": 1.1097142857142857,
+        "exact_match": 0.3225,
+        "novelty": 0.16399999999999998,
+        "perplexity": 2.2516996027898153
+      },
+      {
+        "model": "B2",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.38,
+        "contour_distance": 1.516952380952381,
+        "exact_match": 0.22,
+        "novelty": 0.7559999999999999,
+        "perplexity": null
+      }
+    ],
+    "T3": []
+  }
+}
