@@ -83,6 +83,32 @@
         "exact_match": 0.36363636363636365,
         "novelty": 0.696969696969697,
         "perplexity": null
+      },
+      {
+        "model": "M1-gru",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.5757575757575758,
+        "contour_distance": 1.1186868686868685,
+        "exact_match": 0.5303030303030303,
+        "novelty": 0.25757575757575757,
+        "perplexity": 2.126405151412608
+      },
+      {
+        "model": "M1-transformer",
+        "rung": "T1",
+        "n": 66,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.5151515151515151,
+        "contour_distance": 1.138888888888889,
+        "exact_match": 0.5,
+        "novelty": 0.2878787878787879,
+        "perplexity": 3.1457389614764444
       }
     ],
     "T2": [
@@ -150,6 +176,32 @@
         "exact_match": 0.22,
         "novelty": 0.7559999999999999,
         "perplexity": null
+      },
+      {
+        "model": "M1-gru",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.5,
+        "contour_distance": 1.3915238095238096,
+        "exact_match": 0.2575,
+        "novelty": 0.384,
+        "perplexity": 2.436462598645168
+      },
+      {
+        "model": "M1-transformer",
+        "rung": "T2",
+        "n": 50,
+        "raga_conformance": 1.0,
+        "transition_legality": 1.0,
+        "length_exact": 1.0,
+        "nyasa": 0.58,
+        "contour_distance": 1.3988095238095237,
+        "exact_match": 0.2525,
+        "novelty": 0.47600000000000003,
+        "perplexity": 4.804444210068331
       }
     ],
     "T3": []

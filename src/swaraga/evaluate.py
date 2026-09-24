@@ -192,6 +192,12 @@ def perplexity(model, windows: Iterable[Window]) -> Optional[float]:
     total_log = 0.0
     total_tokens = 0
     for window in windows:
+        # Conditional models hold their (raga, tala) on the instance, so each
+        # window must re-condition. Without this every window after the first
+        # is scored under whatever raga happened to be set last, which makes
+        # the number quietly wrong rather than obviously broken.
+        if hasattr(model, "condition_from"):
+            model.condition_from(window)
         history = list(window.context_degrees)
         for degree in window.target_degrees:
             probability = model.probability(history, degree)

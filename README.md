@@ -95,7 +95,127 @@ structure a generator needs.
 Full numbers in [`reports/dataset_report.md`](reports/dataset_report.md); every
 repair and flag in [`reports/data_quality_log.md`](reports/data_quality_log.md).
 
-## Honest limits of this data
+## Phase 2 - raga-conditioned continuation
+
+The modelling project is specified in [`PRD.md`](PRD.md). Run the baselines:
+
+```bash
+python scripts/run_experiments.py          # all rungs
+python scripts/run_experiments.py --rung T2
+```
+
+**Task ladder** (PRD section 3) - the horizon is staged so no rung is blocked
+on data:
+
+| Rung | Task | Windows | Role |
+| --- | --- | ---: | --- |
+| T1 | 12 notes -> next 4 | 718 | unit-test rung |
+| T2 | 16 notes -> next 8 | 558 | **v1 target** |
+| T3 | 4 avartanas -> next 2 | 59 | headline goal, data-gated |
+
+**Current T2 results** (seed 42; `GT` is the human ground truth, scored as if
+it were a model):
+
+| Model | contour dist | exact | nyasa | novelty | ppl |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| GT (human) | 0.00 | 1.00 | 0.50 | 0.13 | - |
+| B0 random walk | 3.21 | 0.09 | 0.42 | 1.00 | - |
+| B0.5 direction | 1.45 | 0.15 | 0.36 | 0.87 | - |
+| **B1 n-gram** | **1.11** | **0.32** | **0.56** | 0.16 | 2.3 |
+| B2 retrieval | 1.52 | 0.22 | 0.38 | 0.76 | - |
+
+B1 clears the B0.5 bar, which is the v1 success criterion. Raga conformance,
+transition legality and exact length are 1.00 for every model including the
+random walk - they are guaranteed by the constrained decoder, so they verify
+the system rather than ranking models.
+
+### Three things that are easy to get wrong here
+
+1. **Raga conformance is specified, not learned.** With one composition per
+   raga it cannot be learned, but arohanam/avarohanam state it exactly, so
+   `decode.py` masks illegal notes before sampling. Output is in-raga by
+   construction - property-tested across every model, rung and seed.
+
+2. **Novelty must be read against `GT`, never against 1.00.** Real human
+   continuations here score 0.13, because the degree vocabulary is 15 symbols
+   wide and the repertoire is formulaic. Heavy n-gram reuse is normal music.
+   B1 at 0.16 is near-human; B0 at 1.00 is not creative, it is random.
+
+3. **The models reason in scale degrees, not swaras.** Each swara maps to its
+   index in its own raga's scale, so all 20 ragas pool into one training set
+   and a contour learned in Mohanam can be emitted in Hindolam. The cost is
+   that a degree model captures contour, not raga character.
+
+### Known limits
+
+- **Corpus provenance is unverified** and shows signs of being generated
+  (uniform `sa_hz`, uniform gamaka tags, a rishabha in Hindolam). PRD section
+  2.1 makes checking this a gating task before any result is reported.
+- Every raga has one composition, so raga-specific character is unlearnable.
+- T3 runs but is starved: 59 windows from 6 compositions, 33 from one piece.
+
+## Phase 3 — the neural models (M1)
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+python scripts/run_experiments.py       # baselines + M1
+python scripts/run_scaling_study.py     # scaling curve + constraint ablation
+```
+
+`torch` is **optional**: it is imported lazily, the B0–B2 baselines and the
+whole preprocessing pipeline run without it, and the neural tests skip cleanly
+when it is absent. CPU only — no GPU anywhere in this project.
+
+Two conditional architectures, both tiny because the data is tiny:
+
+| Model | Params | Notes |
+| --- | ---: | --- |
+| `M1-gru` | 90,208 | embedding 64 + raga 16 + tala 8 → GRU 128 |
+| `M1-transformer` | 309,152 | d_model 128, 2 layers, 4 heads, causal |
+
+### Results
+
+**T1** (12 notes → next 4):
+
+| Model | contour ↓ | exact | nyasa | novelty | ppl |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| GT | 0.00 | 1.00 | 0.55 | 0.12 | - |
+| B0.5 | 1.20 | 0.23 | 0.45 | 0.82 | - |
+| B1 | 0.90 | 0.46 | 0.55 | 0.20 | 2.2 |
+| **M1-gru** | 1.12 | 0.53 | 0.58 | 0.26 | 2.1 |
+| M1-transformer | 1.14 | 0.50 | 0.52 | 0.29 | 3.1 |
+
+**T2** (16 notes → next 8):
+
+| Model | contour ↓ | exact | nyasa | novelty | ppl |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| GT | 0.00 | 1.00 | 0.50 | 0.13 | - |
+| B0.5 | 1.45 | 0.15 | 0.36 | 0.87 | - |
+| **B1** | 1.11 | 0.32 | 0.56 | 0.16 | 2.3 |
+| M1-gru | 1.39 | 0.26 | 0.50 | 0.38 | 2.4 |
+| M1-transformer | 1.40 | 0.25 | 0.58 | 0.48 | 4.8 |
+
+At the **short** horizon the GRU beats the n-gram on exact match and
+perplexity; at the **longer** horizon the n-gram wins on every column. That
+horizon effect is itself a finding — the neural models hold up for four notes
+and degrade over eight, which is what you would expect from models with
+~500 effective training examples.
+
+### An important correction about "100% raga conformance"
+
+Every model, including the untrained random walk, scores 1.00 raga conformance
+— and it still does with the constraint mask **switched off**. That is not
+evidence the system works. It is a property of the *representation*: degrees
+map back to swaras modulo the raga's own scale, so an out-of-raga note is
+literally unrepresentable.
+
+What the decoder's mask actually buys is **legal motion** — a raga's ascending
+and descending paths differ, and nothing in the degree encoding forces a model
+to respect that. `reports/scaling_study.md` reports the ablation on transition
+legality for this reason. Quoting raga conformance as a result would overstate
+what the grammar contributes.
+
+## Honest limits of the current data
 
 These are logged as warnings by the pipeline, not silently smoothed over:
 

@@ -1,3 +1,8 @@
 pandas>=2.0
 pyarrow>=14.0
 pytest>=7.4
+
+# Optional - only the M1 neural models need it. The preprocessing pipeline and
+# the B0-B2 baselines run without torch installed.
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.14

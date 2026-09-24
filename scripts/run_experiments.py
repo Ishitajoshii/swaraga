@@ -32,6 +32,10 @@ from swaraga.evaluate import (                               # noqa: E402
 )
 from swaraga.grammar import RagaGrammarLibrary, TalaTemplate  # noqa: E402
 from swaraga.models import BASELINES                         # noqa: E402
+from swaraga.models.neural import (                          # noqa: E402
+    ARCHITECTURES, TorchModel, torch_available,
+)
+from swaraga.train import TrainConfig, train as train_model  # noqa: E402
 from swaraga.windows import RUNGS, build_windows, split_windows  # noqa: E402
 
 RESULTS_MD = config.REPORTS_DIR / "baseline_results.md"
@@ -99,6 +103,36 @@ def run_rung(frame: pd.DataFrame, rung: str, seed: int,
             evaluate(results, name, rung, train_ngrams,
                      model=model, windows=test)
         )
+
+    # -- M1 neural models ---------------------------------------------------
+    # Skipped silently without torch, so the baseline suite keeps running in a
+    # light environment (PRD section 8.2).
+    if torch_available():
+        val = parts["val"]
+        for architecture in ARCHITECTURES:
+            model = TorchModel(architecture=architecture, seed=seed)
+            train_model(model, train, val, TrainConfig(seed=seed))
+            results = []
+            for index, window in enumerate(test):
+                row = by_id[window.record_id]
+                grammar = grammars[window.record_id]
+                model.condition_from(window)
+                decoder = ConstrainedDecoder(
+                    grammar, template=TalaTemplate.from_row(row),
+                    rng=random.Random(seed * 10_000 + index),
+                )
+                decoded = decoder.decode(
+                    model, window.context_degrees, len(window.target_degrees),
+                )
+                results.append(
+                    ContinuationResult(window=window, generated=decoded.degrees,
+                                       grammar=grammar)
+                )
+            # perplexity() re-conditions per window itself.
+            reports.append(
+                evaluate(results, model.name, rung, train_ngrams,
+                         model=model, windows=test)
+            )
 
     return reports
 
@@ -198,12 +232,12 @@ def main(argv: List[str] | None = None) -> int:
             continue
         print(f"\n{rung} - {RUNGS[rung]['label']}  "
               f"({window_stats[rung]['total']} windows)")
-        print(f"  {'model':6s} {'contour':>8s} {'exact':>7s} "
+        print(f"  {'model':16s} {'contour':>8s} {'exact':>7s} "
               f"{'nyasa':>7s} {'novelty':>8s} {'ppl':>8s}")
         for report in reports:
             m = report.metrics
             ppl = m.get("perplexity")
-            print(f"  {report.model:6s} {m['contour_distance']:8.2f} "
+            print(f"  {report.model:16s} {m['contour_distance']:8.2f} "
                   f"{m['exact_match']:7.2f} {m['nyasa']:7.2f} "
                   f"{m['novelty']:8.2f} "
                   f"{f'{ppl:8.1f}' if ppl else '       -'}")
