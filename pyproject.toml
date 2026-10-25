@@ -7,10 +7,11 @@ name = "swaraga"
 version = "1.0.0"
 description = "Cleanup and preprocessing pipeline for a Carnatic composition dataset"
 requires-python = ">=3.10"
-dependencies = ["pandas>=2.0", "pyarrow>=14.0"]
+dependencies = ["pandas>=2.0", "pyarrow>=14.0", "numpy>=1.24"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.4"]
+neural = ["torch>=2.14"]
 
 [project.scripts]
 swaraga-preprocess = "swaraga.pipeline:run"

@@ -1,5 +1,55 @@
 # Swaraga - Carnatic composition dataset preprocessing
 
+## Local submission demo
+
+From the repository directory, install the light dependencies once and start:
+
+```powershell
+python -m pip install -r requirements.txt
+python scripts/run_demo.py
+```
+
+Open **http://127.0.0.1:8765**. Use `--port 8766` if that port is occupied.
+Stop the server with Ctrl+C. No account, model download, hosted API, or internet
+connection is needed after dependencies are installed. Python 3.10+ is required.
+
+- **Generated swaras:** three Mohanam practice seeds, existing B1 n-gram
+  continuation, fixed random seeds 42/43/44, synthesized reference playback,
+  and complete-phrase WAV downloads. Timing is uniform, not inferred tala timing.
+- **Recorded vocal response:** empty until approved recordings arrive. Supports
+  prepared pairs and retrieval from other seed families, separately labelled.
+  Vocal audio is recorded material, not newly synthesized singing.
+- **Friend tasks:** the two files under `team_tasks/` stay intentionally
+  unfinished. Safe defaults keep the demo running. After a friend finishes and
+  their file passes its checks, restarting the app picks up their contribution.
+
+Recording manifest, trimming commands, timing schema, and review procedure:
+[docs/RECORDINGS.md](docs/RECORDINGS.md). Schedule and remaining work:
+[SUBMISSION_TODO.md](SUBMISSION_TODO.md).
+
+```powershell
+python scripts/check_demo.py       # validate; save three synthesized backup WAVs
+python -m pytest -q -p no:cacheprovider
+python scripts/package_demo.py     # create a local source/audio ZIP in .demo-artifacts/
+```
+
+The ZIP includes working audio even though Git ignores audio files. It excludes
+originals, environments, and Git metadata. It is a local snapshot, not a complete
+offline Python installer; keep the existing environment and separately back up
+original recordings and the final demo video. The existing source parquet is
+included for reproducing preprocessing; its provenance remains unverified.
+
+The demo omits the legacy transition-legality and constraint-ablation claims.
+The transition metric includes input transitions and does not use the decoder's
+direction-aware mask; old values should not be used as evidence of generated
+transition quality. Existing symbolic dataset provenance is still unverified.
+
+Torch is **optional**, and is no longer installed by `requirements.txt`. Only
+neural experiments need it; install separately if required. Nothing in the new
+demo imports or trains a neural model.
+
+## Existing preprocessing pipeline
+
 Implementation of the pipeline specified in [`preprocessing.md`](preprocessing.md):
 a clean, standardised, model-ready dataset for training a composition generator
 conditioned on **composer**, **raga** and **tala**.

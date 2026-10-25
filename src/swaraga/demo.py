@@ -1,0 +1,118 @@
+"""Offline demo service. Symbolic generation and recorded retrieval stay separate."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import random
+
+import numpy as np
+import pandas as pd
+
+from .audio import RATE, synthesize, wav_bytes
+from .decode import ConstrainedDecoder
+from .grammar import RagaGrammarLibrary
+from .models.baseline_ngram import VariableOrderMarkov
+from .recordings import RecordingBank, load_team_file
+from .windows import FOREIGN_DEGREE, build_windows, to_degrees
+
+PRESETS = [
+    {"id": "ascent", "title": "Mohanam • ascending practice", "tokens": "S R2 G3 P D2 S' D2 P G3 R2 S R2 G3 P D2 P".split()},
+    {"id": "descent", "title": "Mohanam • descending practice", "tokens": "S' D2 P G3 R2 S R2 G3 P D2 P G3 R2 S R2 G3".split()},
+    {"id": "turn", "title": "Mohanam • returning to Sa", "tokens": "S G3 R2 S R2 G3 P G3 P D2 P G3 R2 G3 R2 S".split()},
+]
+DEFAULT_TEXT = {
+    "title": "Swaraga", "subtitle": "A small exploration of Carnatic phrase continuation.",
+    "empty_catalog": "Your voice belongs here. Recordings have not been added yet.",
+    "limitations": "A small curated phrase bank; every vocal response is an existing recording.",
+    "vocal_mode": "Recorded vocal response", "symbolic_mode": "Generated swaras",
+    "seed_label": "Your recorded seed phrase", "play_seed": "Play seed", "play_response": "Play response",
+    "vocal_explanation": "Select an approved recorded pair or retrieve a recorded response from another seed family.",
+    "symbolic_explanation": "New swaras from the existing n-gram baseline, with synthesized reference tones.",
+}
+
+
+class DemoService:
+    def __init__(self, root: Path):
+        self.root = Path(root)
+        self.bank = RecordingBank(self.root)
+        self.copy_ready = False
+        self.text = dict(DEFAULT_TEXT)
+        self.warnings = list(self.bank.errors)
+        try:
+            module = load_team_file(root, "demo_copy")
+            module._check()
+            self.text.update({key: module.get_text(key) for key in DEFAULT_TEXT})
+            self.copy_ready = True
+        except (NotImplementedError, AssertionError):
+            pass
+        except (OSError, SyntaxError, AttributeError, TypeError, KeyError) as exc:
+            self.warnings.append(f"Friend 1 captions need review: {exc}")
+        self.symbolic = {}
+        self.training_count = 0
+        self.composition_count = 0
+        try:
+            frame = pd.read_parquet(root / "data/processed/normalized_dataset.parquet")
+            training_ids = {json.loads(line)["id"] for line in (root / "data/splits/train.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()}
+            training_frame = frame[frame["id"].isin(training_ids)]
+            windows = [w for w in build_windows(training_frame, rung="T2") if FOREIGN_DEGREE not in w.context_degrees + w.target_degrees]
+            if not windows:
+                raise ValueError("No valid training windows available.")
+            model = VariableOrderMarkov().fit(windows)
+            grammar = RagaGrammarLibrary().get("Mohanam", 28)
+            self.training_count = len(windows)
+            self.composition_count = len({w.record_id for w in windows})
+            for index, preset in enumerate(PRESETS):
+                decoded = ConstrainedDecoder(grammar, allow_rests=False, rng=random.Random(42 + index)).decode(
+                    model, to_degrees(preset["tokens"], grammar), horizon=8)
+                self.symbolic[preset["id"]] = {
+                    **preset, "generated": decoded.swaras, "raga": "Mohanam", "tala": "Adi (display context only)",
+                    "fallback_steps": decoded.fell_back,
+                    "random_seed": 42 + index,
+                    "timing_note": "Uniform 0.32-second reference tones; no inferred tala alignment or gamakas.",
+                }
+        except (ValueError, OSError, KeyError) as exc:
+            self.warnings.append(f"Symbolic mode unavailable: {exc}")
+
+    def state(self):
+        return {"text": self.text, "symbolic": list(self.symbolic.values()),
+                "recordings": self.bank.records, "warnings": self.warnings,
+                "team": {"copy_ready": self.copy_ready, "catalog_ready": self.bank.friend_ready},
+                "training": {"windows": self.training_count, "compositions": self.composition_count,
+                             "note": "Existing symbolic fragments; provenance unverified. Overlapping windows are not independent examples. Practice seeds are hand-written demo inputs, not held-out evaluation."}}
+
+    def response(self, query_id: str, mode: str, response_id: str | None = None):
+        query = self.bank.get(query_id)
+        if mode == "prepared":
+            if query["split"] != "bank":
+                raise ValueError("Evaluation clips are only available as retrieval queries.")
+            response_id = query_id
+        elif mode == "retrieval":
+            ranked = self.bank.rank(query_id)
+            if not ranked:
+                raise ValueError("No compatible response from another source group. Try a prepared bank example.")
+            response_id = response_id or ranked[0]["id"]
+            if response_id not in {r["id"] for r in ranked}:
+                raise ValueError("Response does not satisfy the retrieval constraints.")
+        else:
+            raise ValueError("Mode must be prepared or retrieval.")
+        return query, self.bank.get(response_id)
+
+    def audio(self, kind: str, key: str, part: str, mode="prepared", response_id=None):
+        if part not in ("seed", "response", "combined"):
+            raise ValueError("Unknown audio part.")
+        if kind == "symbolic":
+            if key not in self.symbolic:
+                raise ValueError("Unknown symbolic example.")
+            example = self.symbolic[key]
+            tokens = example["tokens"] if part == "seed" else example["generated"]
+            if part == "combined":
+                tokens = example["tokens"] + example["generated"]
+            return wav_bytes(synthesize(tokens))
+        if kind != "vocal":
+            raise ValueError("Unknown audio kind.")
+        if part == "seed":
+            return wav_bytes(self.bank.audio[self.bank.get(key)["id"]]["seed"])
+        query, response = self.response(key, mode, response_id)
+        seed = self.bank.audio[query["id"]]["seed"]
+        tail = self.bank.audio[response["id"]]["response"]
+        return wav_bytes(np.concatenate([seed, tail]) if part == "combined" else tail)

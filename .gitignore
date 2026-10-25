@@ -3,3 +3,8 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
+recordings_originals/
+data/audio/**/*.wav
+data/audio/**/*.m4a
+data/audio/**/*.mp3
+.demo-artifacts/

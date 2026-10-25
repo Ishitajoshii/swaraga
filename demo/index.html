@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Swaraga · A phrase, continued</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/">swaraga<span>♪</span></a><span class="tag">CARNATIC PHRASE LAB</span></header>
+    <section class="intro"><p class="eyebrow">LISTEN. EXPLORE. CONTINUE.</p><h1>A phrase,<br><em>continued.</em></h1><p id="subtitle">A small exploration of Carnatic phrase continuation.</p></section>
+    <nav aria-label="Demo modes"><button id="symbolicTab" aria-pressed="true">Generated swaras</button><button id="vocalTab" aria-pressed="false">Recorded vocal response</button></nav>
+    <div id="error" role="alert" hidden></div>
+    <section class="workspace" aria-label="Phrase workspace">
+      <div class="controls"><div><p class="eyebrow" id="modeLabel">SYMBOLIC CONTINUATION</p><h2 id="modeTitle">Find the next phrase</h2><p id="explanation"></p></div>
+        <div id="vocalControls" hidden><label for="vocalMode">Response method</label><select id="vocalMode"><option value="prepared">Prepared example · approved pair</option><option value="retrieval">Retrieve from another seed family</option></select></div>
+        <div id="seedControl"><label for="seed">Choose a seed phrase</label><select id="seed"></select></div>
+        <div id="responseControl" hidden><label for="response">Compatible recorded response</label><select id="response"></select></div>
+        <p id="metadata" class="metadata"></p>
+      </div>
+      <div id="empty" class="empty" hidden><span class="emptyIcon" aria-hidden="true">♫</span><h2>Waiting for your voice</h2><p id="emptyText"></p><p>Until then, explore the generated swaras tab.</p></div>
+      <div id="players" class="players">
+        <article><div class="cardHeading"><span class="step">01</span><h3 id="seedHeading">Seed phrase</h3><span class="pill" id="seedBadge">SYNTHESIZED</span></div><div id="seedNotes" class="notes" aria-label="Seed swaras"></div><audio id="seedAudio" controls preload="none" aria-label="Play seed phrase"></audio><p id="seedBeat" class="beat"></p></article>
+        <div class="bridge" aria-hidden="true">↓</div>
+        <article class="responseCard"><div class="cardHeading"><span class="step">02</span><h3 id="responseHeading">Generated continuation</h3><span class="pill" id="responseBadge">8 SWARAS</span></div><div id="responseNotes" class="notes" aria-label="Response swaras"></div><audio id="responseAudio" controls preload="none" aria-label="Play response"></audio><p id="responseBeat" class="beat"></p><p id="noResponse" hidden></p></article>
+        <div id="combinedBlock" class="combined"><div><h3>Hear the complete phrase</h3><p id="joinNote">Seed followed by the generated continuation.</p></div><audio id="combinedAudio" controls preload="none" aria-label="Play complete phrase"></audio><a id="download" class="download" download="swaraga-complete.wav">Download WAV ↗</a></div>
+      </div>
+    </section>
+    <aside class="context"><div><p class="eyebrow">WHAT YOU ARE HEARING</p><p id="disclosure"></p></div><div><p class="eyebrow">A SMALL, HONEST EXPERIMENT</p><p id="evidence"></p></div></aside>
+    <details id="warningBox" hidden><summary>Some recordings or assets need attention</summary><ul id="warnings"></ul></details>
+    <footer><span>SWARAGA / STUDENT PROJECT</span><span>Made to be listened to.</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
