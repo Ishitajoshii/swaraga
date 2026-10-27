@@ -3,8 +3,8 @@
 Status: recording-integrated demo, 27 October 2026. Six prepared vocal pairs
 are available; takes 30 and 31 have reviewed beat maps and can retrieve each
 other's responses. Ishita approved all prepared pairs, both timing reviews,
-and both retrieved combinations. Final presentation/video and friend tasks
-remain outstanding.
+and both retrieved combinations. Nyonika's captions, dictionary lookup, and
+catalog filter are merged in PR #2. Final presentation/video remain outstanding.
 
 ## Problem and implemented scope
 
@@ -96,13 +96,12 @@ expert validation. Save negative comments too.
 No numeric ratings were requested or inferred. Timing review for both practice
 takes was separately approved. These checks are not an independent evaluation.
 
-## Contributions (update after review)
+## Contributions
 
 | Contributor | Assigned / implemented work | Verified status |
 | --- | --- | --- |
 | Ishita | Musical selection, own-voice recordings, swara/timing review, musical approval | Completed for the six prepared pairs and two retrieved combinations |
-| Friend 1 — name pending | Demo captions and dictionary lookup | Assigned; not yet completed |
-| Friend 2 — name pending | Catalog filter and approved recording metadata | Assigned; not yet completed |
+| Nyonika (`Nyonikaa`) | Demo captions, dictionary lookup with fallback, and bank-only recording filter with optional exact raga matching | Reviewed and merged in [PR #2](https://github.com/Ishitajoshii/swaraga/pull/2); existing recording metadata preserved |
 | Codex assistance | Local app, symbolic adapter, audio preparation, validation/retrieval, tests, documentation, packaging | Implemented; see pre-recording verification report |
 
 Use the actual contributors and the course's required AI-assistance disclosure.

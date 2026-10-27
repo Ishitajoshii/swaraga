@@ -31,9 +31,10 @@ connection is needed after dependencies are installed. Python 3.10+ is required.
   the other's response; with two eligible exercises there is only one alternative
   per query. Ninnu Kori and take 32 remain phrase-only and excluded from retrieval.
   There are four original source recordings. Vocal audio is existing material.
-- **Friend tasks:** the two files under `team_tasks/` stay intentionally
-  unfinished. Safe defaults keep the demo running. After a friend finishes and
-  their file passes its checks, restarting the app picks up their contribution.
+- **Team contribution:** Nyonika (`Nyonikaa`) completed the demo captions,
+  dictionary lookup, and recording catalog filter in
+  [PR #2](https://github.com/Ishitajoshii/swaraga/pull/2). Both `team_tasks/`
+  modules are integrated; restart the app to load the completed helpers.
 
 Recording manifest, trimming commands, timing schema, and review procedure:
 [docs/RECORDINGS.md](docs/RECORDINGS.md). Schedule and remaining work:
