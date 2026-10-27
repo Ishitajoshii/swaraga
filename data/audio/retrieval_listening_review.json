@@ -1,0 +1,20 @@
+{
+  "reviewer": "Ishita",
+  "date": "2026-10-27",
+  "mode": "retrieval",
+  "combinations": [
+    {
+      "query": "mohanam_take30",
+      "response": "mohanam_take31",
+      "result": "Good"
+    },
+    {
+      "query": "mohanam_take31",
+      "response": "mohanam_take30",
+      "result": "Good"
+    }
+  ],
+  "scope": "Qualitative listening review of melodic continuity, rhythm and audible joins, following the requested two-combination check.",
+  "numeric_ratings": null,
+  "limitations": "Singer/team review, not independent expert evaluation or held-out testing."
+}

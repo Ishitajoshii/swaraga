@@ -1,8 +1,10 @@
 # Submission working notes
 
-Status: pre-recording implementation, 25 October 2026. This is supporting
-material for the report and rehearsal, not a claim that the final vocal demo
-or presentation is finished.
+Status: recording-integrated demo, 27 October 2026. Six prepared vocal pairs
+are available; takes 30 and 31 have reviewed beat maps and can retrieve each
+other's responses. Ishita approved all prepared pairs, both timing reviews,
+and both retrieved combinations. Final presentation/video and friend tasks
+remain outstanding.
 
 ## Problem and implemented scope
 
@@ -17,11 +19,18 @@ with foreign-note errors, and generates eight positions after a sixteen-position
 seed. The three practice inputs are hand-written demo seeds. Fixed random seeds
 make outputs repeatable. They are not held-out evaluation examples.
 
-The audio demo uses manually annotated swaras and timing. Prepared mode plays an
+The audio demo uses supplied swaras and reviewed annotations. Prepared mode plays an
 approved pair; retrieval mode selects a bank response from a different source
 group. Retrieval matches raga/tala/meter and bounds tonic, tempo, and join phase,
 then ranks coarse pitch contours and phrase duration. It neither clones Ishita's
 voice nor makes an existing recording sing newly generated notes.
+
+The timing in takes 30 and 31 follows Ishita's self-counted tala using
+signal-derived attack markers that she reviewed with click overlays. The
+beat maps allow her pace to change. The other four pairs show phrase notation
+without note highlighting or a tala clock. With only two timed exercises,
+retrieval has one eligible alternative per query; this does not demonstrate
+ranking quality across many candidates or performance on unfamiliar inputs.
 
 ## Data provenance and counts
 
@@ -30,11 +39,13 @@ voice nor makes an existing recording sing newly generated notes.
 | Existing symbolic corpus | 20 short composition fragments; provenance not independently verified | Engineering/research prototype input; not verified gold notation |
 | Valid demo training subset | 449 overlapping T2 windows from 15 contributing training compositions | Count used by the current demo; windows are not independent performances |
 | Three practice seeds | Hand-written input examples in `src/swaraga/demo.py` | Repeatable demonstration inputs |
-| Ishita's recorded source takes | 0 received as of this checkpoint | Awaiting recordings; no vocal performance evaluation yet |
-| Approved recorded pairs | 0 | Empty-bank handling is implemented |
+| Ishita's recorded source takes | 4: recordings 29-32 | Her own performances in Mohanam, Adi tala, G# / 5.5 shruti |
+| Approved recorded pairs | 6 seed clips and 6 paired response clips | Three overlapping Ninnu Kori pairs from take 29, plus three practice exercises |
+| Timed retrieval candidates | 2: recordings 30 and 31 | Reviewed coarse swara/beat maps; one alternative response per query |
+| Retrieved combinations checked | 2: 30 to 31 and 31 to 30 | Ishita judged both good; qualitative team listening only |
 | Test audio | Generated reference tones in temporary test folders | Plumbing checks only; not vocal data |
 
-Update these counts with `python scripts/check_demo.py` after adding recordings.
+Recheck these counts with `python scripts/check_demo.py` after adding recordings.
 List the number of **unique seeds**, **response options**, **original takes**, and
 **source groups** separately. Do not equate multiple crops with independent data.
 Owning a performance recording does not establish provenance of the old notation;
@@ -59,31 +70,37 @@ omitted from the new app; no experiments were retrained for the audio prototype.
 2. Open Generated swaras. Show the sixteen-position input and eight-position
    output. Play and download the complete synthesized phrase. Explain that
    pitches are reference tones with fixed duration and no gamakas.
-3. After recordings arrive, open Recorded vocal response. In Prepared mode,
+3. Open Recorded vocal response. In Prepared mode,
    explicitly call it an approved pair sung by Ishita.
 4. In Retrieval mode, show the selected candidate from another seed family.
-   Explain that it is a retrieved recording, with manually annotated notes.
+   Choose recording 30 or 31. Explain that it is a retrieved recording, with
+   supplied notes and a reviewed beat map that follows the singer's pace.
 5. State limitations: tiny corpus, unverified old notation, manual annotations,
    no arbitrary audio transcription, no voice cloning, no learned vocal gamakas,
    and no completed independent listening evaluation.
 
-Before audio arrives, step 3 demonstrates the honest empty state. Replace it
-with three verified voice examples before recording the final backup video.
+For a short demo, show one generated example, one prepared Ninnu Kori pair,
+and one retrieval combination. Save a 60-90 second backup video with sound.
 
-## Team listening sheet (fill tomorrow)
+## Team listening record
 
 Use 1 (poor) to 5 (strong). Team ratings are a smoke check, not independent
 expert validation. Save negative comments too.
 
 | Query / response IDs | Mode | Listener | Continuity 1–5 | Audible artifacts 1–5 (5 = none) | Musical plausibility 1–5 | Notes / action |
 | --- | --- | --- | --- | --- | --- | --- |
-| Pending recordings | | | | | | |
+| All six prepared pairs | Prepared | Ishita | Not scored | Not scored | Not scored | Confirmed cuts and joins are good |
+| mohanam_take30 / mohanam_take31 | Retrieval | Ishita | Not scored | Not scored | Not scored | Confirmed the retrieved combination is good |
+| mohanam_take31 / mohanam_take30 | Retrieval | Ishita | Not scored | Not scored | Not scored | Confirmed the retrieved combination is good |
+
+No numeric ratings were requested or inferred. Timing review for both practice
+takes was separately approved. These checks are not an independent evaluation.
 
 ## Contributions (update after review)
 
 | Contributor | Assigned / implemented work | Verified status |
 | --- | --- | --- |
-| Ishita | Musical selection, own-voice recordings, swara/timing review, final musical approval | Awaiting handoff |
+| Ishita | Musical selection, own-voice recordings, swara/timing review, musical approval | Completed for the six prepared pairs and two retrieved combinations |
 | Friend 1 — name pending | Demo captions and dictionary lookup | Assigned; not yet completed |
 | Friend 2 — name pending | Catalog filter and approved recording metadata | Assigned; not yet completed |
 | Codex assistance | Local app, symbolic adapter, audio preparation, validation/retrieval, tests, documentation, packaging | Implemented; see pre-recording verification report |

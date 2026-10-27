@@ -1,5 +1,14 @@
 # Swaraga: submission checklist
 
+**Current checkpoint, 27 October:** four original recordings are integrated as
+six prepared examples. Ishita approved their cuts/joins, the variable-tempo
+beat maps for 30 and 31, and both retrieval combinations (30 to 31 and 31 to 30).
+There are two timed retrieval candidates, one alternative each; no held-out
+audio evaluation has been completed. Final slides/report, backup demo video,
+friend contributions, and submission remain outstanding. The dated plan below
+is retained as the original work queue; current counts and listening results
+are in `docs/SUBMISSION_NOTES.md`.
+
 Plan written for **today, 25 October 2026**, **tomorrow, 26 October**, and
 **submission on 27 October**. If the submission time is early, treat tomorrow
 evening as the absolute deadline. Times below are work blocks, not promises.

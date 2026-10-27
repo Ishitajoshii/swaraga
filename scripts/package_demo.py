@@ -21,7 +21,7 @@ def package():
                 if file.is_file() and "__pycache__" not in file.parts and file.suffix not in (".pyc", ".pyo"):
                     if file.resolve().is_relative_to(ROOT):
                         archive.write(file, file.relative_to(ROOT))
-        archive.writestr("SNAPSHOT_README.txt", "Local demo snapshot. Read README.md for startup. Python and dependencies must already be installed for offline use. Original recordings and demo video are backed up separately. See SUBMISSION_TODO.md for incomplete tasks.\n")
+        archive.writestr("SNAPSHOT_README.txt", "Local demo snapshot. Read README.md for startup. Python and dependencies must already be installed for offline use. Files in data/audio, including source MP3s, are included. The recordings_originals folder and any external demo video are not included; keep separate backups of those. See SUBMISSION_TODO.md for incomplete tasks.\n")
     print(path)
     return path
 

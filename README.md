@@ -42,8 +42,9 @@ python -m pytest -q -p no:cacheprovider
 python scripts/package_demo.py     # create a local source/audio ZIP in .demo-artifacts/
 ```
 
-The ZIP includes working audio even though Git ignores audio files. It excludes
-originals, environments, and Git metadata. It is a local snapshot, not a complete
+The ZIP includes working audio and the original MP3s currently in `data/audio/`,
+even though Git ignores audio files. It excludes `recordings_originals/`,
+environments, and Git metadata. It is a local snapshot, not a complete
 offline Python installer; keep the existing environment and separately back up
 original recordings and the final demo video. The existing source parquet is
 included for reproducing preprocessing; its provenance remains unverified.
