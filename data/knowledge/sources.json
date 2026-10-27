@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "tyagaraja_mohana_rama",
+      "title": "Mohana Rama",
+      "file": "mOhanarAma.html",
+      "url": "https://www.shivkumar.org/music/mOhanarAma.htm",
+      "tala": "Adi",
+      "kalai": 2,
+      "composer": "Tyagaraja",
+      "raga": "Mohanam",
+      "version": "Ram Kaushik",
+      "archive": "Shivkumar Kalyanaraman Carnatic Music Krithi Archive",
+      "accessed": "2026-10-27",
+      "encoding": "cp1252",
+      "sha256": "5c0ddb248cc7f5e52cef7d99025ad67e05d722590e500e5f6d3aab3b488caba3",
+      "rights_note": "Traditional composition; modern transcription reuse terms not stated on the accessed page. No license inferred. Lyrics, translations and recordings are not included."
+    },
+    {
+      "id": "tyagaraja_rama_ninnu_nammina",
+      "title": "Rama Ninnu Nammina",
+      "file": "ramaninnunammina.html",
+      "url": "https://www.shivkumar.org/music/ramaninnunammina.htm",
+      "tala": "Adi",
+      "kalai": null,
+      "composer": "Tyagaraja",
+      "raga": "Mohanam",
+      "version": "Ram Kaushik",
+      "archive": "Shivkumar Kalyanaraman Carnatic Music Krithi Archive",
+      "accessed": "2026-10-27",
+      "encoding": "cp1252",
+      "sha256": "86a3e6b1f4972b718c164bf944924a6ec8014cb9bc0db239574e382a5479513d",
+      "rights_note": "Traditional composition; modern transcription reuse terms not stated on the accessed page. No license inferred. Lyrics, translations and recordings are not included."
+    }
+  ]
+}

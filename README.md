@@ -14,12 +14,15 @@ Stop the server with Ctrl+C. No account, model download, hosted API, or internet
 connection is needed after dependencies are installed. Python 3.10+ is required.
 
 - **Generated swaras:** three Mohanam practice seeds, existing B1 n-gram
-  continuation, fixed random seeds 42/43/44, synthesized reference playback,
+  continuation augmented with 63 source-attributed notation passages from two
+  Mohanam compositions (1,874 written note attacks), fixed random seeds 42/43/44, synthesized reference playback,
   and complete-phrase WAV downloads. Timing is uniform, not inferred tala timing.
   Ishita's instrumental-playback preference is applied in the demo: distinct
   decaying note attacks, and at most two consecutive identical generated pitches
   when a legal alternative exists. This is an optional decoder preference;
   historical experiment defaults and recorded performances retain their behavior.
+  The new notation teaches pitch-class order; source timing and octaves are not
+  inferred. Sources, reproduction and scope: [Mohanam knowledge](docs/MOHANAM_KNOWLEDGE.md).
 - **Recorded vocal response:** six approved prepared pairs in Mohanam/Adi,
   G# / 5.5 shruti: three overlapping Ninnu Kori pairs from take 29, plus the
   three practice exercises in takes 30-32. Ishita approved their phrase cuts

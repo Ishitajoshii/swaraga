@@ -1,0 +1,51 @@
+{
+  "compositions": 2,
+  "passages": 63,
+  "note_attacks": 1874,
+  "by_composition": [
+    {
+      "id": "tyagaraja_mohana_rama",
+      "passages": 36,
+      "note_attacks": 1265,
+      "excluded": [
+        {
+          "paragraph": 99,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 154,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 157,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 237,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 241,
+          "reason": "duplicate pitch-class sequence"
+        }
+      ]
+    },
+    {
+      "id": "tyagaraja_rama_ninnu_nammina",
+      "passages": 27,
+      "note_attacks": 609,
+      "excluded": [
+        {
+          "paragraph": 80,
+          "reason": "fewer than five attacks"
+        },
+        {
+          "paragraph": 109,
+          "reason": "duplicate pitch-class sequence"
+        }
+      ]
+    }
+  ],
+  "scope": "Pitch-class order only; no inferred octaves, rhythm targets, lyrics or voice synthesis.",
+  "evaluation": "Training-only addition. No held-out quality improvement claimed."
+}

@@ -5,7 +5,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
 INCLUDE = ["src", "demo", "scripts", "tests", "config", "data/raw", "data/interim", "data/processed", "data/splits",
-           "data/audio", "team_tasks", "docs", "reports", "README.md", "SUBMISSION_TODO.md",
+           "data/audio", "data/knowledge", "team_tasks", "docs", "reports", "README.md", "SUBMISSION_TODO.md",
            "PRD.md", "requirements.txt", "pyproject.toml", "train-00000-of-00001.parquet", ".gitignore"]
 
 
