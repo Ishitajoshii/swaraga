@@ -1,0 +1,102 @@
+{
+  "source": {
+    "title": "Samaja Vara Gamana",
+    "composer": "Tyagaraja",
+    "raga": "Hindolam",
+    "tala": "Adi",
+    "performer_credit": "Shivkumar Kalyanaraman (archive rendition, following Peri Sriramamurthy's version)",
+    "audio_url": "https://www.shivkumar.org/music/samajavaragamana.mp3",
+    "notation_url": "https://www.shivkumar.org/music/samajavaragamana.htm",
+    "rights_url": "https://www.shivkumar.org/music/background.html",
+    "rights_note": "Archive author permits noncommercial copying and distribution with attribution; custom permission, not a Creative Commons license.",
+    "source_sha256": "b2f2a6582f4898065e3cc3700ab2120bdb60c2313c1a0c28dff9851685ab7f07",
+    "working_sha256": "abfaaac9d6b46b678784c7b733c189cc52c2045629ba820464162c4cf272cb56",
+    "accessed": "2026-10-27",
+    "group_id": "tyagaraja_samaja_vara_gamana",
+    "working_format": "float32 little-endian, mono, 24000 Hz",
+    "duration_seconds": 420.28408333333334,
+    "peak_before": 1.932159423828125,
+    "above_nominal_full_scale_fraction": 0.03961586300060138,
+    "audio_type": "Archive vocal rendition; source accompaniment retained"
+  },
+  "notation": {
+    "compositions": 1,
+    "passages": 16,
+    "written_notes": 294
+  },
+  "vocal_checks": [
+    {
+      "id": "vocal-1",
+      "source_seconds": [
+        71.11204166666667,
+        78.457625,
+        88.19354166666666
+      ],
+      "durations": {
+        "seed": 7.345583333333333,
+        "response": 9.735916666666666,
+        "combined": 17.0815
+      },
+      "analysis": {
+        "frames": 424,
+        "confident_frames": 143,
+        "confident_fraction": 0.3373,
+        "median_f0_hz": 168.61,
+        "scope": "Diagnostic F0 only. No tonic, swaras, gamakas or tala inferred as ground truth."
+      },
+      "source_peak": 1.8740944862365723,
+      "source_above_nominal_full_scale_fraction": 0.0536399028188391,
+      "join_sample_jump": 0.007236249696949888
+    },
+    {
+      "id": "vocal-2",
+      "source_seconds": [
+        183.78808333333333,
+        194.03529166666667,
+        206.95466666666667
+      ],
+      "durations": {
+        "seed": 10.247208333333333,
+        "response": 12.919375,
+        "combined": 23.16658333333333
+      },
+      "analysis": {
+        "frames": 576,
+        "confident_frames": 241,
+        "confident_fraction": 0.4184,
+        "median_f0_hz": 250.62,
+        "scope": "Diagnostic F0 only. No tonic, swaras, gamakas or tala inferred as ground truth."
+      },
+      "source_peak": 1.9293062686920166,
+      "source_above_nominal_full_scale_fraction": 0.05069802409361185,
+      "join_sample_jump": 0.0029445641746458934
+    },
+    {
+      "id": "vocal-3",
+      "source_seconds": [
+        298.3672916666667,
+        309.7825833333333,
+        319.51175
+      ],
+      "durations": {
+        "seed": 11.415291666666667,
+        "response": 9.729166666666666,
+        "combined": 21.144458333333333
+      },
+      "analysis": {
+        "frames": 526,
+        "confident_frames": 227,
+        "confident_fraction": 0.4316,
+        "median_f0_hz": 186.88,
+        "scope": "Diagnostic F0 only. No tonic, swaras, gamakas or tala inferred as ground truth."
+      },
+      "source_peak": 1.794891119003296,
+      "source_above_nominal_full_scale_fraction": 0.046458193340650725,
+      "join_sample_jump": 0.003791335505980394
+    }
+  ],
+  "status": "Vocal preparation incomplete: V1-V3 rejected for lyric content. Instrumental examples remain pending.",
+  "vocal_content_verified": false,
+  "saraga_status": "Govardhana Girisham metadata, tonic and sama obtained; audio unavailable (Zenodo HTTP 403 network restriction). Not used for these clips.",
+  "evaluation_note": "All vocal excerpts and notation share one composition group; this is a development listening review, not held-out evaluation."
+}

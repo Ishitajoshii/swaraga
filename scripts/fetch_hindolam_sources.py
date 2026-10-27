@@ -17,6 +17,8 @@ CACHE = ROOT / ".demo-artifacts/hindolam-sources"
 SOURCES = {
     "saraga-metadata.zip": "https://codeload.github.com/MTG/saraga/zip/refs/heads/master",
     "samajavaragamana.html": "https://www.shivkumar.org/music/samajavaragamana.htm",
+    "archive-background.html": "https://www.shivkumar.org/music/background.html",
+    "samajavaragamana.mp3": "https://www.shivkumar.org/music/samajavaragamana.mp3",
 }
 ARCHIVE_URL = "https://zenodo.org/records/4301737/files/saraga1.5_carnatic.zip"
 TRACK = "Chaitra Sairam at Arkay by Chaitra Sairam/Govardhana Girisham/Govardhana Girisham"

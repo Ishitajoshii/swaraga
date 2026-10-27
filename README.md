@@ -42,6 +42,12 @@ Recording manifest, trimming commands, timing schema, and review procedure:
 [docs/RECORDINGS.md](docs/RECORDINGS.md). Schedule and remaining work:
 [SUBMISSION_TODO.md](SUBMISSION_TODO.md).
 
+**Hindolam review:** three generated instrumental continuations remain available.
+V1–V3 were rejected because they contain lyrics rather than swaram-only singing;
+replacement vocal examples are not ready. Status and instrumental playback:
+<http://127.0.0.1:8765/review/hindolam/>. See
+[sources, verification and reproduction](docs/HINDOLAM_REVIEW.md).
+
 ```powershell
 python scripts/check_demo.py       # validate; save three synthesized backup WAVs
 python -m pytest -q -p no:cacheprovider

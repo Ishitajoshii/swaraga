@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "review_id": "hindolam-v2-vocals-withdrawn",
+  "approved": false,
+  "vocal_status": "No eligible swaram-only vocal examples. V1-V3 rejected after user content review.",
+  "source": {
+    "title": "Samaja Vara Gamana",
+    "composer": "Tyagaraja",
+    "raga": "Hindolam",
+    "tala": "Adi",
+    "performer_credit": "Shivkumar Kalyanaraman (archive rendition, following Peri Sriramamurthy's version)",
+    "audio_url": "https://www.shivkumar.org/music/samajavaragamana.mp3",
+    "notation_url": "https://www.shivkumar.org/music/samajavaragamana.htm",
+    "rights_url": "https://www.shivkumar.org/music/background.html",
+    "rights_note": "Archive author permits noncommercial copying and distribution with attribution; custom permission, not a Creative Commons license.",
+    "source_sha256": "b2f2a6582f4898065e3cc3700ab2120bdb60c2313c1a0c28dff9851685ab7f07",
+    "working_sha256": "abfaaac9d6b46b678784c7b733c189cc52c2045629ba820464162c4cf272cb56",
+    "accessed": "2026-10-27",
+    "group_id": "tyagaraja_samaja_vara_gamana",
+    "working_format": "float32 little-endian, mono, 24000 Hz",
+    "duration_seconds": 420.28408333333334,
+    "peak_before": 1.932159423828125,
+    "above_nominal_full_scale_fraction": 0.03961586300060138,
+    "audio_type": "Archive vocal rendition; source accompaniment retained"
+  },
+  "notation": {
+    "compositions": 1,
+    "passages": 16,
+    "written_notes": 294
+  },
+  "items": [
+    {
+      "id": "vocal-1",
+      "title": "Vocal excerpt 1",
+      "kind": "vocal",
+      "paths": {
+        "seed": "vocal-1-seed.wav",
+        "response": "vocal-1-response.wav",
+        "combined": "vocal-1-combined.wav"
+      },
+      "sha256": {
+        "seed": "e739810fa928a8d29c018064917cfc34a90f9212e38ff95c529f5cdfb9478b47",
+        "response": "2cd3cc5adf902511525d3756a21529725044b574a8973bde47a2ffbca83920b1",
+        "combined": "49c80eaf286e9b3680fbad28ccf55bfd6c2a3ba6ee5185312f3eaead53dc2979"
+      },
+      "approved": false,
+      "review_status": "rejected",
+      "swara_only_verified": false,
+      "rejection_reason": "User confirmed these excerpts contain lyrics, not only swara syllables. Withdrawn from the swaram-only pipeline.",
+      "group_id": "tyagaraja_samaja_vara_gamana",
+      "split": "review_only",
+      "source_seconds": [
+        71.11204166666667,
+        78.457625,
+        88.19354166666666
+      ],
+      "durations": {
+        "seed": 7.345583333333333,
+        "response": 9.735916666666666,
+        "combined": 17.0815
+      },
+      "analysis": {
+        "frames": 424,
+        "confident_frames": 143,
+        "confident_fraction": 0.3373,
+        "median_f0_hz": 168.61,
+        "scope": "Diagnostic F0 only. No tonic, swaras, gamakas or tala inferred as ground truth."
+      },
+      "source_peak": 1.8740944862365723,
+      "source_above_nominal_full_scale_fraction": 0.0536399028188391,
+      "gain": 0.4399222908407436,
+      "edge_fade_seconds": 0.008,
+      "join_sample_jump": 0.007236249696949888,
+      "note": "Original contiguous excerpt. Low-energy cuts proposed automatically; phrase endpoints need your review. Swara transcription and tala alignment are not verified."
+    },
+    {
+      "id": "vocal-2",
+      "title": "Vocal excerpt 2",
+      "kind": "vocal",
+      "paths": {
+        "seed": "vocal-2-seed.wav",
+        "response": "vocal-2-response.wav",
+        "combined": "vocal-2-combined.wav"
+      },
+      "sha256": {
+        "seed": "817c4a743c9039649dd984c1bfd7cfbea5cbb5ffd1b644956dc84cf3012a0369",
+        "response": "23141145b0e19cb0263cb276e24b38d675cdc30aa87a79a8e4fb03048261a760",
+        "combined": "1ebff03c1e63aaf0eaa2e2eae56a77be89247c1d79aaf933a78aa77e5ccbc3cf"
+      },
+      "approved": false,
+      "review_status": "rejected",
+      "swara_only_verified": false,
+      "rejection_reason": "User confirmed these excerpts contain lyrics, not only swara syllables. Withdrawn from the swaram-only pipeline.",
+      "group_id": "tyagaraja_samaja_vara_gamana",
+      "split": "review_only",
+      "source_seconds": [
+        183.78808333333333,
+        194.03529166666667,
+        206.95466666666667
+      ],
+      "durations": {
+        "seed": 10.247208333333333,
+        "response": 12.919375,
+        "combined": 23.16658333333333
+      },
+      "analysis": {
+        "frames": 576,
+        "confident_frames": 241,
+        "confident_fraction": 0.4184,
+        "median_f0_hz": 250.62,
+        "scope": "Diagnostic F0 only. No tonic, swaras, gamakas or tala inferred as ground truth."
+      },
+      "source_peak": 1.9293062686920166,
+      "source_above_nominal_full_scale_fraction": 0.05069802409361185,
+      "gain": 0.4399222908407436,
+      "edge_fade_seconds": 0.008,
+      "join_sample_jump": 0.0029445641746458934,
+      "note": "Original contiguous excerpt. Low-energy cuts proposed automatically; phrase endpoints need your review. Swara transcription and tala alignment are not verified."
+    },
+    {
+      "id": "vocal-3",
+      "title": "Vocal excerpt 3",
+      "kind": "vocal",
+      "paths": {
+        "seed": "vocal-3-seed.wav",
+        "response": "vocal-3-response.wav",
+        "combined": "vocal-3-combined.wav"
+      },
+      "sha256": {
+        "seed": "399158f41f2c5cb2144efccd4728869ba69beed64629ea168fbf9060684a58cc",
+        "response": "e74faec02168ba153616519674f6ff1accf7305cb857a5a52f3893a913f31f4a",
+        "combined": "f006c535e41524b0c867b059fe73ea9d2668fd4e7f56b6405c4289bae4308840"
+      },
+      "approved": false,
+      "review_status": "rejected",
+      "swara_only_verified": false,
+      "rejection_reason": "User confirmed these excerpts contain lyrics, not only swara syllables. Withdrawn from the swaram-only pipeline.",
+      "group_id": "tyagaraja_samaja_vara_gamana",
+      "split": "review_only",
+      "source_seconds": [
+        298.3672916666667,
+        309.7825833333333,
+        319.51175
+      ],
+      "durations": {
+        "seed": 11.415291666666667,
+        "response": 9.729166666666666,
+        "combined": 21.144458333333333
+      },
+      "analysis": {
+        "frames": 526,
+        "confident_frames": 227,
+        "confident_fraction": 0.4316,
+        "median_f0_hz": 186.88,
+        "scope": "Diagnostic F0 only. No tonic, swaras, gamakas or tala inferred as ground truth."
+      },
+      "source_peak": 1.794891119003296,
+      "source_above_nominal_full_scale_fraction": 0.046458193340650725,
+      "gain": 0.4399222908407436,
+      "edge_fade_seconds": 0.008,
+      "join_sample_jump": 0.003791335505980394,
+      "note": "Original contiguous excerpt. Low-energy cuts proposed automatically; phrase endpoints need your review. Swara transcription and tala alignment are not verified."
+    },
+    {
+      "id": "symbolic-1",
+      "title": "Rising phrase",
+      "kind": "symbolic",
+      "seed": [
+        "S",
+        "G2",
+        "M1",
+        "D1",
+        "N2",
+        "S'",
+        "N2",
+        "D1",
+        "M1",
+        "G2",
+        "S",
+        "G2",
+        "M1",
+        "D1",
+        "M1",
+        "G2"
+      ],
+      "response": [
+        "S",
+        "N2",
+        "S'",
+        "G2'",
+        "M1'",
+        "D1'",
+        "N2'",
+        "N2"
+      ],
+      "raga": "Hindolam",
+      "random_seed": 142,
+      "fallback_steps": 0,
+      "approved": false,
+      "review_status": "pending",
+      "note": "Hand-written practice seed plus generated continuation. Uniform reference timing; no inferred tala or gamakas. Not a held-out evaluation.",
+      "paths": {
+        "seed": "symbolic-1-seed.wav",
+        "response": "symbolic-1-response.wav",
+        "combined": "symbolic-1-combined.wav"
+      },
+      "sha256": {
+        "seed": "3f802d23664caab15cb426aad8d92e404ed31951064b463209fa2f9e7c884542",
+        "response": "08bdb57aef01b6a04c2603b8880c2f9bc233acbf02015d1bf3ef9cb70ff25b78",
+        "combined": "716c8261d98c2ab7a28c9c4abb62b839949e5a38247daa545e8ffaa95a945703"
+      },
+      "split": "review_only"
+    },
+    {
+      "id": "symbolic-2",
+      "title": "Descending phrase",
+      "kind": "symbolic",
+      "seed": [
+        "S'",
+        "N2",
+        "D1",
+        "M1",
+        "G2",
+        "S",
+        "G2",
+        "M1",
+        "D1",
+        "N2",
+        "D1",
+        "M1",
+        "G2",
+        "S",
+        "G2",
+        "M1"
+      ],
+      "response": [
+        "D1",
+        "N2",
+        "S'",
+        "N2",
+        "D1",
+        "M1",
+        "G2",
+        "S"
+      ],
+      "raga": "Hindolam",
+      "random_seed": 143,
+      "fallback_steps": 0,
+      "approved": false,
+      "review_status": "pending",
+      "note": "Hand-written practice seed plus generated continuation. Uniform reference timing; no inferred tala or gamakas. Not a held-out evaluation.",
+      "paths": {
+        "seed": "symbolic-2-seed.wav",
+        "response": "symbolic-2-response.wav",
+        "combined": "symbolic-2-combined.wav"
+      },
+      "sha256": {
+        "seed": "36a55f8715d02625062629d46bf51f036c4e09defbc9fb0192dd7dc1a0de5b4d",
+        "response": "93a90fa5a3325428bec6d4afc15bdc1a37b182b2cc5a34f89c8b6cde8540e012",
+        "combined": "61ab4c3140ace873de2c995aa9df53e8f25dc5c5e3432c715b88bb6a7c9322b7"
+      },
+      "split": "review_only"
+    },
+    {
+      "id": "symbolic-3",
+      "title": "Returning phrase",
+      "kind": "symbolic",
+      "seed": [
+        "M1",
+        "G2",
+        "S",
+        "N2.",
+        "D1.",
+        "N2.",
+        "S",
+        "G2",
+        "M1",
+        "G2",
+        "M1",
+        "D1",
+        "N2",
+        "D1",
+        "M1",
+        "G2"
+      ],
+      "response": [
+        "S",
+        "S",
+        "S'",
+        "N2",
+        "D1",
+        "M1",
+        "G2",
+        "S"
+      ],
+      "raga": "Hindolam",
+      "random_seed": 144,
+      "fallback_steps": 0,
+      "approved": false,
+      "review_status": "pending",
+      "note": "Hand-written practice seed plus generated continuation. Uniform reference timing; no inferred tala or gamakas. Not a held-out evaluation.",
+      "paths": {
+        "seed": "symbolic-3-seed.wav",
+        "response": "symbolic-3-response.wav",
+        "combined": "symbolic-3-combined.wav"
+      },
+      "sha256": {
+        "seed": "025795189fe43133ee104e074e1d6ae12f462c96275c803bd59174840db8c424",
+        "response": "c5b5cbea0ac329201e48ae8f58553c5b6d021ced9b5c1535e2b158d4643486fe",
+        "combined": "a627d283cf08d6bc95d8d58c0600a6c41c0e44acd1cc5d6aadcfcc59f13d0640"
+      },
+      "split": "review_only"
+    }
+  ],
+  "evaluation_note": "All vocal excerpts and notation share one composition group; this is a development listening review, not held-out evaluation.",
+  "saraga_status": "Govardhana Girisham metadata, tonic and sama obtained; audio unavailable (Zenodo HTTP 403 network restriction). Not used for these clips."
+}

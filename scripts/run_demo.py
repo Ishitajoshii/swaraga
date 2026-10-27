@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import re
 from pathlib import Path
 import socket
 import sys
@@ -45,6 +46,29 @@ def create_server(port=8765, root=ROOT):
                 if url.path == "/api/audio":
                     audio = service.audio(get("kind"), get("id"), get("part"), get("mode", "prepared"), get("response"))
                     return self.send(audio, "audio/wav")
+                review_assets = {
+                    "/review/hindolam/": ("hindolam_review.html", "text/html; charset=utf-8"),
+                    "/review/hindolam/style.css": ("hindolam_review.css", "text/css; charset=utf-8"),
+                    "/review/hindolam/review.js": ("hindolam_review.js", "text/javascript; charset=utf-8"),
+                }
+                if url.path in review_assets:
+                    file, content_type = review_assets[url.path]
+                    return self.send((root / "demo" / file).read_bytes(), content_type)
+                if re.fullmatch(r"/review/hindolam/(review\.json|(?:vocal|symbolic)-[1-3]-(?:seed|response|combined)\.wav)", url.path):
+                    base = (root / "data/audio/hindolam_review").resolve()
+                    path = (base / url.path.rsplit("/", 1)[1]).resolve()
+                    if not path.is_relative_to(base):
+                        raise ValueError("Invalid review asset path")
+                    if path.suffix == ".wav":
+                        review = json.loads((base / "review.json").read_text(encoding="utf-8"))
+                        allowed = {name for item in review["items"]
+                                   if item.get("review_status") != "rejected"
+                                   and (item["kind"] != "vocal" or item.get("swara_only_verified") is True)
+                                   for name in item["paths"].values()}
+                        if path.name not in allowed:
+                            return self.send_json({"error": "Clip withdrawn or swara-only content not verified"}, 404)
+                    content_type = "application/json; charset=utf-8" if path.suffix == ".json" else "audio/wav"
+                    return self.send(path.read_bytes(), content_type)
                 assets = {"/": ("index.html", "text/html; charset=utf-8"),
                           "/app.js": ("app.js", "text/javascript; charset=utf-8"),
                           "/style.css": ("style.css", "text/css; charset=utf-8")}
