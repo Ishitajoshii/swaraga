@@ -2,6 +2,10 @@
 
 ## Local submission demo
 
+**Frozen scope, 28 October:** the Mohanam demo is the deliverable. No additional
+recordings or ragas are required for this version. Use the short
+[demo run sheet](docs/DEMO_RUNSHEET.md) for presentation and recovery.
+
 From the repository directory, install the light dependencies once and start:
 
 ```powershell
@@ -49,7 +53,7 @@ replacement vocal examples are not ready. Status and instrumental playback:
 [sources, verification and reproduction](docs/HINDOLAM_REVIEW.md).
 
 ```powershell
-python scripts/check_demo.py       # validate; save three synthesized backup WAVs
+python scripts/check_demo.py       # check all audio paths; export complete-phrase backups
 python -m pytest -q -p no:cacheprovider
 python scripts/package_demo.py     # create a local source/audio ZIP in .demo-artifacts/
 ```
@@ -60,6 +64,10 @@ environments, and Git metadata. It is a local snapshot, not a complete
 offline Python installer; keep the existing environment and separately back up
 original recordings and the final demo video. The existing source parquet is
 included for reproducing preprocessing; its provenance remains unverified.
+`backup_audio/` inside the ZIP contains 11 complete phrases: three generated,
+six prepared vocal pairs, and both retrieval combinations. Its `check.json`
+records durations, hashes and the tested runtime versions. These WAVs can be
+played without running Python. Packaging reruns the audio checker first.
 
 The demo omits the legacy transition-legality and constraint-ablation claims.
 The transition metric includes input transitions and does not use the decoder's
@@ -93,7 +101,7 @@ data/splits/{train,val,test}.jsonl
 ```bash
 pip install -r requirements.txt
 python scripts/run_preprocessing.py
-pytest                                  # 88 tests
+python -m pytest -q -p no:cacheprovider
 ```
 
 The run is deterministic: the same input and seed give byte-identical splits.
@@ -196,10 +204,10 @@ it were a model):
 | **B1 n-gram** | **1.11** | **0.32** | **0.56** | 0.16 | 2.3 |
 | B2 retrieval | 1.52 | 0.22 | 0.38 | 0.76 | - |
 
-B1 clears the B0.5 bar, which is the v1 success criterion. Raga conformance,
-transition legality and exact length are 1.00 for every model including the
-random walk - they are guaranteed by the constrained decoder, so they verify
-the system rather than ranking models.
+These are historical prototype results on an unverified corpus. They do not
+establish the musical quality of the current demo. Pitch membership and output
+length are engineering constraints; the legacy transition-legality metric is
+superseded and must not be used as evidence.
 
 ### Three things that are easy to get wrong here
 
@@ -211,7 +219,7 @@ the system rather than ranking models.
 2. **Novelty must be read against `GT`, never against 1.00.** Real human
    continuations here score 0.13, because the degree vocabulary is 15 symbols
    wide and the repertoire is formulaic. Heavy n-gram reuse is normal music.
-   B1 at 0.16 is near-human; B0 at 1.00 is not creative, it is random.
+   Similar novelty scores do not establish human-level musical quality.
 
 3. **The models reason in scale degrees, not swaras.** Each swara maps to its
    index in its own raga's scale, so all 20 ragas pool into one training set
@@ -281,11 +289,10 @@ evidence the system works. It is a property of the *representation*: degrees
 map back to swaras modulo the raga's own scale, so an out-of-raga note is
 literally unrepresentable.
 
-What the decoder's mask actually buys is **legal motion** — a raga's ascending
-and descending paths differ, and nothing in the degree encoding forces a model
-to respect that. `reports/scaling_study.md` reports the ablation on transition
-legality for this reason. Quoting raga conformance as a result would overstate
-what the grammar contributes.
+The decoder also restricts motion using the supplied grammar. However, the saved
+transition-legality ablation is superseded: its metric counts context transitions
+and differs from the decoder's direction-aware check. Do not use that table to
+claim a measured benefit. Pitch membership alone is not evidence of raga identity.
 
 ## Honest limits of the current data
 

@@ -1,6 +1,6 @@
 # Data-quality log
 
-Generated: 2026-10-25T16:02:51+00:00
+Generated: 2026-10-27T18:41:24+00:00
 
 - Total events: **68**
 - Errors: **0** | Warnings: **13** | Info: **55**

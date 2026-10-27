@@ -1,6 +1,8 @@
 # Submission working notes
 
-Status: recording-integrated demo, 27 October 2026. Six prepared vocal pairs
+Status: Mohanam scope frozen, 28 October 2026. No more recordings or raga expansion
+are needed for this version. See [the demo run sheet](DEMO_RUNSHEET.md).
+Six prepared vocal pairs
 are available; takes 30 and 31 have reviewed beat maps and can retrieve each
 other's responses. Ishita approved all prepared pairs, both timing reviews,
 and both retrieved combinations. Nyonika's captions, dictionary lookup, and
@@ -41,6 +43,7 @@ ranking quality across many candidates or performance on unfamiliar inputs.
 | Existing symbolic corpus | 20 short composition fragments; provenance not independently verified | Engineering/research prototype input; not verified gold notation |
 | Valid demo training subset | 449 overlapping T2 windows from 15 contributing training compositions | Count used by the current demo; windows are not independent performances |
 | Three practice seeds | Hand-written input examples in `src/swaraga/demo.py` | Repeatable demonstration inputs |
+| Mohanam notation supplement | 63 passages, 1,874 written note attacks from two attributed compositions | Pitch-class order prior; source timing, octaves and gamakas are not reconstructed |
 | Ishita's recorded source takes | 4: recordings 29-32 | Her own performances in Mohanam, Adi tala, G# / 5.5 shruti |
 | Approved recorded pairs | 6 seed clips and 6 paired response clips | Three overlapping Ninnu Kori pairs from take 29, plus three practice exercises |
 | Timed retrieval candidates | 2: recordings 30 and 31 | Reviewed coarse swara/beat maps; one alternative response per query |
@@ -48,6 +51,11 @@ ranking quality across many candidates or performance on unfamiliar inputs.
 | Test audio | Generated reference tones in temporary test folders | Plumbing checks only; not vocal data |
 
 Recheck these counts with `python scripts/check_demo.py` after adding recordings.
+The checker now exercises 33 audio paths and saves 11 complete-phrase WAVs,
+including all six prepared pairs and both retrieval combinations. The full
+regression suite passed 296 tests on 28 October. This is engineering evidence,
+not independent musical evaluation. The rejected Hindolam vocal clips are not
+part of the deliverable; Hindolam instrumental examples remain exploratory.
 List the number of **unique seeds**, **response options**, **original takes**, and
 **source groups** separately. Do not equate multiple crops with independent data.
 Owning a performance recording does not establish provenance of the old notation;

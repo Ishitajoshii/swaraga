@@ -1,5 +1,26 @@
 # Swaraga: submission checklist
 
+## Current freeze: 28 October 2026
+
+The deliverable is the existing **Mohanam** demo. New recordings, YouTube
+acquisition and additional ragas are deferred. The original dated work queue
+below is historical; it is not a request for more recordings.
+
+- [x] Three generated examples, six approved vocal pairs from four source takes,
+  and two reviewed retrieval combinations are available.
+- [x] Full regression suite: 296 tests passed.
+- [x] All 33 seed/response/combined audio paths checked; 11 complete phrases
+  exported with durations and hashes for direct playback.
+- [x] Hindolam vocal excerpts remain rejected, outside the approved bank.
+- [x] Presentation and recovery instructions: [demo run sheet](docs/DEMO_RUNSHEET.md).
+- [ ] Final visual/playback check on the presentation machine. Computer-use app
+  approval timed out; automated verification is not a browser listening check.
+- [ ] Final slides/report, backup video and submission, if required by the course.
+
+No further musical review is requested for the already approved Mohanam pairs.
+The two helper modules pass their checks; this does not establish completion of
+the other friend's separate assigned contribution.
+
 **Current checkpoint, 27 October:** four original recordings are integrated as
 six prepared examples. Ishita approved their cuts/joins, the variable-tempo
 beat maps for 30 and 31, and both retrieval combinations (30 to 31 and 31 to 30).

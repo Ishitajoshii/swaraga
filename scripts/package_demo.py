@@ -12,6 +12,11 @@ INCLUDE = ["src", "demo", "scripts", "tests", "config", "data/raw", "data/interi
 def package():
     destination = ROOT / ".demo-artifacts"
     destination.mkdir(exist_ok=True)
+    # Refresh backups and fail before packaging an invalid demo.
+    import subprocess
+    import sys
+    subprocess.run([sys.executable, str(ROOT / "scripts/check_demo.py")], cwd=ROOT, check=True,
+                   stdout=subprocess.DEVNULL)
     path = destination / ("swaraga-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ") + ".zip")
     with ZipFile(path, "x", ZIP_DEFLATED) as archive:
         for name in INCLUDE:
@@ -21,7 +26,12 @@ def package():
                 if file.is_file() and "__pycache__" not in file.parts and file.suffix not in (".pyc", ".pyo"):
                     if file.resolve().is_relative_to(ROOT):
                         archive.write(file, file.relative_to(ROOT))
-        archive.writestr("SNAPSHOT_README.txt", "Local demo snapshot. Read README.md for startup. Python and dependencies must already be installed for offline use. Files in data/audio, including source MP3s, are included. The recordings_originals folder and any external demo video are not included; keep separate backups of those. See SUBMISSION_TODO.md for incomplete tasks.\n")
+        import json
+        check = json.loads((destination / "check.json").read_text(encoding="utf-8"))
+        archive.write(destination / "check.json", "backup_audio/check.json")
+        for item in check["exports"]:
+            archive.write(destination / "audio-backups" / item["file"], "backup_audio/" + item["file"])
+        archive.writestr("SNAPSHOT_README.txt", "Mohanam demo snapshot. Read docs/DEMO_RUNSHEET.md for startup and presentation. backup_audio contains complete generated, prepared and retrieved phrases plus SHA-256 hashes. Python and dependencies must already be installed for offline app use; WAVs play independently. Files in data/audio, including source MP3s, are included. Hindolam vocal cuts are rejected archive artifacts, not showcase material. The recordings_originals folder and any external demo video are not included; keep separate backups of those.\n")
     print(path)
     return path
 
