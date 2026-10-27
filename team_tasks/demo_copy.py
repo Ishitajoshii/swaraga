@@ -37,28 +37,35 @@ The main technical owner will import this file when integrating the UI.
 
 TEXT = {
     "title": "Swaraga",
-    "subtitle": "TODO: write one sentence introducing a short Carnatic phrase demo.",
+    "subtitle": (
+        "Record a short Carnatic phrase and hear two kinds of response: "
+        "a matching recorded vocal phrase and separately generated swaras."
+    ),
     "seed_label": "Your recorded seed phrase",
     "vocal_mode": "Recorded vocal response",
     "symbolic_mode": "Generated swaras",
     "play_seed": "Play seed",
     "play_response": "Play response",
-    "empty_catalog": "TODO: explain that no recordings have been added yet.",
+    "empty_catalog": (
+        "No recordings have been added yet, so the recorded vocal response "
+        "is not available."
+    ),
     "vocal_explanation": (
         "This mode selects a compatible recorded phrase in the singer's voice."
     ),
     "symbolic_explanation": (
         "This mode generates swaras. Instrumental playback is synthesized."
     ),
-    "limitations": "TODO: say the demo currently supports a small curated phrase bank.",
+    "limitations": (
+        "This demo currently supports only a small curated bank of phrases."
+    ),
     "unknown": "Information unavailable",
 }
 
 
 def get_text(key: str) -> str:
     """Return the requested UI text, or the 'unknown' text for an unknown key."""
-    # TODO FRIEND 1: replace the next line with the dictionary lookup described above.
-    raise NotImplementedError("Friend 1: complete get_text and the three text TODOs.")
+    return TEXT.get(key, TEXT["unknown"])
 
 
 def _check() -> None:

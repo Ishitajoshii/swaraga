@@ -107,8 +107,14 @@ def list_recordings(
     records: list[dict[str, str]], raga: str | None = None
 ) -> list[dict[str, str]]:
     """Select bank records, optionally restricted to one exact raga name."""
-    # TODO FRIEND 2: replace the next line with your loop, filter, and return.
-    raise NotImplementedError("Friend 2: complete the small catalog filter.")
+    selected = []  # a brand-new list, so the input list is never changed
+    for record in records:
+        if record["split"] != "bank":
+            continue  # skip "evaluation" (or anything else that isn't "bank")
+        if raga is not None and record["raga"] != raga:
+            continue  # a raga was requested and this record's raga is different
+        selected.append(record)  # keeps the original order
+    return selected
 
 
 def _check() -> None:
