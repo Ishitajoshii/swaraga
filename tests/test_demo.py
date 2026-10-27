@@ -193,6 +193,51 @@ def test_vocal_playback_combines_selected_recordings_without_changing_source(ban
         service.audio("vocal", "c", "combined", "prepared")
 
 
+def phrase_annotation(group):
+    return {"approved": True, "level": "phrase", "approved_for": "prepared_playback",
+            "group_id": group, "shruti_label": "G# / 5.5", "seed_notation": "G , G ,",
+            "response_notation": "S R G R", "review_scope": "Singer approved phrase cuts and joins."}
+
+
+def test_phrase_approval_enables_playback_but_never_retrieval(bank_root):
+    path = bank_root / "data/audio/annotations.json"
+    annotations = json.loads(path.read_text())
+    annotations["a"] = phrase_annotation("one")
+    path.write_text(json.dumps(annotations))
+    service = DemoService(bank_root)
+    assert service.bank.errors == []
+    for part, seconds in (("seed", 1), ("response", 1), ("combined", 2)):
+        with wave.open(io.BytesIO(service.audio("vocal", "a", part))) as audio:
+            assert audio.getnframes() == seconds * RATE
+    assert service.bank.rank("a") == []  # Phrase query cannot be ranked.
+    assert service.bank.rank("b") == []  # Phrase candidate cannot be selected.
+    with pytest.raises(ValueError, match="No compatible"):
+        service.audio("vocal", "a", "combined", "retrieval")
+
+
+def test_phrase_review_does_not_approve_note_or_tala_timing():
+    a = phrase_annotation("one")
+    validate_annotation(a, {"seed": 1, "response": 1})
+    for field, value in (("approved", False), ("approved_for", "all"),
+                         ("seed_notation", ""), ("level", "unknown"),
+                         ("seed_events", []), ("tempo_bpm", 60)):
+        with pytest.raises(ValueError):
+            validate_annotation({**a, field: value}, {"seed": 1, "response": 1})
+    with pytest.raises(ValueError):
+        validate_annotation({**a, "level": "note"}, {"seed": 1, "response": 1})
+
+
+def test_phrase_approval_still_enforces_source_group_isolation(bank_root):
+    path = bank_root / "data/audio/annotations.json"
+    annotations = json.loads(path.read_text())
+    annotations["a"] = phrase_annotation("one")
+    annotations["c"] = phrase_annotation("one")
+    path.write_text(json.dumps(annotations))
+    bank = RecordingBank(bank_root)
+    assert not bank.records
+    assert "leakage" in bank.errors[-1]
+
+
 def test_local_http_routes_and_invalid_requests():
     spec = importlib.util.spec_from_file_location("run_demo", ROOT / "scripts/run_demo.py")
     module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)

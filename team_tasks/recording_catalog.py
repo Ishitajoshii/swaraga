@@ -43,8 +43,31 @@ The main technical owner will validate file existence and integrate this module.
 The example records used by _check are invented metadata, not real recordings.
 """
 
-# Tomorrow, add REAL records here using the exact fields shown in the example.
-RECORDINGS: list[dict[str, str]] = []
+# Ishita reviewed all three phrase cuts/joins from her Ninnu Kori take.
+# These overlap within one composition; all belong to the same bank group.
+RECORDINGS: list[dict[str, str]] = [
+    {
+        "id": "ninnu_kori_pair01", "title": "Ninnu Kori - pallavi lines 1 to 2",
+        "raga": "Mohanam", "tala": "Adi",
+        "seed_path": "data/audio/ninnu_kori_pair01_seed.wav",
+        "response_path": "data/audio/ninnu_kori_pair01_response.wav",
+        "source_take": "standard_recording_29", "split": "bank",
+    },
+    {
+        "id": "ninnu_kori_pair02", "title": "Ninnu Kori - pallavi lines 2 to 3",
+        "raga": "Mohanam", "tala": "Adi",
+        "seed_path": "data/audio/ninnu_kori_pair02_seed.wav",
+        "response_path": "data/audio/ninnu_kori_pair02_response.wav",
+        "source_take": "standard_recording_29", "split": "bank",
+    },
+    {
+        "id": "ninnu_kori_pair03", "title": "Ninnu Kori - pallavi lines 3 to 4",
+        "raga": "Mohanam", "tala": "Adi",
+        "seed_path": "data/audio/ninnu_kori_pair03_seed.wav",
+        "response_path": "data/audio/ninnu_kori_pair03_response.wav",
+        "source_take": "standard_recording_29", "split": "bank",
+    },
+]
 
 # Example SHAPE ONLY: do not uncomment without replacing values with real metadata.
 # {

@@ -43,7 +43,14 @@ function notes(part, tokens) {
   }));
 }
 function timed(part, record) {
-  const a = record.annotation, events = a[part + "_events"];
+  const a = record.annotation;
+  if (a.level === "phrase") {
+    notes(part, a[part + "_notation"].split(/\s+/));
+    $(part + "Audio").ontimeupdate = null;
+    $(part + "Beat").textContent = "Supplied phrase notation · octave marks and note/tala timing unverified.";
+    return;
+  }
+  const events = a[part + "_events"];
   notes(part, events);
   const audio = $(part + "Audio");
   audio.ontimeupdate = () => {
@@ -108,7 +115,10 @@ async function render() {
     return;
   }
   const query = state.recordings.find(r => r.id === id);
-  $("metadata").textContent = `${query.raga} · ${query.tala}\nSa ${query.annotation.tonic_hz} Hz · ${query.annotation.tempo_bpm} beats/min\nSource take: ${query.source_take}`;
+  const phraseOnly = query.annotation.level === "phrase";
+  const tuning = phraseOnly ? `${query.annotation.shruti_label} · phrase-level playback` : `Sa ${query.annotation.tonic_hz} Hz · ${query.annotation.tempo_bpm} beats/min`;
+  $("metadata").textContent = `${query.raga} · ${query.tala}\n${tuning}\nSource take: ${query.source_take}`;
+  if (phraseOnly) $("evidence").textContent = "Ishita reviewed these phrase cuts and joins. The three examples overlap within one performance; they are prepared playback examples, not independent retrieval results. Note timing and octave labels remain unverified.";
   setAudio("seed", audioUrl(id, "seed")); timed("seed", query);
   let response = query;
   const prepared = $("vocalMode").value === "prepared";
@@ -126,7 +136,7 @@ async function render() {
         $("responseAudio").hidden = true;
         $("combinedBlock").hidden = true;
         $("noResponse").hidden = false;
-        $("noResponse").textContent = "No compatible response from another seed family. Try a prepared bank example or add more approved phrases.";
+        $("noResponse").textContent = phraseOnly ? "This recording is approved for prepared playback. Retrieval needs verified note and tala timing, plus material from another seed family. Choose Prepared example to hear this pair." : "No compatible response from another seed family. Try a prepared bank example or add more approved phrases.";
         return;
       }
       $("responseControl").hidden = false;

@@ -1,6 +1,18 @@
 # Adding Ishita's recordings
 
-The real catalog is deliberately empty. The app already runs without it.
+The catalog now contains three prepared pairs from Ishita's Ninnu Kori take.
+Ishita reviewed all three cuts/joins and said they were good. Their annotations
+use `level: "phrase"` and `approved_for: "prepared_playback"`: this approval
+covers prepared playback with supplied phrase notation, not note timestamps,
+octave labels, tempo, or tala phase. No timed highlighting is shown. The three
+pairs overlap within one source group and cannot be used as independent
+evaluation examples or retrieval candidates.
+
+Phrase-level annotations require `approved`, `group_id`, `shruti_label`,
+`seed_notation`, `response_notation`, and `review_scope`. They must not contain
+event/tala timing fields. The detailed timing workflow below applies when
+adding fully timed recordings; it is not required for phrase-only playback.
+
 Only the technical owner needs this document; Ishita can send originals and
 the simple notes from `SUBMISSION_TODO.md`.
 
@@ -24,10 +36,11 @@ inspect the actual recording before accepting the result. Level handling only
 attenuates peaks above 0.95; it does not boost quiet noise, denoise, correct
 clipping, pitch-shift, or stretch time. Seed and response get the same gain.
 
-M4A/MP3 conversion is supported **when FFmpeg is on PATH**, but FFmpeg was not
-installed on this machine during the pre-recording checks. That conversion path
-has not been verified. PCM WAV works now. Phone M4A originals are still welcome;
-the technical owner must arrange and verify conversion before catalog entry.
+M4A/MP3 conversion is supported **when FFmpeg is on PATH**. The MP3 conversion
+path has now been exercised with `Standard recording 29.mp3`; its original
+hash and conversion metadata are in `data/audio/ninnu_kori_take29_intake.json`.
+The installed Windows FFmpeg needed access outside the sandbox. M4A conversion
+has not yet been exercised. Subsequent cuts use the decoded PCM WAV working copy.
 
 ## 2. Friend 2 enters the simple catalog
 

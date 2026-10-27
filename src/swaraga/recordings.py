@@ -40,6 +40,18 @@ def validate_annotation(annotation: dict, durations: dict) -> None:
         raise ValueError("Musical review and approved=true annotation are required.")
     if not isinstance(annotation.get("group_id"), str) or not annotation["group_id"].strip():
         raise ValueError("group_id must identify the composition/seed family across all takes.")
+    level = annotation.get("level", "note")
+    if level == "phrase":
+        if annotation.get("approved_for") != "prepared_playback":
+            raise ValueError("Phrase annotations require explicit prepared-playback approval.")
+        for field in ("shruti_label", "seed_notation", "response_notation", "review_scope"):
+            if not isinstance(annotation.get(field), str) or not annotation[field].strip():
+                raise ValueError(f"Phrase annotation needs {field}.")
+        if any(key in annotation for key in ("seed_events", "response_events", "tempo_bpm", "beats_per_cycle")):
+            raise ValueError("Phrase-only approval must not include unverified event or tala timing.")
+        return
+    if level != "note":
+        raise ValueError("Annotation level must be note or phrase.")
     number(annotation.get("tonic_hz"), "tonic_hz", 60, 1000)
     bpm = number(annotation.get("tempo_bpm"), "tempo_bpm", 20, 300)
     beats = number(annotation.get("beats_per_cycle"), "beats_per_cycle", 1, 128)
@@ -152,9 +164,13 @@ class RecordingBank:
         """No adaptation: match contour, tonic, tempo, meter, and join position."""
         query = self.get(query_id)
         a = query["annotation"]
+        if a.get("level") == "phrase":
+            return []
         ranked = []
         for candidate in self.selectable:
             b = candidate["annotation"]
+            if b.get("level") == "phrase":
+                continue
             if candidate["raga"] != query["raga"] or candidate["tala"] != query["tala"]:
                 continue
             if a["group_id"] == b["group_id"] or query["source_take"] == candidate["source_take"]:

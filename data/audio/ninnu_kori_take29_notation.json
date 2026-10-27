@@ -1,0 +1,29 @@
+{
+  "source_take": "Standard recording 29.mp3",
+  "source": "Notation pasted by Ishita in conversation; she confirmed swara-only singing.",
+  "notation_type": "Untimed reference, not verified audio annotations",
+  "recorded_extent_user_confirmed": "Full supplied pallavi followed by the opening G , G , P , , , of the anupallavi.",
+  "sections": [
+    {
+      "name": "Pallavi",
+      "lines": [
+        "G , G ,    R , , ,    S S R R    G G R R |",
+        "S R G R    S R S D |  S R G P    G R S R ||",
+        "G P G G    R S- R G   R R S D    S R G R |",
+        "G P G- P   D P- D S | D D P- G   D P G R ||"
+      ]
+    },
+    {
+      "name": "Anupallavi opening",
+      "lines": ["G , G ,    P , , ,"]
+    }
+  ],
+  "interpretation_notes": [
+    "Commas are treated as notated extensions of the preceding swara, not silent rests; actual durations remain unverified.",
+    "Hyphens and bar markers are preserved from the supplied notation without deriving timestamps or beat phase.",
+    "Octave markings are absent from the pasted text and must be checked against the performance or original notation.",
+    "Lyrics and translations were reference text only and are omitted from the sung-swara reference.",
+    "No inferred timing or octave assignments have been entered into the approved recording bank."
+  ],
+  "approved": false
+}
