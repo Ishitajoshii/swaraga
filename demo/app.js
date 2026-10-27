@@ -96,6 +96,11 @@ async function render() {
   $("players").hidden = !id;
   $("seedControl").hidden = !id;
   $("vocalControls").hidden = !vocal || !state.recordings.length;
+  if (vocal) {
+    const preparedCount = state.recordings.filter(r => r.split === "bank").length;
+    const timedCount = state.recordings.filter(r => r.annotation.level !== "phrase").length;
+    $("recordingStatus").textContent = `${preparedCount} prepared pairs available. ${timedCount} seeds have reviewed note and tala timing and can be checked for a compatible recorded response. Retrieval lists only those seeds.`;
+  }
   $("responseControl").hidden = true;
   $("metadata").textContent = "";
   $("modeLabel").textContent = vocal ? "RECORDED VOCAL PHRASES" : "SYMBOLIC CONTINUATION";
@@ -153,7 +158,7 @@ async function render() {
         $("responseAudio").hidden = true;
         $("combinedBlock").hidden = true;
         $("noResponse").hidden = false;
-        $("noResponse").textContent = phraseOnly ? "This recording is approved for prepared playback. Retrieval needs verified note and tala timing, plus material from another seed family. Choose Prepared example to hear this pair." : "No compatible response from another seed family. Try a prepared bank example or add more approved phrases.";
+        $("noResponse").textContent = phraseOnly ? `${query.title} is ready in Prepared example mode. Its exact note boundaries and tala starting position still need review for retrieval; knowing the tala name and approximate tempo alone does not establish that alignment. Switch to Prepared example to hear this pair, or reselect Retrieval to see the timing-reviewed seeds.` : "No compatible response from another seed family. Try a prepared bank example or add more approved phrases.";
         return;
       }
       $("responseControl").hidden = false;
