@@ -1,0 +1,36 @@
+{
+  "source": "data/audio/Standard recording 29.mp3",
+  "source_sha256": "ee36dd3b6a3ac83a552ee2cce7a993e64198e2c128bcdf210f32c97bc4c348ec",
+  "review_copy": "data/audio/ninnu_kori_take29_review.wav",
+  "composition_user_supplied": "Ninnu Kori varnam",
+  "raga_user_supplied": "Mohanam",
+  "tala_from_conversation": "Adi",
+  "shruti_user_supplied": "G# / 5.5; pa Sa Sa sa",
+  "tonic_hz": null,
+  "tonic_hz_estimate": 207.579,
+  "alignment_draft": "data/audio/ninnu_kori_take29_alignment_draft.json",
+  "review_page": "data/audio/ninnu_kori_take29_review.html",
+  "duration_seconds": 40.176,
+  "review_sample_rate": 24000,
+  "decoded_peak": 0.633087158203125,
+  "decoded_peak_dbfs": -3.970729915894522,
+  "decoded_rms_dbfs": -19.78149282908314,
+  "samples_at_or_above_0_999": 0,
+  "approved": false,
+  "vocal_content_user_confirmed": "Swaras only; lyrics in the supplied reference were not sung.",
+  "notation_reference": "data/audio/ninnu_kori_take29_notation.json",
+  "recorded_extent_user_confirmed": "Full pallavi followed by G , G , P , , , at the start of the anupallavi.",
+  "status": "Three phrase pairs approved by Ishita and integrated for prepared playback with supplied phrase-level notation. Detailed note alignment, octave labels, tempo and tala phase remain unverified.",
+  "group_id": "ninnu_kori_mohanam",
+  "phrase_playback_approved": true,
+  "listening_review": {
+    "reviewer": "Ishita",
+    "result": "All three pairs good",
+    "scope": "Phrase cuts and joins only",
+    "pair_ids": [
+      "ninnu_kori_pair01",
+      "ninnu_kori_pair02",
+      "ninnu_kori_pair03"
+    ]
+  }
+}

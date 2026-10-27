@@ -1,0 +1,313 @@
+{
+  "id": "mohanam_take31",
+  "take": 31,
+  "source_sha256": "20c1069a9e4f2038b607b8a4fa74939088a752b5124a201fb3f4b334c69784dc",
+  "source": "data/audio/Standard recording 31.mp3",
+  "working_copy": "data/audio/mohanam_take31_review.wav",
+  "click_audio": "data/audio/mohanam_take31_beat_review.wav",
+  "self_counted_tala_user_confirmed": true,
+  "timing_approved": true,
+  "structure_checked": true,
+  "attacks_seconds": [
+    0.22,
+    1.23,
+    2.28,
+    3.28,
+    4.23,
+    5.08,
+    5.98,
+    6.97,
+    7.98,
+    8.87,
+    9.77,
+    10.67,
+    11.63,
+    12.65,
+    13.57,
+    14.53
+  ],
+  "tokens": [
+    "G",
+    "P",
+    "D",
+    "S'",
+    "D",
+    "P",
+    "G",
+    "R",
+    "S",
+    "R",
+    "G",
+    "P",
+    "G",
+    "R",
+    "S",
+    "S"
+  ],
+  "proposed_cuts": {
+    "start_seconds": 0.22,
+    "split_seconds": 7.98,
+    "end_seconds": 16.49,
+    "previous_start_seconds": 0.19,
+    "previous_split_seconds": 8.15,
+    "paths": {
+      "seed": "data/audio/mohanam_take31_timing_seed_draft.wav",
+      "response": "data/audio/mohanam_take31_timing_response_draft.wav",
+      "combined": "data/audio/mohanam_take31_timing_combined_draft.wav"
+    }
+  },
+  "mean_bpm": 62.89,
+  "local_bpm_range": [
+    57.14,
+    70.59
+  ],
+  "review_focus": [
+    "Timing markers and proposed boundaries reviewed and accepted by Ishita."
+  ],
+  "caveat": "A manually reviewed coarse swara/beat map, not a gamaka pitch-trajectory transcription or independent expert evaluation.",
+  "approval": {
+    "reviewer": "Ishita",
+    "date": "2026-10-27",
+    "result": "Both good",
+    "scope": "Beat markers and proposed boundaries"
+  },
+  "annotation": {
+    "approved": true,
+    "level": "note",
+    "group_id": "mohanam_practice_exercise02",
+    "split_group_id": "mohanam_practice_batch01",
+    "tonic_hz": 209.407,
+    "tempo_bpm": 62.893,
+    "beats_per_cycle": 8,
+    "seed_start_beat": 0.0,
+    "response_start_beat": 0.0,
+    "seed_beat_map": [
+      {
+        "onset": 0.0,
+        "beat": 0.0
+      },
+      {
+        "onset": 1.01,
+        "beat": 1.0
+      },
+      {
+        "onset": 2.06,
+        "beat": 2.0
+      },
+      {
+        "onset": 3.06,
+        "beat": 3.0
+      },
+      {
+        "onset": 4.01,
+        "beat": 4.0
+      },
+      {
+        "onset": 4.86,
+        "beat": 5.0
+      },
+      {
+        "onset": 5.76,
+        "beat": 6.0
+      },
+      {
+        "onset": 6.75,
+        "beat": 7.0
+      },
+      {
+        "onset": 7.76,
+        "beat": 8.0
+      }
+    ],
+    "response_beat_map": [
+      {
+        "onset": 0.0,
+        "beat": 0.0
+      },
+      {
+        "onset": 0.89,
+        "beat": 1.0
+      },
+      {
+        "onset": 1.79,
+        "beat": 2.0
+      },
+      {
+        "onset": 2.69,
+        "beat": 3.0
+      },
+      {
+        "onset": 3.65,
+        "beat": 4.0
+      },
+      {
+        "onset": 4.67,
+        "beat": 5.0
+      },
+      {
+        "onset": 5.59,
+        "beat": 6.0
+      },
+      {
+        "onset": 6.55,
+        "beat": 7.0
+      },
+      {
+        "onset": 8.51,
+        "beat": 9.041667
+      }
+    ],
+    "seed_events": [
+      {
+        "kind": "note",
+        "swara": "G3",
+        "octave": 0,
+        "onset": 0.0,
+        "duration": 1.01,
+        "cycle_position": 0.0
+      },
+      {
+        "kind": "note",
+        "swara": "P",
+        "octave": 0,
+        "onset": 1.01,
+        "duration": 1.05,
+        "cycle_position": 1.0
+      },
+      {
+        "kind": "note",
+        "swara": "D2",
+        "octave": 0,
+        "onset": 2.06,
+        "duration": 1.0,
+        "cycle_position": 2.0
+      },
+      {
+        "kind": "note",
+        "swara": "S",
+        "octave": 1,
+        "onset": 3.06,
+        "duration": 0.95,
+        "cycle_position": 3.0
+      },
+      {
+        "kind": "note",
+        "swara": "D2",
+        "octave": 0,
+        "onset": 4.01,
+        "duration": 0.85,
+        "cycle_position": 4.0
+      },
+      {
+        "kind": "note",
+        "swara": "P",
+        "octave": 0,
+        "onset": 4.86,
+        "duration": 0.9,
+        "cycle_position": 5.0
+      },
+      {
+        "kind": "note",
+        "swara": "G3",
+        "octave": 0,
+        "onset": 5.76,
+        "duration": 0.99,
+        "cycle_position": 6.0
+      },
+      {
+        "kind": "note",
+        "swara": "R2",
+        "octave": 0,
+        "onset": 6.75,
+        "duration": 1.01,
+        "cycle_position": 7.0
+      }
+    ],
+    "response_events": [
+      {
+        "kind": "note",
+        "swara": "S",
+        "octave": 0,
+        "onset": 0.0,
+        "duration": 0.89,
+        "cycle_position": 0.0
+      },
+      {
+        "kind": "note",
+        "swara": "R2",
+        "octave": 0,
+        "onset": 0.89,
+        "duration": 0.9,
+        "cycle_position": 1.0
+      },
+      {
+        "kind": "note",
+        "swara": "G3",
+        "octave": 0,
+        "onset": 1.79,
+        "duration": 0.9,
+        "cycle_position": 2.0
+      },
+      {
+        "kind": "note",
+        "swara": "P",
+        "octave": 0,
+        "onset": 2.69,
+        "duration": 0.96,
+        "cycle_position": 3.0
+      },
+      {
+        "kind": "note",
+        "swara": "G3",
+        "octave": 0,
+        "onset": 3.65,
+        "duration": 1.02,
+        "cycle_position": 4.0
+      },
+      {
+        "kind": "note",
+        "swara": "R2",
+        "octave": 0,
+        "onset": 4.67,
+        "duration": 0.92,
+        "cycle_position": 5.0
+      },
+      {
+        "kind": "note",
+        "swara": "S",
+        "octave": 0,
+        "onset": 5.59,
+        "duration": 0.96,
+        "cycle_position": 6.0
+      },
+      {
+        "kind": "note",
+        "swara": "S",
+        "octave": 0,
+        "onset": 6.55,
+        "duration": 0.59,
+        "cycle_position": 7.0
+      },
+      {
+        "kind": "rest",
+        "swara": null,
+        "octave": 0,
+        "onset": 7.14,
+        "duration": 1.37,
+        "cycle_position": 7.614583
+      }
+    ],
+    "timing_source": "Spectral-attack beat map reviewed and approved by Ishita through click-marked playback.",
+    "notation_source": "Supplied exercise; one swara per self-counted beat",
+    "approved_for": "timed_playback_and_retrieval",
+    "review_scope": "Ishita confirmed both timing reviews are good, including the response-start marker and repeated ending Sas.",
+    "source_take": "standard_recording_31",
+    "original_source": "data/audio/Standard recording 31.mp3",
+    "cut_provenance": "data/audio/mohanam_take31_timed_cuts.json"
+  },
+  "active_playback_paths": {
+    "seed": "data/audio/mohanam_take31_timed_seed.wav",
+    "response": "data/audio/mohanam_take31_timed_response.wav",
+    "combined": "data/audio/mohanam_take31_timed_combined.wav"
+  }
+}

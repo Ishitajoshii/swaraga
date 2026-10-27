@@ -1,0 +1,759 @@
+{
+  "source": "data/audio/ninnu_kori_take29_review.wav",
+  "approved": false,
+  "method": "Local YIN-style pitch estimates plus duration-constrained, notation-guided alignment",
+  "tonic_hz_estimate": 207.579,
+  "tonic_octave_convention": "G#3 as middle Sa",
+  "tempo_bpm": null,
+  "beats_per_cycle": null,
+  "limitations": [
+    "Not independently transcribed: the supplied note order constrains the alignment.",
+    "Repeated-note boundaries use a duration prior and need listening review.",
+    "Gamakas, breaths and background sound can reduce pitch agreement.",
+    "Low periodicity is not proof of silence; no rest events are inferred.",
+    "Tala subdivision, cycle phase and tempo are unverified; no tala timing is claimed.",
+    "No listening approval has been performed; these are draft estimates."
+  ],
+  "phrases": [
+    {
+      "label": "Pallavi line 1",
+      "start_seconds": 0.47,
+      "end_seconds": 9.01,
+      "first_reliable_pitch_seconds": 0.52
+    },
+    {
+      "label": "Pallavi line 2",
+      "start_seconds": 9.01,
+      "end_seconds": 17.57,
+      "first_reliable_pitch_seconds": 9.18
+    },
+    {
+      "label": "Pallavi line 3",
+      "start_seconds": 17.57,
+      "end_seconds": 26.33,
+      "first_reliable_pitch_seconds": 17.58
+    },
+    {
+      "label": "Pallavi line 4",
+      "start_seconds": 26.33,
+      "end_seconds": 35.33,
+      "first_reliable_pitch_seconds": 26.34
+    },
+    {
+      "label": "Anupallavi opening",
+      "start_seconds": 35.33,
+      "end_seconds": 40.13,
+      "first_reliable_pitch_seconds": 36.54
+    }
+  ],
+  "notes": [
+    {
+      "swara": "G",
+      "units": 2,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 0.47,
+      "end_seconds": 1.85,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.913,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 2,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 1.85,
+      "end_seconds": 3.21,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.985,
+      "pitch_agreement_fraction": 0.97,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 4,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 3.21,
+      "end_seconds": 4.91,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.624,
+      "pitch_agreement_fraction": 0.679,
+      "review_needed": false
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 4.91,
+      "end_seconds": 5.31,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.5,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 5.31,
+      "end_seconds": 5.69,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.947,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 5.69,
+      "end_seconds": 6.21,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.885,
+      "pitch_agreement_fraction": 0.304,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 6.21,
+      "end_seconds": 6.71,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.56,
+      "pitch_agreement_fraction": 0.786,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 6.71,
+      "end_seconds": 7.37,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.455,
+      "pitch_agreement_fraction": 0.933,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 7.37,
+      "end_seconds": 8.01,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.625,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 8.01,
+      "end_seconds": 8.51,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.12,
+      "pitch_agreement_fraction": 0.333,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 1",
+      "start_seconds": 8.51,
+      "end_seconds": 9.01,
+      "octave_estimate": null,
+      "voiced_fraction": 0.0,
+      "pitch_agreement_fraction": 0,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 9.01,
+      "end_seconds": 9.51,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.08,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 9.51,
+      "end_seconds": 10.01,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.48,
+      "pitch_agreement_fraction": 0.333,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 10.01,
+      "end_seconds": 10.67,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.97,
+      "pitch_agreement_fraction": 0.938,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 10.67,
+      "end_seconds": 11.13,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.522,
+      "pitch_agreement_fraction": 0.583,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 11.13,
+      "end_seconds": 11.65,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.577,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 11.65,
+      "end_seconds": 12.23,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.448,
+      "pitch_agreement_fraction": 0.615,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 12.23,
+      "end_seconds": 12.83,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.5,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 12.83,
+      "end_seconds": 13.33,
+      "octave_estimate": null,
+      "voiced_fraction": 0.0,
+      "pitch_agreement_fraction": 0,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 13.33,
+      "end_seconds": 13.83,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.88,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 13.83,
+      "end_seconds": 14.33,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.72,
+      "pitch_agreement_fraction": 0.5,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 14.33,
+      "end_seconds": 14.87,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.741,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 14.87,
+      "end_seconds": 15.63,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.921,
+      "pitch_agreement_fraction": 0.971,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 15.63,
+      "end_seconds": 16.01,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.895,
+      "pitch_agreement_fraction": 0.941,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 16.01,
+      "end_seconds": 16.53,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.231,
+      "pitch_agreement_fraction": 0.667,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 16.53,
+      "end_seconds": 17.05,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.808,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 2",
+      "start_seconds": 17.05,
+      "end_seconds": 17.57,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.731,
+      "pitch_agreement_fraction": 0.421,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 17.57,
+      "end_seconds": 18.11,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.778,
+      "pitch_agreement_fraction": 0.952,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 18.11,
+      "end_seconds": 18.95,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.905,
+      "pitch_agreement_fraction": 0.947,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 18.95,
+      "end_seconds": 19.33,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.895,
+      "pitch_agreement_fraction": 0.706,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 19.33,
+      "end_seconds": 19.73,
+      "octave_estimate": 0,
+      "voiced_fraction": 1.0,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 19.73,
+      "end_seconds": 20.29,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.286,
+      "pitch_agreement_fraction": 0.875,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 20.29,
+      "end_seconds": 20.85,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.536,
+      "pitch_agreement_fraction": 0.933,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 20.85,
+      "end_seconds": 21.41,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.571,
+      "pitch_agreement_fraction": 0.438,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 21.41,
+      "end_seconds": 22.23,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.927,
+      "pitch_agreement_fraction": 0.921,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 22.23,
+      "end_seconds": 22.63,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.65,
+      "pitch_agreement_fraction": 0.615,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 22.63,
+      "end_seconds": 23.03,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.3,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 23.03,
+      "end_seconds": 23.67,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.469,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 23.67,
+      "end_seconds": 24.17,
+      "octave_estimate": null,
+      "voiced_fraction": 0.0,
+      "pitch_agreement_fraction": 0,
+      "review_needed": true
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 24.17,
+      "end_seconds": 24.67,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.52,
+      "pitch_agreement_fraction": 0.923,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 24.67,
+      "end_seconds": 25.17,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.72,
+      "pitch_agreement_fraction": 0.222,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 25.17,
+      "end_seconds": 25.89,
+      "octave_estimate": 0,
+      "voiced_fraction": 1.0,
+      "pitch_agreement_fraction": 0.833,
+      "review_needed": false
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 3",
+      "start_seconds": 25.89,
+      "end_seconds": 26.33,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.136,
+      "pitch_agreement_fraction": 0.667,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 26.33,
+      "end_seconds": 26.87,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.741,
+      "pitch_agreement_fraction": 0.85,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 26.87,
+      "end_seconds": 27.65,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.897,
+      "pitch_agreement_fraction": 0.943,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 27.65,
+      "end_seconds": 27.93,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.5,
+      "pitch_agreement_fraction": 0.714,
+      "review_needed": true
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 27.93,
+      "end_seconds": 28.47,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.889,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 28.47,
+      "end_seconds": 29.01,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.741,
+      "pitch_agreement_fraction": 0.75,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 29.01,
+      "end_seconds": 29.55,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.815,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 29.55,
+      "end_seconds": 30.07,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.769,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "S",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 30.07,
+      "end_seconds": 30.67,
+      "octave_estimate": 1,
+      "voiced_fraction": 0.933,
+      "pitch_agreement_fraction": 0.964,
+      "review_needed": false
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 30.67,
+      "end_seconds": 31.13,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.739,
+      "pitch_agreement_fraction": 0.588,
+      "review_needed": true
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 31.13,
+      "end_seconds": 31.59,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.783,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 31.59,
+      "end_seconds": 32.15,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.714,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 32.15,
+      "end_seconds": 32.71,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.036,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "D",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 32.71,
+      "end_seconds": 33.25,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.667,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 33.25,
+      "end_seconds": 34.01,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.895,
+      "pitch_agreement_fraction": 0.971,
+      "review_needed": false
+    },
+    {
+      "swara": "G",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 34.01,
+      "end_seconds": 34.67,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.455,
+      "pitch_agreement_fraction": 0.933,
+      "review_needed": true
+    },
+    {
+      "swara": "R",
+      "units": 1,
+      "phrase": "Pallavi line 4",
+      "start_seconds": 34.67,
+      "end_seconds": 35.33,
+      "octave_estimate": null,
+      "voiced_fraction": 0.0,
+      "pitch_agreement_fraction": 0,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 2,
+      "phrase": "Anupallavi opening",
+      "start_seconds": 35.33,
+      "end_seconds": 36.91,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.241,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": true
+    },
+    {
+      "swara": "G",
+      "units": 2,
+      "phrase": "Anupallavi opening",
+      "start_seconds": 36.91,
+      "end_seconds": 38.49,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.911,
+      "pitch_agreement_fraction": 0.958,
+      "review_needed": false
+    },
+    {
+      "swara": "P",
+      "units": 4,
+      "phrase": "Anupallavi opening",
+      "start_seconds": 38.49,
+      "end_seconds": 40.13,
+      "octave_estimate": 0,
+      "voiced_fraction": 0.866,
+      "pitch_agreement_fraction": 1.0,
+      "review_needed": false
+    }
+  ],
+  "review_pairs": [
+    {
+      "label": "Pallavi lines 1 and 2",
+      "path": "data/audio/ninnu_kori_take29_pair1_draft.wav",
+      "start_seconds": 0.47,
+      "split_seconds": 9.01,
+      "end_seconds": 17.57,
+      "note": "Original adjacent phrases; draft cut, not a generated response or retrieval result."
+    },
+    {
+      "label": "Pallavi lines 2 and 3",
+      "path": "data/audio/ninnu_kori_take29_pair2_draft.wav",
+      "start_seconds": 9.01,
+      "split_seconds": 17.57,
+      "end_seconds": 26.33,
+      "note": "Original adjacent phrases; draft cut, not a generated response or retrieval result."
+    },
+    {
+      "label": "Pallavi lines 3 and 4",
+      "path": "data/audio/ninnu_kori_take29_pair3_draft.wav",
+      "start_seconds": 17.57,
+      "split_seconds": 26.33,
+      "end_seconds": 35.33,
+      "note": "Original adjacent phrases; draft cut, not a generated response or retrieval result."
+    }
+  ]
+}

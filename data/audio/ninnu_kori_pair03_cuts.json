@@ -1,0 +1,11 @@
+{
+  "source": "D:\\ishi\\swaraga\\data\\audio\\ninnu_kori_take29_review.wav",
+  "start": 17.57,
+  "split": 26.33,
+  "end": 35.33,
+  "peak_before": 0.633056640625,
+  "possible_clipping": false,
+  "sample_rate": 24000,
+  "seed_path": "data\\audio\\ninnu_kori_pair03_seed.wav",
+  "response_path": "data\\audio\\ninnu_kori_pair03_response.wav"
+}

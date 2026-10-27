@@ -1,0 +1,3458 @@
+{
+  "schema_version": 1,
+  "compositions": [
+    {
+      "id": "tyagaraja_mohana_rama",
+      "title": "Mohana Rama",
+      "file": "mOhanarAma.html",
+      "url": "https://www.shivkumar.org/music/mOhanarAma.htm",
+      "tala": "Adi",
+      "kalai": 2,
+      "composer": "Tyagaraja",
+      "raga": "Mohanam",
+      "version": "Ram Kaushik",
+      "archive": "Shivkumar Kalyanaraman Carnatic Music Krithi Archive",
+      "accessed": "2026-10-27",
+      "encoding": "cp1252",
+      "sha256": "5c0ddb248cc7f5e52cef7d99025ad67e05d722590e500e5f6d3aab3b488caba3",
+      "rights_note": "Traditional composition; modern transcription reuse terms not stated on the accessed page. No license inferred. Lyrics, translations and recordings are not included.",
+      "split": "train",
+      "group_id": "tyagaraja_mohana_rama",
+      "representation": "pitch_class_attacks",
+      "octaves": "unspecified; not inferred",
+      "timing": "source punctuation and underlines retained; not validated or trained",
+      "review": "source-text extraction and scale checked; no musician or listening validation",
+      "passages": [
+        {
+          "id": "tyagaraja_mohana_rama:p67",
+          "section": "pallavi",
+          "source_paragraph": 67,
+          "source_spans": [
+            {
+              "text": " ; ; S ; D – S R ; G ; ; ;  ; ; Rgr    | R ; -  S  ; D – S R ; G ; ; ;  ; ; Rgr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p70",
+          "section": "pallavi",
+          "source_paragraph": 70,
+          "source_spans": [
+            {
+              "text": "R;  ;  ",
+              "underlined": false
+            },
+            {
+              "text": "rsD",
+              "underlined": true
+            },
+            {
+              "text": "   ;  – S R ; G G D P  ; gp G R   | srgg -  ",
+              "underlined": false
+            },
+            {
+              "text": "rsD",
+              "underlined": true
+            },
+            {
+              "text": " ; sd – S R ; G G D P  G P G R  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p73",
+          "section": "pallavi",
+          "source_paragraph": 73,
+          "source_spans": [
+            {
+              "text": "srgg-",
+              "underlined": false
+            },
+            {
+              "text": " rsD",
+              "underlined": true
+            },
+            {
+              "text": " ; sd – S R ; G G P ds  D P G R  | srgg-",
+              "underlined": false
+            },
+            {
+              "text": " rsD",
+              "underlined": true
+            },
+            {
+              "text": " ; sd – S R ; G G P ds  D P G R  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p76",
+          "section": "pallavi",
+          "source_paragraph": 76,
+          "source_spans": [
+            {
+              "text": "srgg-",
+              "underlined": false
+            },
+            {
+              "text": " rsD",
+              "underlined": true
+            },
+            {
+              "text": " ; sd – S R ; srgp DS  ;  P  dsdp  | grsr -",
+              "underlined": false
+            },
+            {
+              "text": " rsD",
+              "underlined": true
+            },
+            {
+              "text": " ; sd – S R ; srgp DS  ;  P dsdp  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p80",
+          "section": "pallavi",
+          "source_paragraph": 80,
+          "source_spans": [
+            {
+              "text": "grsr-",
+              "underlined": false
+            },
+            {
+              "text": " rsD",
+              "underlined": true
+            },
+            {
+              "text": " ; sd – S R ; srgp dsrg rs-ds dp-gp  | grsr -Pg-p  ; D , S,  Srs DP  pgdp G ;   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p84",
+          "section": "pallavi",
+          "source_paragraph": 84,
+          "source_spans": [
+            {
+              "text": "; R- rG-",
+              "underlined": false
+            },
+            {
+              "text": "rs",
+              "underlined": true
+            },
+            {
+              "text": " ; - S , r D S ,r G ;  R – gd , pdp | R S ;   ;  ; ; ; G P ds ; D  P G R – rg || ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "G3",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "R2",
+            "S",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "R2",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p88",
+          "section": "pallavi",
+          "source_paragraph": 88,
+          "source_spans": [
+            {
+              "text": ", rS – srgr  sd - S R ; srgp dsrg rs-ds dp-gp  | grsr -",
+              "underlined": false
+            },
+            {
+              "text": "gpgg",
+              "underlined": true
+            },
+            {
+              "text": " , -p  ;  D , S,  srgr dsrs  pdsd gpdp   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "P",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p92",
+          "section": "pallavi",
+          "source_paragraph": 92,
+          "source_spans": [
+            {
+              "text": "grS-gpdr  sr-ds pd-gp   grsd - srG R – gd  pdP | gRs -  ; ; ; ; ; G  pdsr grsd  rsdp – sdp- p || ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "G3",
+            "P",
+            "D2",
+            "R2",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "P",
+            "D2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "G3",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "S",
+            "D2",
+            "P",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p96",
+          "section": "pallavi",
+          "source_paragraph": 96,
+          "source_spans": [
+            {
+              "text": "grsr-",
+              "underlined": false
+            },
+            {
+              "text": " rsD",
+              "underlined": true
+            },
+            {
+              "text": " ;  ; - S R; srgp dsrg rs-ds dp-gp  | grsr -",
+              "underlined": false
+            },
+            {
+              "text": "gpgg",
+              "underlined": true
+            },
+            {
+              "text": " , -",
+              "underlined": false
+            },
+            {
+              "text": "pd | pp",
+              "underlined": true
+            },
+            {
+              "text": " ,-",
+              "underlined": false
+            },
+            {
+              "text": "dsdd",
+              "underlined": true
+            },
+            {
+              "text": " , S,  sr ",
+              "underlined": false
+            },
+            {
+              "text": "srgr",
+              "underlined": true
+            },
+            {
+              "text": " ds ",
+              "underlined": false
+            },
+            {
+              "text": "dsrs",
+              "underlined": true
+            },
+            {
+              "text": " pd ",
+              "underlined": false
+            },
+            {
+              "text": "pdsd",
+              "underlined": true
+            },
+            {
+              "text": " gpdp   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "D2",
+            "S",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "P",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p102",
+          "section": "pallavi",
+          "source_paragraph": 102,
+          "source_spans": [
+            {
+              "text": "grsr -sd ; ; –  G R ; gddp grG  ; ; ; ;   | ; ; ; ; RS R ;  ; D – S ; ;  ; ; ;   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "D2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p113",
+          "section": "anupallavi",
+          "source_paragraph": 113,
+          "source_spans": [
+            {
+              "text": "; ;  ; -  D  ; D  D ;  ; P  D  ;   ; ; PD | dpG ; - D  ; D  D ;  ; P  D  ;   ; ; Pds ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p116",
+          "section": "anupallavi",
+          "source_paragraph": 116,
+          "source_spans": [
+            {
+              "text": "dpGpg- D  ; D  D ;  ; P  D  pd    sdS-,d-rs | dp-sdpg - pd  sd D  D ; ; P  D  pd   sdS,d - rs ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "R2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p120",
+          "section": "anupallavi",
+          "source_paragraph": 120,
+          "source_spans": [
+            {
+              "text": "dp-sdpg- pd  sd- D  D ; ; P  D  pd   sdS ; - ",
+              "underlined": false
+            },
+            {
+              "text": "dsR",
+              "underlined": true
+            },
+            {
+              "text": " | , sdp G – G  P D – S ;  R ; - rSr G - R R ; ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "P",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p124",
+          "section": "anupallavi",
+          "source_paragraph": 124,
+          "source_spans": [
+            {
+              "text": "; ;  ; - ",
+              "underlined": false
+            },
+            {
+              "text": "rsD",
+              "underlined": true
+            },
+            {
+              "text": "   ; D  D ; P  D  pd sd S ; ; - ",
+              "underlined": false
+            },
+            {
+              "text": "dsR",
+              "underlined": true
+            },
+            {
+              "text": " | , sdp G – G  P D – S ;  R ; - rSr G - R R ; ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "S",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p128",
+          "section": "anupallavi",
+          "source_paragraph": 128,
+          "source_spans": [
+            {
+              "text": "; ; R r-ss   ,d- D  D ; P  D  pd sd S ; ; - ",
+              "underlined": false
+            },
+            {
+              "text": "dsR",
+              "underlined": true
+            },
+            {
+              "text": " | , sdp G – G  P D – S ;  R ; - rSr G - rs r-pG ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "P",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p136",
+          "section": "anupallavi",
+          "source_paragraph": 136,
+          "source_spans": [
+            {
+              "text": "; ; G , r ; G , R, S ; ; ; ; ; D P | D ; - G , r ; G , R, S ; ; ; ; ; D P  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p139",
+          "section": "anupallavi",
+          "source_paragraph": 139,
+          "source_spans": [
+            {
+              "text": "D; G , r ; gP - gR  srgr S ; ; ; ",
+              "underlined": false
+            },
+            {
+              "text": "drss",
+              "underlined": true
+            },
+            {
+              "text": " D | D P - G , r ; gP - gR  srgr S ; ; ; ",
+              "underlined": false
+            },
+            {
+              "text": "drss",
+              "underlined": true
+            },
+            {
+              "text": " D ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "S",
+            "D2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p143",
+          "section": "anupallavi",
+          "source_paragraph": 143,
+          "source_spans": [
+            {
+              "text": "; ; G , r ; gP - gR  srgr srgr S ; - D P | dsrg - G g- r R-sS - dP  G G Pds DP – GR  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p146",
+          "section": "anupallavi",
+          "source_paragraph": 146,
+          "source_spans": [
+            {
+              "text": "S ;- G , r ; gP - gR  srgr srgr S ; - D P | dsrg - G g- r R-sS - dP  pgdp-sdrs grsd - rsdp  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p150",
+          "section": "anupallavi",
+          "source_paragraph": 150,
+          "source_spans": [
+            {
+              "text": "grS- G , r ; gP - gR  srgr srgr S ; - D P | dsrg - G g- r R-sS - dP  pgdp-sdrs grsd - rsdp  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p160",
+          "section": "anupallavi",
+          "source_paragraph": 160,
+          "source_spans": [
+            {
+              "text": "; ; sd ;  ; –  G R ; gddp grG  ; ; ; ;   | ; ; ; ; RS R ;  ; D – S ; ;  ; ; ;   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "D2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p175",
+          "section": "charanam",
+          "source_paragraph": 175,
+          "source_spans": [
+            {
+              "text": " ; ; ; - P   P - P P ;  P ; ;  G  DP D ; | ; ; - dPd    S- D ; S  pgpg-P ds D P – G R ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "P",
+            "P",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p178",
+          "section": "charanam",
+          "source_paragraph": 178,
+          "source_spans": [
+            {
+              "text": " S R G- P   P - P P ;  P ; ;  G   DP D ; | ; ; - dPd    S- D ; S  pgpg-P ds D P – G R ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "P",
+            "P",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p182",
+          "section": "charanam",
+          "source_paragraph": 182,
+          "source_spans": [
+            {
+              "text": "S ; - G G P ; D P pg pg -  pg dp G P G R | S ; - Rg-",
+              "underlined": false
+            },
+            {
+              "text": "rs",
+              "underlined": true
+            },
+            {
+              "text": "   ",
+              "underlined": false
+            },
+            {
+              "text": "sd",
+              "underlined": true
+            },
+            {
+              "text": " , - S ; - R G ; grrs S – R  Rpg ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "R2",
+            "P",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p191",
+          "section": "charanam",
+          "source_paragraph": 191,
+          "source_spans": [
+            {
+              "text": "; ; ; - G   P D  S  ;  Srs D P  P ; D ; |  ; ; dPd S- D ; - S G G Pds D P – pgdp  || ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p195",
+          "section": "charanam",
+          "source_paragraph": 195,
+          "source_spans": [
+            {
+              "text": "grsr- G , g ,r – rG , rss S ; sRd  S R gd-dp | R ; S ;  ; ; srgp gR, S ; ; ; ; ; ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "D2",
+            "D2",
+            "P",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p203",
+          "section": "charanam",
+          "source_paragraph": 203,
+          "source_spans": [
+            {
+              "text": "; ; P , p , g- d P  Gr   S ; ; ; srgp – gRs  | S ; ; rg , ",
+              "underlined": false
+            },
+            {
+              "text": "rssd",
+              "underlined": true
+            },
+            {
+              "text": "  , ;  s r   , g ",
+              "underlined": false
+            },
+            {
+              "text": "rs",
+              "underlined": true
+            },
+            {
+              "text": " , - RG ; ;  ; ; || ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p206",
+          "section": "charanam",
+          "source_paragraph": 206,
+          "source_spans": [
+            {
+              "text": "; ; P , p , g- d P  Gr   RG GR srgp – gRs  | S ; ; rg , ",
+              "underlined": false
+            },
+            {
+              "text": "rssd",
+              "underlined": true
+            },
+            {
+              "text": "  , ;  s r   , g ",
+              "underlined": false
+            },
+            {
+              "text": "rs",
+              "underlined": true
+            },
+            {
+              "text": " , - Rpg G ;  ; ; || ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "P",
+            "G3",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p210",
+          "section": "charanam",
+          "source_paragraph": 210,
+          "source_spans": [
+            {
+              "text": "; ; ; - G P D – ; S   Srs D P  P ; dsdp | grsr - G , g ,r- ; R G gpdp – gr G   ;  rsS ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "G3",
+            "R2",
+            "R2",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p221",
+          "section": "charanam",
+          "source_paragraph": 221,
+          "source_spans": [
+            {
+              "text": "; ; ; - D D – D ; ; D P – P D D P – PD  | dpG ; - G P D  ; - S R ; grsr   G- R R ; ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p224",
+          "section": "charanam",
+          "source_paragraph": 224,
+          "source_spans": [
+            {
+              "text": "; ; ; - ",
+              "underlined": false
+            },
+            {
+              "text": "rsD",
+              "underlined": true
+            },
+            {
+              "text": "  D – D ; ; D P – P D D P – PD  | dpGpg - G P D  ; - sr G,r- rSr   G- rSr-pg ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "S",
+            "D2",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "P",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p227",
+          "section": "charanam",
+          "source_paragraph": 227,
+          "source_spans": [
+            {
+              "text": "; ; ; - ",
+              "underlined": false
+            },
+            {
+              "text": "G,rssD ",
+              "underlined": true
+            },
+            {
+              "text": "– D ; ; D P – P D D P – PD  | dpGpg - G P D  ; - sr G,r- rSr   G- rSr-pg  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "P",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p230",
+          "section": "charanam",
+          "source_paragraph": 230,
+          "source_spans": [
+            {
+              "text": "; ; G , r ; gP - gR  srgr S ; ; ; ",
+              "underlined": false
+            },
+            {
+              "text": "drss",
+              "underlined": true
+            },
+            {
+              "text": " D | D P - G , r ; gP - gR  srgr S ; ; ; ",
+              "underlined": false
+            },
+            {
+              "text": "drss",
+              "underlined": true
+            },
+            {
+              "text": " D ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "S",
+            "D2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p234",
+          "section": "charanam",
+          "source_paragraph": 234,
+          "source_spans": [
+            {
+              "text": "P ; G , r ; gP - gR  srgr srgr S ; - D P | dsrg – R , - s  ; D , P ,   G G Pds DP – GR  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p245",
+          "section": "charanam",
+          "source_paragraph": 245,
+          "source_spans": [
+            {
+              "text": "grsr-",
+              "underlined": false
+            },
+            {
+              "text": " rssd",
+              "underlined": true
+            },
+            {
+              "text": " ; ; - S R; srgp dsrg rs-ds dp-gp  | grsr -",
+              "underlined": false
+            },
+            {
+              "text": "gpgg",
+              "underlined": true
+            },
+            {
+              "text": " , -",
+              "underlined": false
+            },
+            {
+              "text": "pd | pp",
+              "underlined": true
+            },
+            {
+              "text": " ,-",
+              "underlined": false
+            },
+            {
+              "text": "dsdd",
+              "underlined": true
+            },
+            {
+              "text": " , S,  sr ",
+              "underlined": false
+            },
+            {
+              "text": "srgr",
+              "underlined": true
+            },
+            {
+              "text": " ds ",
+              "underlined": false
+            },
+            {
+              "text": "dsrs",
+              "underlined": true
+            },
+            {
+              "text": " pd ",
+              "underlined": false
+            },
+            {
+              "text": "pdsd",
+              "underlined": true
+            },
+            {
+              "text": " gpdp   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "D2",
+            "S",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "D2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "P",
+            "D2",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_mohana_rama:p248",
+          "section": "charanam",
+          "source_paragraph": 248,
+          "source_spans": [
+            {
+              "text": "grS- gpdr  sr-ds pd-gp   grsd - srG R – gd  pdP | gRg -  ; ; ; ; RS  R ; ; R D S ; ; ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "G3",
+            "P",
+            "D2",
+            "R2",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "P",
+            "D2",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "G3",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "R2",
+            "D2",
+            "S"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "paragraph": 99,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 154,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 157,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 237,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 241,
+          "reason": "duplicate pitch-class sequence"
+        }
+      ]
+    },
+    {
+      "id": "tyagaraja_rama_ninnu_nammina",
+      "title": "Rama Ninnu Nammina",
+      "file": "ramaninnunammina.html",
+      "url": "https://www.shivkumar.org/music/ramaninnunammina.htm",
+      "tala": "Adi",
+      "kalai": null,
+      "composer": "Tyagaraja",
+      "raga": "Mohanam",
+      "version": "Ram Kaushik",
+      "archive": "Shivkumar Kalyanaraman Carnatic Music Krithi Archive",
+      "accessed": "2026-10-27",
+      "encoding": "cp1252",
+      "sha256": "86a3e6b1f4972b718c164bf944924a6ec8014cb9bc0db239574e382a5479513d",
+      "rights_note": "Traditional composition; modern transcription reuse terms not stated on the accessed page. No license inferred. Lyrics, translations and recordings are not included.",
+      "split": "train",
+      "group_id": "tyagaraja_rama_ninnu_nammina",
+      "representation": "pitch_class_attacks",
+      "octaves": "unspecified; not inferred",
+      "timing": "source punctuation and underlines retained; not validated or trained",
+      "review": "source-text extraction and scale checked; no musician or listening validation",
+      "passages": [
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p43",
+          "section": "pallavi",
+          "source_paragraph": 43,
+          "source_spans": [
+            {
+              "text": "G p – g  R – S   ",
+              "underlined": false
+            },
+            {
+              "text": "SD",
+              "underlined": true
+            },
+            {
+              "text": "  – S  ; R  | G ;  ; ;  |  ; ;   ; ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p46",
+          "section": "pallavi",
+          "source_paragraph": 46,
+          "source_spans": [
+            {
+              "text": "gP – g  R – S   ",
+              "underlined": false
+            },
+            {
+              "text": "SD",
+              "underlined": true
+            },
+            {
+              "text": " – S ; R | G ;  ; ;  | pgdp  gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p49",
+          "section": "pallavi",
+          "source_paragraph": 49,
+          "source_spans": [
+            {
+              "text": "gdpP,",
+              "underlined": true
+            },
+            {
+              "text": " – g R – S   ",
+              "underlined": false
+            },
+            {
+              "text": "srD",
+              "underlined": true
+            },
+            {
+              "text": " – S ; R | Grg  ; ;  | pgdp  gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p52",
+          "section": "pallavi",
+          "source_paragraph": 52,
+          "source_spans": [
+            {
+              "text": "gdpP,",
+              "underlined": true
+            },
+            {
+              "text": " – g R – S   ",
+              "underlined": false
+            },
+            {
+              "text": "srD",
+              "underlined": true
+            },
+            {
+              "text": " – S ; R | dpG  ; gg  | ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": " dp gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p55",
+          "section": "pallavi",
+          "source_paragraph": 55,
+          "source_spans": [
+            {
+              "text": "gdpP,",
+              "underlined": true
+            },
+            {
+              "text": " – g R – S   ",
+              "underlined": false
+            },
+            {
+              "text": "srD",
+              "underlined": true
+            },
+            {
+              "text": " – S ; ",
+              "underlined": false
+            },
+            {
+              "text": "R,d",
+              "underlined": true
+            },
+            {
+              "text": " | ",
+              "underlined": false
+            },
+            {
+              "text": "D,dppG",
+              "underlined": true
+            },
+            {
+              "text": " ; - gg | ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": " dp gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p58",
+          "section": "pallavi",
+          "source_paragraph": 58,
+          "source_spans": [
+            {
+              "text": "gP-  p ; - D   P D  dPd | S ;  D P  |  pgdp  gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p61",
+          "section": "pallavi",
+          "source_paragraph": 61,
+          "source_spans": [
+            {
+              "text": "g P – g ",
+              "underlined": false
+            },
+            {
+              "text": "R,s",
+              "underlined": true
+            },
+            {
+              "text": " – S   ",
+              "underlined": false
+            },
+            {
+              "text": "srD",
+              "underlined": true
+            },
+            {
+              "text": " – S ; ",
+              "underlined": false
+            },
+            {
+              "text": "R,d",
+              "underlined": true
+            },
+            {
+              "text": " | ",
+              "underlined": false
+            },
+            {
+              "text": "D,dppG",
+              "underlined": true
+            },
+            {
+              "text": " ; - gg | ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": " dp gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p64",
+          "section": "pallavi",
+          "source_paragraph": 64,
+          "source_spans": [
+            {
+              "text": "gP-  p ; - D   P D  dPd | S- sd  rs dp |  pgdp  gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p67",
+          "section": "pallavi",
+          "source_paragraph": 67,
+          "source_spans": [
+            {
+              "text": "gdp – g ",
+              "underlined": false
+            },
+            {
+              "text": "R,s",
+              "underlined": true
+            },
+            {
+              "text": " – S   ",
+              "underlined": false
+            },
+            {
+              "text": "srD",
+              "underlined": true
+            },
+            {
+              "text": " – S ; ",
+              "underlined": false
+            },
+            {
+              "text": "R,d",
+              "underlined": true
+            },
+            {
+              "text": " | ",
+              "underlined": false
+            },
+            {
+              "text": "D,dppG",
+              "underlined": true
+            },
+            {
+              "text": " ; - gg | ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": " dp gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "R2",
+            "D2",
+            "D2",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p71",
+          "section": "pallavi",
+          "source_paragraph": 71,
+          "source_spans": [
+            {
+              "text": "gP-  p ; - D   P D  grgr | sd- ds  rs dp |  pgdp  gr sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p74",
+          "section": "pallavi",
+          "source_paragraph": 74,
+          "source_spans": [
+            {
+              "text": "gpdS, ",
+              "underlined": true
+            },
+            {
+              "text": "– ",
+              "underlined": false
+            },
+            {
+              "text": "dppG,",
+              "underlined": true
+            },
+            {
+              "text": " – S ",
+              "underlined": false
+            },
+            {
+              "text": "SD",
+              "underlined": true
+            },
+            {
+              "text": " – S   ;  R | ",
+              "underlined": false
+            },
+            {
+              "text": "dppRg",
+              "underlined": true
+            },
+            {
+              "text": " ; ;  | ; ;  ; ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "S",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "D2",
+            "P",
+            "P",
+            "R2",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p77",
+          "section": "pallavi",
+          "source_paragraph": 77,
+          "source_spans": [
+            {
+              "text": "; ;  ; R  S – S   R ;  | ; ;   ; ;  | ; ;  S  rd  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "D2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p87",
+          "section": "anupallavi",
+          "source_paragraph": 87,
+          "source_spans": [
+            {
+              "text": "; ",
+              "underlined": false
+            },
+            {
+              "text": "Pdp",
+              "underlined": true
+            },
+            {
+              "text": "   , ",
+              "underlined": false
+            },
+            {
+              "text": "gr",
+              "underlined": true
+            },
+            {
+              "text": "  G  P P   dPd  | S ;   ; ;  |  ; ;   ; ;   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p90",
+          "section": "anupallavi",
+          "source_paragraph": 90,
+          "source_spans": [
+            {
+              "text": "; ",
+              "underlined": false
+            },
+            {
+              "text": "Pdp",
+              "underlined": true
+            },
+            {
+              "text": "   , ",
+              "underlined": false
+            },
+            {
+              "text": "gr",
+              "underlined": true
+            },
+            {
+              "text": "  G  P P    D ",
+              "underlined": false
+            },
+            {
+              "text": "P,d ",
+              "underlined": true
+            },
+            {
+              "text": " | S ;   ; ;  | ; ;   rs-sd  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "S",
+            "D2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p93",
+          "section": "anupallavi",
+          "source_paragraph": 93,
+          "source_spans": [
+            {
+              "text": "pg- ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": "   , ",
+              "underlined": false
+            },
+            {
+              "text": "dp",
+              "underlined": true
+            },
+            {
+              "text": "  G  P P   dPd  | S ;   ; ;  | ; ;   rs-sd  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "S",
+            "D2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p96",
+          "section": "anupallavi",
+          "source_paragraph": 96,
+          "source_spans": [
+            {
+              "text": "pg- ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": "   , ",
+              "underlined": false
+            },
+            {
+              "text": "dp",
+              "underlined": true
+            },
+            {
+              "text": " G  P P   dPd  | S ;  ;  dr  | , s S  sd- rs ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "S",
+            "S",
+            "D2",
+            "R2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p99",
+          "section": "anupallavi",
+          "source_paragraph": 99,
+          "source_spans": [
+            {
+              "text": "D- ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": "   , ",
+              "underlined": false
+            },
+            {
+              "text": "dp",
+              "underlined": true
+            },
+            {
+              "text": " G  P P   dPd  | S ;  ;  dg  | , r G  R- S  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p103",
+          "section": "anupallavi",
+          "source_paragraph": 103,
+          "source_spans": [
+            {
+              "text": "; - ",
+              "underlined": false
+            },
+            {
+              "text": "Srg",
+              "underlined": true
+            },
+            {
+              "text": " , ",
+              "underlined": false
+            },
+            {
+              "text": "rs",
+              "underlined": true
+            },
+            {
+              "text": " S sdrs  dp D |  ; d s  , d  P | pg dp  gr  sr  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p106",
+          "section": "anupallavi",
+          "source_paragraph": 106,
+          "source_spans": [
+            {
+              "text": "D- ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": "   , ",
+              "underlined": false
+            },
+            {
+              "text": "dp",
+              "underlined": true
+            },
+            {
+              "text": " G  P P   sdpd | S ;  ; dg  |  , r G  R- S ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "P",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "R2",
+            "G3",
+            "R2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p112",
+          "section": "anupallavi",
+          "source_paragraph": 112,
+          "source_spans": [
+            {
+              "text": "; - ",
+              "underlined": false
+            },
+            {
+              "text": "RG",
+              "underlined": true
+            },
+            {
+              "text": " , R  S sdrs  dp D | g r sd  rs dp  | pg dp gr  sr ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "G3",
+            "R2",
+            "S",
+            "D2",
+            "R2",
+            "S",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p122",
+          "section": "charanam 1",
+          "source_paragraph": 122,
+          "source_spans": [
+            {
+              "text": "P   P   d p – pg   dp- gp g r- G     | gd p- g  r s –  s r  | d- s g r  G ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "G3",
+            "R2",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p125",
+          "section": "charanam 1",
+          "source_paragraph": 125,
+          "source_spans": [
+            {
+              "text": "P P   d p – pg  dp- gp g r- G     | gd p- g  r s – s r | d- s g r   ",
+              "underlined": false
+            },
+            {
+              "text": "pG,",
+              "underlined": true
+            },
+            {
+              "text": " , g  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "P",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "G3",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "R2",
+            "D2",
+            "S",
+            "G3",
+            "R2",
+            "P",
+            "G3",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p128",
+          "section": "charanam 1",
+          "source_paragraph": 128,
+          "source_spans": [
+            {
+              "text": "g g pp  d p – pg dp- gp g r s r  | sd s - r s r - g ",
+              "underlined": false
+            },
+            {
+              "text": "dp",
+              "underlined": true
+            },
+            {
+              "text": " |  ,  R s   ; , g   ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "D2",
+            "P",
+            "R2",
+            "S",
+            "G3"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p131",
+          "section": "charanam 1",
+          "source_paragraph": 131,
+          "source_spans": [
+            {
+              "text": "g g pp  d p – pg dp- gp g r s r  | ",
+              "underlined": false
+            },
+            {
+              "text": "rsD",
+              "underlined": true
+            },
+            {
+              "text": " s - r s r - g ",
+              "underlined": false
+            },
+            {
+              "text": "dp",
+              "underlined": true
+            },
+            {
+              "text": " | , R s   ; p p    ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "G3",
+            "P",
+            "P",
+            "D2",
+            "P",
+            "P",
+            "G3",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "R2",
+            "S",
+            "D2",
+            "S",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "D2",
+            "P",
+            "R2",
+            "S",
+            "P",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p134",
+          "section": "charanam 1",
+          "source_paragraph": 134,
+          "source_spans": [
+            {
+              "text": "R g- p  , p – P d s – dp d – S , |  d g r – s s D p | g p d p  D - p p  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "G3",
+            "P",
+            "P",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "P",
+            "D2",
+            "P",
+            "P"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p137",
+          "section": "charanam 1",
+          "source_paragraph": 137,
+          "source_spans": [
+            {
+              "text": "R g- p  , p – P d s – dp d – S , |  d g r – s s D p | g p d p  D ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "R2",
+            "G3",
+            "P",
+            "P",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "P",
+            "D2",
+            "P",
+            "D2"
+          ]
+        },
+        {
+          "id": "tyagaraja_rama_ninnu_nammina:p140",
+          "section": "charanam 1",
+          "source_paragraph": 140,
+          "source_spans": [
+            {
+              "text": "G r – s   r -g R ",
+              "underlined": false
+            },
+            {
+              "text": "srG",
+              "underlined": true
+            },
+            {
+              "text": " r – s s s d p  |  d r s – s d p – g g | ",
+              "underlined": false
+            },
+            {
+              "text": "Pds",
+              "underlined": true
+            },
+            {
+              "text": " d p   g r s r  || ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "R2",
+            "G3",
+            "R2",
+            "S",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "D2",
+            "R2",
+            "S",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "G3",
+            "P",
+            "D2",
+            "S",
+            "D2",
+            "P",
+            "G3",
+            "R2",
+            "S",
+            "R2"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "paragraph": 80,
+          "reason": "fewer than five attacks"
+        },
+        {
+          "paragraph": 109,
+          "reason": "duplicate pitch-class sequence"
+        }
+      ]
+    }
+  ]
+}

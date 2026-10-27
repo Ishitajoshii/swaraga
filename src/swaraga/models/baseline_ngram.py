@@ -62,6 +62,12 @@ class VariableOrderMarkov:
                 self.counts[order][context][following] += 1
                 self.n_observations += 1
 
+    def fit_sequences(self, sequences: Iterable[Sequence[int]]) -> "VariableOrderMarkov":
+        """Count independent source phrases once, without joining boundaries."""
+        for sequence in sequences:
+            self._count_sequence(sequence)
+        return self
+
     # -- inference ----------------------------------------------------------
 
     def next_scores(self, context: Sequence[int]) -> Dict[int, float]:

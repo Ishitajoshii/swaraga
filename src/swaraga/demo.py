@@ -11,6 +11,7 @@ import pandas as pd
 from .audio import RATE, synthesize, wav_bytes
 from .decode import ConstrainedDecoder
 from .grammar import RagaGrammarLibrary
+from .knowledge import NotationPrior, load_knowledge
 from .models.baseline_ngram import VariableOrderMarkov
 from .recordings import RecordingBank, load_team_file
 from .windows import FOREIGN_DEGREE, build_windows, to_degrees
@@ -50,6 +51,7 @@ class DemoService:
         self.symbolic = {}
         self.training_count = 0
         self.composition_count = 0
+        self.knowledge = {"compositions": 0, "passages": 0, "note_attacks": 0, "sources": []}
         try:
             frame = pd.read_parquet(root / "data/processed/normalized_dataset.parquet")
             training_ids = {json.loads(line)["id"] for line in (root / "data/splits/train.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()}
@@ -58,17 +60,30 @@ class DemoService:
             if not windows:
                 raise ValueError("No valid training windows available.")
             model = VariableOrderMarkov().fit(windows)
+            try:
+                compositions = load_knowledge(root)
+                if compositions:
+                    model = NotationPrior(model, compositions)
+                    self.knowledge = {
+                        "compositions": len(compositions),
+                        "passages": sum(len(c["passages"]) for c in compositions),
+                        "note_attacks": sum(len(p["pitch_classes"]) for c in compositions for p in c["passages"]),
+                        "sources": [{"title": c["title"], "url": c["url"]} for c in compositions],
+                    }
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                self.warnings.append(f"Notation supplement unavailable; using legacy baseline: {exc}")
             grammar = RagaGrammarLibrary().get("Mohanam", 28)
             self.training_count = len(windows)
             self.composition_count = len({w.record_id for w in windows})
             for index, preset in enumerate(PRESETS):
-                decoded = ConstrainedDecoder(grammar, allow_rests=False, rng=random.Random(42 + index)).decode(
+                decoded = ConstrainedDecoder(grammar, allow_rests=False, rng=random.Random(42 + index),
+                                             max_consecutive_notes=2).decode(
                     model, to_degrees(preset["tokens"], grammar), horizon=8)
                 self.symbolic[preset["id"]] = {
                     **preset, "generated": decoded.swaras, "raga": "Mohanam", "tala": "Adi (display context only)",
                     "fallback_steps": decoded.fell_back,
                     "random_seed": 42 + index,
-                    "timing_note": "Uniform 0.32-second reference tones; no inferred tala alignment or gamakas.",
+                    "timing_note": "Distinct, decaying 0.32-second reference notes. Generated runs stay at two repeated pitches when a legal alternative exists; no inferred tala timing or gamakas.",
                 }
         except (ValueError, OSError, KeyError) as exc:
             self.warnings.append(f"Symbolic mode unavailable: {exc}")
@@ -78,7 +93,12 @@ class DemoService:
                 "recordings": self.bank.records, "warnings": self.warnings,
                 "team": {"copy_ready": self.copy_ready, "catalog_ready": self.bank.friend_ready},
                 "training": {"windows": self.training_count, "compositions": self.composition_count,
-                             "note": "Existing symbolic fragments; provenance unverified. Overlapping windows are not independent examples. Practice seeds are hand-written demo inputs, not held-out evaluation."}}
+                             "knowledge": self.knowledge,
+                             "note": "Legacy symbolic fragments have unverified provenance; overlapping windows are not independent examples. "
+                             + (f"Added {self.knowledge['passages']} source-attributed notation passages from "
+                                f"{self.knowledge['compositions']} Mohanam compositions as a pitch-class prior. "
+                                "Source octaves and timing are not inferred. " if self.knowledge["compositions"] else "")
+                             + "Practice seeds are hand-written inputs, not held-out evaluation; musical improvement is not yet measured."}}
 
     def response(self, query_id: str, mode: str, response_id: str | None = None):
         query = self.bank.get(query_id)
@@ -107,7 +127,7 @@ class DemoService:
             tokens = example["tokens"] if part == "seed" else example["generated"]
             if part == "combined":
                 tokens = example["tokens"] + example["generated"]
-            return wav_bytes(synthesize(tokens))
+            return wav_bytes(synthesize(tokens, articulated=True))
         if kind != "vocal":
             raise ValueError("Unknown audio kind.")
         if part == "seed":

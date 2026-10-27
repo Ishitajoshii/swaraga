@@ -1,5 +1,16 @@
 # Swaraga: submission checklist
 
+**Current checkpoint, 27 October:** four original recordings are integrated as
+six prepared examples. Ishita approved their cuts/joins, the variable-tempo
+beat maps for 30 and 31, and both retrieval combinations (30 to 31 and 31 to 30).
+There are two timed retrieval candidates, one alternative each; no held-out
+audio evaluation has been completed. Nyonika's contribution is merged in PR #2;
+the other friend's assigned contribution is still pending. Final slides/report,
+backup demo video, and submission remain
+outstanding. The dated plan below
+is retained as the original work queue; current counts and listening results
+are in `docs/SUBMISSION_NOTES.md`.
+
 Plan written for **today, 25 October 2026**, **tomorrow, 26 October**, and
 **submission on 27 October**. If the submission time is early, treat tomorrow
 evening as the absolute deadline. Times below are work blocks, not promises.
@@ -335,6 +346,8 @@ Suggested message to Friend 2:
 - [ ] A working offline backup exists.
 
 Checked items record implemented and verified pre-recording work, with limits
-noted above. The two `team_tasks` modules remain intentionally unfinished. The
-app imports them safely and uses temporary defaults until their checks pass;
-reviewing and merging each friend's actual contribution is still pending.
+noted above. As of 27 October, Nyonika's contribution in
+[PR #2](https://github.com/Ishitajoshii/swaraga/pull/2) has been reviewed and
+merged. Although her PR changed both helper files, it completes only her
+contribution. The other friend's assigned contribution is still pending.
+Earlier friend-task assignments above are retained as the original work queue.

@@ -38,8 +38,8 @@ The main technical owner will import this file when integrating the UI.
 TEXT = {
     "title": "Swaraga",
     "subtitle": (
-        "Record a short Carnatic phrase and hear two kinds of response: "
-        "a matching recorded vocal phrase and separately generated swaras."
+        "Explore short Carnatic phrases through recorded vocal responses "
+        "and separately generated swaras."
     ),
     "seed_label": "Your recorded seed phrase",
     "vocal_mode": "Recorded vocal response",

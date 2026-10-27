@@ -14,14 +14,29 @@ Stop the server with Ctrl+C. No account, model download, hosted API, or internet
 connection is needed after dependencies are installed. Python 3.10+ is required.
 
 - **Generated swaras:** three Mohanam practice seeds, existing B1 n-gram
-  continuation, fixed random seeds 42/43/44, synthesized reference playback,
+  continuation augmented with 63 source-attributed notation passages from two
+  Mohanam compositions (1,874 written note attacks), fixed random seeds 42/43/44, synthesized reference playback,
   and complete-phrase WAV downloads. Timing is uniform, not inferred tala timing.
-- **Recorded vocal response:** empty until approved recordings arrive. Supports
-  prepared pairs and retrieval from other seed families, separately labelled.
-  Vocal audio is recorded material, not newly synthesized singing.
-- **Friend tasks:** the two files under `team_tasks/` stay intentionally
-  unfinished. Safe defaults keep the demo running. After a friend finishes and
-  their file passes its checks, restarting the app picks up their contribution.
+  Ishita's instrumental-playback preference is applied in the demo: distinct
+  decaying note attacks, and at most two consecutive identical generated pitches
+  when a legal alternative exists. This is an optional decoder preference;
+  historical experiment defaults and recorded performances retain their behavior.
+  The new notation teaches pitch-class order; source timing and octaves are not
+  inferred. Sources, reproduction and scope: [Mohanam knowledge](docs/MOHANAM_KNOWLEDGE.md).
+- **Recorded vocal response:** six approved prepared pairs in Mohanam/Adi,
+  G# / 5.5 shruti: three overlapping Ninnu Kori pairs from take 29, plus the
+  three practice exercises in takes 30-32. Ishita approved their phrase cuts
+  and joins. Takes 30 and 31 now also have reviewed note/beat markers, refined
+  response boundaries and variable-tempo tala highlighting. Each can retrieve
+  the other's response; with two eligible exercises there is only one alternative
+  per query. Ninnu Kori and take 32 remain phrase-only and excluded from retrieval.
+  There are four original source recordings. Vocal audio is existing material.
+- **Team contribution:** Nyonika (`Nyonikaa`) completed the demo captions,
+  dictionary lookup, and recording catalog filter in
+  [PR #2](https://github.com/Ishitajoshii/swaraga/pull/2). Both `team_tasks/`
+  modules are integrated; restart the app to load the completed helpers.
+  This completes Nyonika's contribution only. The other friend's assigned
+  contribution is still pending.
 
 Recording manifest, trimming commands, timing schema, and review procedure:
 [docs/RECORDINGS.md](docs/RECORDINGS.md). Schedule and remaining work:
@@ -33,8 +48,9 @@ python -m pytest -q -p no:cacheprovider
 python scripts/package_demo.py     # create a local source/audio ZIP in .demo-artifacts/
 ```
 
-The ZIP includes working audio even though Git ignores audio files. It excludes
-originals, environments, and Git metadata. It is a local snapshot, not a complete
+The ZIP includes working audio and the original MP3s currently in `data/audio/`,
+even though Git ignores audio files. It excludes `recordings_originals/`,
+environments, and Git metadata. It is a local snapshot, not a complete
 offline Python installer; keep the existing environment and separately back up
 original recordings and the final demo video. The existing source parquet is
 included for reproducing preprocessing; its provenance remains unverified.

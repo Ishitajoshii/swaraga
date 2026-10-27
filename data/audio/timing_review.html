@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swaraga — beat alignment check</title><style>
+body{max-width:1000px;margin:36px auto;padding:0 20px;font:17px/1.6 system-ui;background:#f7f5ef;color:#193c38}
+section{background:white;border:1px solid #d4ded8;border-radius:14px;padding:24px;margin:24px 0}h1{font-size:32px;line-height:1.2}h2{margin-top:0}
+audio{width:100%;display:block;margin:8px 0 18px}.notes{display:grid;grid-template-columns:repeat(8,1fr);gap:7px}.notes span{background:#f0f3ee;padding:8px;text-align:center;border-radius:6px}.notes .active{background:#176454;color:white}
+label{font-weight:600}.position{min-height:1.6em;color:#52665b}details{font-size:14px}summary{cursor:pointer}@media(max-width:650px){.notes{grid-template-columns:repeat(4,1fr)}}
+</style><h1>Beat maps approved</h1>
+<p>You kept tala yourself, so this proposed beat map follows a changing pace. Your earlier review approved phrase cuts; this checks where the individual beats fall.</p>
+<p>You approved the timing for <b>30 and 31</b>. Both are now available for timed playback and retrieval in the main demo. These click overlays remain as review references; the demo uses your voice without clicks.</p>
+<p>The review copies add quiet clicks and lower the voice slightly for headroom. The proposed response cuts move 40 ms earlier in take 30 and 170 ms earlier in take 31, to the detected attacks. Your approved playback files are unchanged. Recording 32 remains in prepared mode while its uncertain alignment is investigated.</p>
+<section data-take="30"><h2>Recording 30</h2>
+<p class="instructions">Play with clicks. Each click should land at the start of a sung swara; the higher clicks mark beats 1 and 9 (the next cycle). Click 9 is also the proposed response start.</p>
+<div class="notes"><span data-index="0">1: S</span><span data-index="1">2: R</span><span data-index="2">3: G</span><span data-index="3">4: P</span><span data-index="4">5: G</span><span data-index="5">6: R</span><span data-index="6">7: S</span><span data-index="7">8: R</span><span data-index="8">1: G</span><span data-index="9">2: P</span><span data-index="10">3: D</span><span data-index="11">4: P</span><span data-index="12">5: G</span><span data-index="13">6: R</span><span data-index="14">7: S</span><span data-index="15">8: S</span></div><p class="position">Ready</p>
+<label>With proposed beat clicks</label><audio class="marked" controls preload="metadata" src="mohanam_take30_beat_review.wav"></audio>
+<label>Original recording</label><audio controls preload="metadata" src="mohanam_take30_review.wav"></audio>
+<details><summary>Hear the proposed phrase cuts separately</summary>
+<label>Opening</label><audio controls preload="metadata" src="mohanam_take30_timing_seed_draft.wav"></audio>
+<label>Continuation</label><audio controls preload="metadata" src="mohanam_take30_timing_response_draft.wav"></audio></details>
+<p><b>Especially check:</b> Timing markers and proposed boundaries reviewed and accepted by Ishita.</p>
+<details><summary>Proposed times and tempo</summary><p>0.2, 1.15, 2.09, 2.99, 3.96, 4.85, 5.78, 6.69, 7.75, 8.73, 9.62, 10.58, 11.57, 12.55, 13.54, 14.74 seconds.</p>
+<p>Average 61.9 bpm; intervals vary. These values describe the draft map, not an independent tala measurement.</p></details></section><section data-take="31"><h2>Recording 31</h2>
+<p class="instructions">Play with clicks. Each click should land at the start of a sung swara; the higher clicks mark beats 1 and 9 (the next cycle). Click 9 is also the proposed response start.</p>
+<div class="notes"><span data-index="0">1: G</span><span data-index="1">2: P</span><span data-index="2">3: D</span><span data-index="3">4: S&#x27;</span><span data-index="4">5: D</span><span data-index="5">6: P</span><span data-index="6">7: G</span><span data-index="7">8: R</span><span data-index="8">1: S</span><span data-index="9">2: R</span><span data-index="10">3: G</span><span data-index="11">4: P</span><span data-index="12">5: G</span><span data-index="13">6: R</span><span data-index="14">7: S</span><span data-index="15">8: S</span></div><p class="position">Ready</p>
+<label>With proposed beat clicks</label><audio class="marked" controls preload="metadata" src="mohanam_take31_beat_review.wav"></audio>
+<label>Original recording</label><audio controls preload="metadata" src="mohanam_take31_review.wav"></audio>
+<details><summary>Hear the proposed phrase cuts separately</summary>
+<label>Opening</label><audio controls preload="metadata" src="mohanam_take31_timing_seed_draft.wav"></audio>
+<label>Continuation</label><audio controls preload="metadata" src="mohanam_take31_timing_response_draft.wav"></audio></details>
+<p><b>Especially check:</b> Timing markers and proposed boundaries reviewed and accepted by Ishita.</p>
+<details><summary>Proposed times and tempo</summary><p>0.22, 1.23, 2.28, 3.28, 4.23, 5.08, 5.98, 6.97, 7.98, 8.87, 9.77, 10.67, 11.63, 12.65, 13.57, 14.53 seconds.</p>
+<p>Average 62.89 bpm; intervals vary. These values describe the draft map, not an independent tala measurement.</p></details></section>
+<script>const times={"30": [0.2, 1.15, 2.09, 2.99, 3.96, 4.85, 5.78, 6.69, 7.75, 8.73, 9.62, 10.58, 11.57, 12.55, 13.54, 14.74], "31": [0.22, 1.23, 2.28, 3.28, 4.23, 5.08, 5.98, 6.97, 7.98, 8.87, 9.77, 10.67, 11.63, 12.65, 13.57, 14.53]};const all=[...document.querySelectorAll('audio')];
+for(const a of all)a.addEventListener('play',()=>{for(const b of all)if(a!==b)b.pause();});
+for(const section of document.querySelectorAll('section')){const a=section.querySelector('.marked'),markers=times[section.dataset.take],notes=[...section.querySelectorAll('.notes span')];
+function update(){let i=-1;for(let j=0;j<markers.length;j++)if(a.currentTime>=markers[j])i=j;
+notes.forEach((n,j)=>n.classList.toggle('active',j===i));section.querySelector('.position').textContent=i<0?'Before the first marker':`Proposed cycle ${Math.floor(i/8)+1}, beat ${i%8+1} · ${a.currentTime.toFixed(2)} s`;
+if(!a.paused)requestAnimationFrame(update);}a.addEventListener('play',update);a.addEventListener('seeked',update);a.addEventListener('pause',update);}
+</script></html>

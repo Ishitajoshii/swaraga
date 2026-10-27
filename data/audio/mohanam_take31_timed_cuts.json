@@ -1,0 +1,20 @@
+{
+  "start_seconds": 0.22,
+  "split_seconds": 7.98,
+  "end_seconds": 16.49,
+  "previous_start_seconds": 0.19,
+  "previous_split_seconds": 8.15,
+  "paths": {
+    "seed": "data/audio/mohanam_take31_timed_seed.wav",
+    "response": "data/audio/mohanam_take31_timed_response.wav",
+    "combined": "data/audio/mohanam_take31_timed_combined.wav"
+  },
+  "source": "data/audio/Standard recording 31.mp3",
+  "source_sha256": "20c1069a9e4f2038b607b8a4fa74939088a752b5124a201fb3f4b334c69784dc",
+  "working_copy": "data/audio/mohanam_take31_review.wav",
+  "sample_rate": 24000,
+  "reviewer": "Ishita",
+  "review_date": "2026-10-27",
+  "review_scope": "Proposed beat map and phrase boundary at click 9 accepted.",
+  "promotion": "Copies of reviewed timing cuts; added review clicks are not included."
+}

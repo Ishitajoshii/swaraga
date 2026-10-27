@@ -1,0 +1,16 @@
+{
+  "source": "data/audio/Standard recording 32.mp3",
+  "source_sha256": "46a0de79368549e35674d08e4201232ee065516e5fab7fd4208d055c388180b0",
+  "working_copy": "data/audio/mohanam_take32_review.wav",
+  "start": 0.17,
+  "split": 8.01,
+  "end": 15.33,
+  "sample_rate": 24000,
+  "paths": {
+    "seed": "data/audio/mohanam_take32_seed.wav",
+    "response": "data/audio/mohanam_take32_response.wav",
+    "combined": "data/audio/mohanam_take32_combined.wav"
+  },
+  "review": "Ishita approved the opening/continuation cuts and joins for recordings 30-32.",
+  "promotion": "Byte-identical copies of the reviewed draft WAVs; no further trimming or processing."
+}

@@ -74,12 +74,20 @@ class ConstrainedDecoder:
         register: tuple = DEFAULT_REGISTER,
         allow_rests: bool = True,
         rng: Optional[random.Random] = None,
+        max_consecutive_notes: Optional[int] = None,
     ) -> None:
         self.grammar = grammar
         self.template = template
         self.register = register
         self.allow_rests = allow_rests
         self.rng = rng or random.Random(config.SPLIT_SEED)
+        if max_consecutive_notes is not None and (
+            isinstance(max_consecutive_notes, bool)
+            or not isinstance(max_consecutive_notes, int)
+            or max_consecutive_notes < 1
+        ):
+            raise ValueError("max_consecutive_notes must be a positive integer or None")
+        self.max_consecutive_notes = max_consecutive_notes
 
     # -- candidate space ----------------------------------------------------
 
@@ -149,6 +157,14 @@ class ConstrainedDecoder:
 
         for step in range(horizon):
             legal = self.legal_degrees(history)
+            # Optional instrumental-demo preference. Include the seed's tail;
+            # never break the raga grammar when no different note is legal.
+            limit = self.max_consecutive_notes
+            if (limit is not None and len(history) >= limit and is_note(history[-1])
+                    and all(d == history[-1] for d in history[-limit:])):
+                alternatives = legal - {history[-1]}
+                if alternatives:
+                    legal = alternatives
             if self._rests_allowed(generated, step):
                 legal = legal | {REST_DEGREE}
 
