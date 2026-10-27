@@ -104,7 +104,8 @@ def trim_take(source: Path, output_dir: Path, clip_id: str, start: float,
     return info
 
 
-def synthesize(tokens: list[str], tonic_hz: float = 240, seconds: float = 0.32) -> np.ndarray:
+def synthesize(tokens: list[str], tonic_hz: float = 240, seconds: float = 0.32,
+               articulated: bool = False) -> np.ndarray:
     """Plain equal-tempered reference tones; no vocal synthesis or gamakas."""
     chunks = []
     for token in tokens:
@@ -116,6 +117,11 @@ def synthesize(tokens: list[str], tonic_hz: float = 240, seconds: float = 0.32) 
         semitone = SEMITONES[base] + 12 * (token.count("'") - token.count("."))
         frequency = tonic_hz * 2 ** (semitone / 12)
         envelope = np.minimum(1, t / 0.012) * np.minimum(1, (seconds - t) / 0.035)
+        if articulated:
+            # Clear attacks, decay and a short gap distinguish repeated keys.
+            # Keep each token's total duration unchanged.
+            envelope = (np.minimum(1, t / 0.008) * np.exp(-3.5 * t / seconds)
+                        * np.clip((0.9 * seconds - t) / 0.025, 0, 1))
         tone = (np.sin(2 * np.pi * frequency * t) + 0.22 * np.sin(4 * np.pi * frequency * t))
         chunks.append(0.24 * envelope * tone)
     return np.concatenate(chunks) if chunks else np.zeros(0)

@@ -35,11 +35,43 @@ def number(value, name: str, low: float, high: float) -> float:
     return float(value)
 
 
+def beat_offset(annotation: dict, part: str, seconds: float) -> float:
+    """Elapsed beats from a reviewed map, or the legacy constant-tempo clock."""
+    anchors = annotation.get(part + "_beat_map")
+    if anchors is None:
+        return seconds * annotation["tempo_bpm"] / 60
+    return float(np.interp(seconds, [a["onset"] for a in anchors], [a["beat"] for a in anchors]))
+
+
+def validate_beat_map(anchors, duration: float) -> None:
+    if not isinstance(anchors, list) or len(anchors) < 2:
+        raise ValueError("A beat map needs at least two anchors.")
+    previous = None
+    for anchor in anchors:
+        if not isinstance(anchor, dict):
+            raise ValueError("Beat map anchors must be objects.")
+        onset = number(anchor.get("onset"), "beat map onset", 0, duration)
+        beat = number(anchor.get("beat"), "elapsed beat", 0, 10000)
+        if previous is not None:
+            if onset <= previous[0] or beat <= previous[1]:
+                raise ValueError("Beat map times and beats must strictly increase.")
+            tempo = 60 * (beat - previous[1]) / (onset - previous[0])
+            if not 20 <= tempo <= 300:
+                raise ValueError("Beat map local tempo must be between 20 and 300 bpm.")
+        previous = (onset, beat)
+    if (abs(anchors[0]["onset"]) > .001 or abs(anchors[0]["beat"]) > .001
+            or abs(anchors[-1]["onset"] - duration) > .001):
+        raise ValueError("Beat map must cover the clip from onset/beat zero to its exact end.")
+
+
 def validate_annotation(annotation: dict, durations: dict) -> None:
     if not isinstance(annotation, dict) or annotation.get("approved") is not True:
         raise ValueError("Musical review and approved=true annotation are required.")
     if not isinstance(annotation.get("group_id"), str) or not annotation["group_id"].strip():
         raise ValueError("group_id must identify the composition/seed family across all takes.")
+    if "split_group_id" in annotation and (not isinstance(annotation["split_group_id"], str)
+                                           or not annotation["split_group_id"].strip()):
+        raise ValueError("split_group_id must be a nonempty string when supplied.")
     level = annotation.get("level", "note")
     if level == "phrase":
         if annotation.get("approved_for") != "prepared_playback":
@@ -47,7 +79,8 @@ def validate_annotation(annotation: dict, durations: dict) -> None:
         for field in ("shruti_label", "seed_notation", "response_notation", "review_scope"):
             if not isinstance(annotation.get(field), str) or not annotation[field].strip():
                 raise ValueError(f"Phrase annotation needs {field}.")
-        if any(key in annotation for key in ("seed_events", "response_events", "tempo_bpm", "beats_per_cycle")):
+        if any(key in annotation for key in ("seed_events", "response_events", "tempo_bpm", "beats_per_cycle",
+                                             "seed_beat_map", "response_beat_map")):
             raise ValueError("Phrase-only approval must not include unverified event or tala timing.")
         return
     if level != "note":
@@ -55,6 +88,10 @@ def validate_annotation(annotation: dict, durations: dict) -> None:
     number(annotation.get("tonic_hz"), "tonic_hz", 60, 1000)
     bpm = number(annotation.get("tempo_bpm"), "tempo_bpm", 20, 300)
     beats = number(annotation.get("beats_per_cycle"), "beats_per_cycle", 1, 128)
+    mapped = "seed_beat_map" in annotation or "response_beat_map" in annotation
+    if mapped:
+        for part in ("seed", "response"):
+            validate_beat_map(annotation.get(part + "_beat_map"), durations[part])
     for part in ("seed", "response"):
         start = number(annotation.get(part + "_start_beat"), part + "_start_beat", 0, beats - 1e-9)
         events = annotation.get(part + "_events")
@@ -87,14 +124,14 @@ def validate_annotation(annotation: dict, durations: dict) -> None:
                     raise ValueError("A hold must extend the immediately preceding pitched event.")
                 previous_pitch = pitch
             position = number(event.get("cycle_position"), "cycle_position", 0, beats - 1e-9)
-            expected = (start + onset * bpm / 60) % beats
+            expected = (start + beat_offset(annotation, part, onset)) % beats
             delta = abs(position - expected)
             if min(delta, beats - delta) > 0.12:
                 raise ValueError("cycle_position disagrees with onset, tempo, and clip start beat.")
             previous_end = onset + duration
         if abs(previous_end - durations[part]) > 0.04:
             raise ValueError("Events must cover the full clip, including trailing silence.")
-    end_beat = (annotation["seed_start_beat"] + durations["seed"] * bpm / 60) % beats
+    end_beat = (annotation["seed_start_beat"] + beat_offset(annotation, "seed", durations["seed"])) % beats
     gap = abs(end_beat - annotation["response_start_beat"])
     if min(gap, beats - gap) > 0.15:
         raise ValueError("Seed end and paired response start must agree in tala position.")
@@ -138,6 +175,9 @@ class RecordingBank:
                     validate_annotation(annotation, durations)
                     group = annotation["group_id"]
                     groups.setdefault(group, set()).add(record["split"])
+                    split_group = annotation.get("split_group_id")
+                    if split_group is not None:
+                        groups.setdefault(split_group, set()).add(record["split"])
                     takes.setdefault(record["source_take"], set()).add(record["split"])
                     self.records.append({**record, "annotation": annotation, "durations": durations})
                     self.audio[key] = samples
@@ -179,7 +219,7 @@ class RecordingBank:
                 continue
             if abs(1200 * math.log2(a["tonic_hz"] / b["tonic_hz"])) > 25 or abs(a["tempo_bpm"] / b["tempo_bpm"] - 1) > 0.03:
                 continue
-            end = (a["seed_start_beat"] + query["durations"]["seed"] * a["tempo_bpm"] / 60) % a["beats_per_cycle"]
+            end = (a["seed_start_beat"] + beat_offset(a, "seed", query["durations"]["seed"])) % a["beats_per_cycle"]
             gap = abs(end - b["response_start_beat"])
             if min(gap, a["beats_per_cycle"] - gap) > 0.15:
                 continue

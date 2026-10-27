@@ -62,13 +62,14 @@ class DemoService:
             self.training_count = len(windows)
             self.composition_count = len({w.record_id for w in windows})
             for index, preset in enumerate(PRESETS):
-                decoded = ConstrainedDecoder(grammar, allow_rests=False, rng=random.Random(42 + index)).decode(
+                decoded = ConstrainedDecoder(grammar, allow_rests=False, rng=random.Random(42 + index),
+                                             max_consecutive_notes=2).decode(
                     model, to_degrees(preset["tokens"], grammar), horizon=8)
                 self.symbolic[preset["id"]] = {
                     **preset, "generated": decoded.swaras, "raga": "Mohanam", "tala": "Adi (display context only)",
                     "fallback_steps": decoded.fell_back,
                     "random_seed": 42 + index,
-                    "timing_note": "Uniform 0.32-second reference tones; no inferred tala alignment or gamakas.",
+                    "timing_note": "Distinct, decaying 0.32-second reference notes. Generated runs stay at two repeated pitches when a legal alternative exists; no inferred tala timing or gamakas.",
                 }
         except (ValueError, OSError, KeyError) as exc:
             self.warnings.append(f"Symbolic mode unavailable: {exc}")
@@ -107,7 +108,7 @@ class DemoService:
             tokens = example["tokens"] if part == "seed" else example["generated"]
             if part == "combined":
                 tokens = example["tokens"] + example["generated"]
-            return wav_bytes(synthesize(tokens))
+            return wav_bytes(synthesize(tokens, articulated=True))
         if kind != "vocal":
             raise ValueError("Unknown audio kind.")
         if part == "seed":

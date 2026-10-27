@@ -190,3 +190,31 @@ def test_direction_inference() -> None:
 
 def test_direction_ignores_rests() -> None:
     assert infer_direction([0, REST_DEGREE, 1, REST_DEGREE, 2]) == ASCENDING
+
+
+def test_optional_repeat_limit_includes_seed_and_preserves_legal_motion(library):
+    class RepeatOnly:
+        def next_scores(self, context):
+            return {context[-1]: 1.0}
+
+    grammar = library.get("Mohanam", 28)
+    baseline = ConstrainedDecoder(grammar, allow_rests=False)
+    assert baseline.decode(RepeatOnly(), [0, 0], 4).degrees == [0, 0, 0, 0]
+    decoder = ConstrainedDecoder(grammar, allow_rests=False, max_consecutive_notes=2)
+    result = decoder.decode(RepeatOnly(), [0, 0], 20)
+    history = [0, 0]
+    for degree in result.degrees:
+        assert degree in decoder.legal_degrees(history)
+        assert history[-2:] != [degree, degree]
+        history.append(degree)
+
+
+def test_repeat_preference_does_not_force_an_illegal_note(library, monkeypatch):
+    class RepeatOnly:
+        def next_scores(self, context):
+            return {0: 1.0}
+
+    decoder = ConstrainedDecoder(library.get("Mohanam", 28), allow_rests=False,
+                                 max_consecutive_notes=2)
+    monkeypatch.setattr(decoder, "legal_degrees", lambda context: {0})
+    assert decoder.decode(RepeatOnly(), [0, 0], 4).degrees == [0, 0, 0, 0]

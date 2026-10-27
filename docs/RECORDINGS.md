@@ -1,12 +1,17 @@
 # Adding Ishita's recordings
 
-The catalog now contains three prepared pairs from Ishita's Ninnu Kori take.
-Ishita reviewed all three cuts/joins and said they were good. Their annotations
+The catalog now contains six prepared pairs: three from Ishita's Ninnu Kori
+take 29 and one each from practice takes 30, 31 and 32. Ishita reviewed all six
+cuts/joins and said they were good. She subsequently approved the note/beat
+markers and refined boundaries for 30 and 31; these now support timed playback
+and retrieval between the two exercises. The remaining four entries' annotations
 use `level: "phrase"` and `approved_for: "prepared_playback"`: this approval
 covers prepared playback with supplied phrase notation, not note timestamps,
-octave labels, tempo, or tala phase. No timed highlighting is shown. The three
-pairs overlap within one source group and cannot be used as independent
-evaluation examples or retrieval candidates.
+octave labels, tempo, or tala phase. No timed highlighting is shown for those
+four phrase-only entries. The Ninnu
+Kori pairs overlap within one source group. The practice batch stays grouped
+together for splitting because its exercises share material. All six are
+bank-only examples; only 30 and 31 currently qualify as timed retrieval candidates.
 
 Phrase-level annotations require `approved`, `group_id`, `shruti_label`,
 `seed_notation`, `response_notation`, and `review_scope`. They must not contain
@@ -15,6 +20,62 @@ adding fully timed recordings; it is not required for phrase-only playback.
 
 Only the technical owner needs this document; Ishita can send originals and
 the simple notes from `SUBMISSION_TODO.md`.
+
+## Practice batch received and approved
+
+This batch uses Mohanam, Adi tala, and Ishita's G# / 5.5 shruti. It contains
+three simple practice exercises written for the demo, each with one opening
+cycle and one continuation cycle. They add contexts outside Ninnu Kori.
+
+Use 60 bpm if comfortable, one swara per beat, eight beats per cycle; keep the
+same tempo across all three. Each pair lasts about 16 seconds, plus lead-in and
+tail. Sing continuously across the arrow. S' means upper Sa; all other notes
+are in the middle octave. R/G/D denote Mohanam's R2/G3/D2.
+
+| File | Opening (8 beats) | Continuation (8 beats) |
+| --- | --- | --- |
+| `mohanam_practice01` | S R G P G R S R | G P D P G R S S |
+| `mohanam_practice02` | G P D S' D P G R | S R G P G R S S |
+| `mohanam_practice03` | S G R S R G P G | P D P G R G R S |
+
+The rows above were received as `Standard recording 30.mp3`, `31.mp3` and
+`32.mp3`, respectively. Ishita approved the prepared cuts and joins. Copies
+named `mohanam_take30/31/32_seed.wav` and `_response.wav` are byte-identical to
+the reviewed drafts; `_cuts.json` files retain source hashes and timestamps.
+Detailed timing and tala alignment still need verification before retrieval.
+No additional recordings are needed for the current prepared-demo milestone.
+
+## Timing review for self-counted tala
+
+Ishita confirmed that takes 30-32 follow her own tala count, not a metronome.
+`scripts/prepare_timing_review.py` prepares draft beat maps for 30 and 31 from
+inspected spectral attacks. Pitch settling is not used as the syllable onset.
+The review is `data/audio/timing_review.html`, with added-click WAVs and proposed
+cuts at the ninth attack. These move the response starts 40 ms earlier for 30
+and 170 ms earlier for 31. The six approved prepared examples remain unchanged.
+
+Ishita confirmed both timing reviews are good, including the response-start
+marker and the repeated ending Sas. Approved records are saved separately as
+`mohanam_take30_timing.json` and `mohanam_take31_timing.json`; original draft
+records remain archived. The active catalog uses the `_timed_seed.wav` and
+`_timed_response.wav` copies, with approved annotations in `annotations.json`.
+Review clicks are not included in playback. Take 32 retains phrase-only playback.
+
+The validator, retrieval phase check, and UI now support optional
+`seed_beat_map` / `response_beat_map` arrays. Each anchor has `onset` in seconds
+and `beat` as elapsed beats from the start of that clip. Both maps must cover
+their clips exactly, increase strictly, and imply 20-300 bpm between anchors.
+Event cycle positions and joins use interpolation through this map. Without
+maps, existing constant-tempo annotations behave as before. `tempo_bpm` is a
+summary average when maps are present, not a fixed playback clock.
+
+The timed annotations identify each practice exercise as its own retrieval `group_id`, with
+the broader `split_group_id: "mohanam_practice_batch01"` retained to prevent
+related exercises entering both bank and evaluation. The three overlapping
+Ninnu Kori pairs remain one source group. No independent evaluation result is
+claimed. Draft timing annotations are not loaded by the main recording bank.
+Retrieval checks pass in both directions, 30 to 31 and 31 to 30. This is one
+alternative per query, not a test of ranking quality across a large candidate bank.
 
 ## 1. Keep originals, trim copies
 

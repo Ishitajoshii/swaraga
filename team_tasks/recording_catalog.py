@@ -43,8 +43,8 @@ The main technical owner will validate file existence and integrate this module.
 The example records used by _check are invented metadata, not real recordings.
 """
 
-# Ishita reviewed all three phrase cuts/joins from her Ninnu Kori take.
-# These overlap within one composition; all belong to the same bank group.
+# Ishita reviewed the Ninnu Kori cuts and the three Mohanam practice pairs.
+# Keep related material grouped; all six entries are prepared bank examples.
 RECORDINGS: list[dict[str, str]] = [
     {
         "id": "ninnu_kori_pair01", "title": "Ninnu Kori - pallavi lines 1 to 2",
@@ -66,6 +66,27 @@ RECORDINGS: list[dict[str, str]] = [
         "seed_path": "data/audio/ninnu_kori_pair03_seed.wav",
         "response_path": "data/audio/ninnu_kori_pair03_response.wav",
         "source_take": "standard_recording_29", "split": "bank",
+    },
+    {
+        "id": "mohanam_take30", "title": "Mohanam practice 1 - recording 30",
+        "raga": "Mohanam", "tala": "Adi",
+        "seed_path": "data/audio/mohanam_take30_timed_seed.wav",
+        "response_path": "data/audio/mohanam_take30_timed_response.wav",
+        "source_take": "standard_recording_30", "split": "bank",
+    },
+    {
+        "id": "mohanam_take31", "title": "Mohanam practice 2 - recording 31",
+        "raga": "Mohanam", "tala": "Adi",
+        "seed_path": "data/audio/mohanam_take31_timed_seed.wav",
+        "response_path": "data/audio/mohanam_take31_timed_response.wav",
+        "source_take": "standard_recording_31", "split": "bank",
+    },
+    {
+        "id": "mohanam_take32", "title": "Mohanam practice 3 - recording 32",
+        "raga": "Mohanam", "tala": "Adi",
+        "seed_path": "data/audio/mohanam_take32_seed.wav",
+        "response_path": "data/audio/mohanam_take32_response.wav",
+        "source_take": "standard_recording_32", "split": "bank",
     },
 ]
 

@@ -15,9 +15,20 @@ import pytest
 
 from swaraga.audio import RATE, read_audio, synthesize, trim_take, wav_bytes
 from swaraga.demo import DemoService
-from swaraga.recordings import RecordingBank, audio_path, validate_annotation
+from swaraga.recordings import RecordingBank, audio_path, beat_offset, validate_annotation
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_articulated_reference_notes_have_separate_attacks_and_same_duration():
+    audio = synthesize(["S", "S", "[REST]", "R2"], articulated=True)
+    length = round(.32 * RATE)
+    assert len(audio) == 4 * length
+    for index in (0, 1, 3):
+        note = audio[index * length:(index + 1) * length]
+        assert np.max(np.abs(note[:length // 3])) > .05
+        assert np.all(note[round(.91 * length):] == 0)
+    assert np.all(audio[2 * length:3 * length] == 0)
 
 
 def annotation(group):
@@ -232,6 +243,76 @@ def test_phrase_approval_still_enforces_source_group_isolation(bank_root):
     annotations = json.loads(path.read_text())
     annotations["a"] = phrase_annotation("one")
     annotations["c"] = phrase_annotation("one")
+    path.write_text(json.dumps(annotations))
+    bank = RecordingBank(bank_root)
+    assert not bank.records
+    assert "leakage" in bank.errors[-1]
+
+
+def mapped_annotation(group):
+    a = annotation(group)
+    a.update(tempo_bpm=120, response_start_beat=3,
+             seed_beat_map=[{"onset": 0, "beat": 0}, {"onset": .4, "beat": 1},
+                            {"onset": 1, "beat": 3}],
+             response_beat_map=[{"onset": 0, "beat": 0}, {"onset": 1, "beat": 1}])
+    a["response_events"][0]["cycle_position"] = 3
+    return a
+
+
+def test_variable_beat_map_controls_note_phase_and_retrieval_join(bank_root):
+    a = mapped_annotation("one")
+    a["seed_events"] = [
+        {"kind": "note", "swara": "S", "octave": 0, "onset": 0, "duration": .4, "cycle_position": 0},
+        {"kind": "hold", "swara": "S", "octave": 0, "onset": .4, "duration": .6, "cycle_position": 1},
+    ]
+    validate_annotation(a, {"seed": 1, "response": 1})
+    assert beat_offset(a, "seed", .4) == 1
+    assert beat_offset(a, "seed", 1) == 3
+    assert beat_offset(a, "response", 1) == 1
+    broken = copy.deepcopy(a)
+    broken["seed_events"][1]["cycle_position"] = .8  # Constant clock is wrong here.
+    with pytest.raises(ValueError, match="cycle_position"):
+        validate_annotation(broken, {"seed": 1, "response": 1})
+    path = bank_root / "data/audio/annotations.json"
+    annotations = json.loads(path.read_text())
+    annotations["a"] = a
+    annotations["b"] = mapped_annotation("two")
+    path.write_text(json.dumps(annotations))
+    bank = RecordingBank(bank_root)
+    assert not bank.errors
+    assert [r["id"] for r in bank.rank("a")] == ["b"]
+
+
+@pytest.mark.parametrize("anchors", [
+    [], [{"onset": 0, "beat": 0}],
+    [{"onset": 0, "beat": 0}, {"onset": 0, "beat": 1}],
+    [{"onset": 0, "beat": 0}, {"onset": 1, "beat": 0}],
+    [{"onset": .1, "beat": 0}, {"onset": 1, "beat": 1}],
+    [{"onset": 0, "beat": 1}, {"onset": 1, "beat": 2}],
+    [{"onset": 0, "beat": 0}, {"onset": .9, "beat": 1}],
+    [{"onset": 0, "beat": 0}, {"onset": 1, "beat": 10}],
+])
+def test_invalid_beat_maps_are_rejected(anchors):
+    a = mapped_annotation("one")
+    a["seed_beat_map"] = anchors
+    with pytest.raises(ValueError):
+        validate_annotation(a, {"seed": 1, "response": 1})
+
+
+def test_partial_beat_map_cannot_silently_use_a_constant_clock():
+    a = mapped_annotation("one")
+    del a["response_beat_map"]
+    with pytest.raises(ValueError, match="beat map"):
+        validate_annotation(a, {"seed": 1, "response": 1})
+
+
+def test_shared_split_group_blocks_leakage_between_distinct_exercises(bank_root):
+    path = bank_root / "data/audio/annotations.json"
+    annotations = json.loads(path.read_text())
+    # Distinct exercises may be retrieval candidates, but related data must
+    # still remain in one split rather than becoming claimed held-out evidence.
+    annotations["a"]["split_group_id"] = "practice_batch"
+    annotations["c"]["split_group_id"] = "practice_batch"
     path.write_text(json.dumps(annotations))
     bank = RecordingBank(bank_root)
     assert not bank.records

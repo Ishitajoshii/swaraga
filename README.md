@@ -16,12 +16,18 @@ connection is needed after dependencies are installed. Python 3.10+ is required.
 - **Generated swaras:** three Mohanam practice seeds, existing B1 n-gram
   continuation, fixed random seeds 42/43/44, synthesized reference playback,
   and complete-phrase WAV downloads. Timing is uniform, not inferred tala timing.
-- **Recorded vocal response:** three prepared Ninnu Kori pairs from Ishita's
-  Mohanam/Adi take, in G# / 5.5 shruti. Ishita approved their phrase cuts and
-  joins. Supplied swaras appear at phrase level; note/octave timing and tala
-  highlighting remain unverified. The pairs overlap within one source take.
-  Retrieval needs fully timed recordings from other seed families; these
-  phrase-only pairs are excluded. Vocal audio is existing recorded material.
+  Ishita's instrumental-playback preference is applied in the demo: distinct
+  decaying note attacks, and at most two consecutive identical generated pitches
+  when a legal alternative exists. This is an optional decoder preference;
+  historical experiment defaults and recorded performances retain their behavior.
+- **Recorded vocal response:** six approved prepared pairs in Mohanam/Adi,
+  G# / 5.5 shruti: three overlapping Ninnu Kori pairs from take 29, plus the
+  three practice exercises in takes 30-32. Ishita approved their phrase cuts
+  and joins. Takes 30 and 31 now also have reviewed note/beat markers, refined
+  response boundaries and variable-tempo tala highlighting. Each can retrieve
+  the other's response; with two eligible exercises there is only one alternative
+  per query. Ninnu Kori and take 32 remain phrase-only and excluded from retrieval.
+  There are four original source recordings. Vocal audio is existing material.
 - **Friend tasks:** the two files under `team_tasks/` stay intentionally
   unfinished. Safe defaults keep the demo running. After a friend finishes and
   their file passes its checks, restarting the app picks up their contribution.
