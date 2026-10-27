@@ -4,8 +4,9 @@
 six prepared examples. Ishita approved their cuts/joins, the variable-tempo
 beat maps for 30 and 31, and both retrieval combinations (30 to 31 and 31 to 30).
 There are two timed retrieval candidates, one alternative each; no held-out
-audio evaluation has been completed. Nyonika's two helper implementations are
-merged in PR #2. Final slides/report, backup demo video, and submission remain
+audio evaluation has been completed. Nyonika's contribution is merged in PR #2;
+the other friend's assigned contribution is still pending. Final slides/report,
+backup demo video, and submission remain
 outstanding. The dated plan below
 is retained as the original work queue; current counts and listening results
 are in `docs/SUBMISSION_NOTES.md`.
@@ -345,7 +346,8 @@ Suggested message to Friend 2:
 - [ ] A working offline backup exists.
 
 Checked items record implemented and verified pre-recording work, with limits
-noted above. As of 27 October, Nyonika completed both `team_tasks` helpers in
-[PR #2](https://github.com/Ishitajoshii/swaraga/pull/2), which has been reviewed
-and merged. The app loads these implementations after their checks pass.
+noted above. As of 27 October, Nyonika's contribution in
+[PR #2](https://github.com/Ishitajoshii/swaraga/pull/2) has been reviewed and
+merged. Although her PR changed both helper files, it completes only her
+contribution. The other friend's assigned contribution is still pending.
 Earlier friend-task assignments above are retained as the original work queue.

@@ -35,6 +35,8 @@ connection is needed after dependencies are installed. Python 3.10+ is required.
   dictionary lookup, and recording catalog filter in
   [PR #2](https://github.com/Ishitajoshii/swaraga/pull/2). Both `team_tasks/`
   modules are integrated; restart the app to load the completed helpers.
+  This completes Nyonika's contribution only. The other friend's assigned
+  contribution is still pending.
 
 Recording manifest, trimming commands, timing schema, and review procedure:
 [docs/RECORDINGS.md](docs/RECORDINGS.md). Schedule and remaining work:
