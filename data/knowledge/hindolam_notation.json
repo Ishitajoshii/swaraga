@@ -1,0 +1,565 @@
+{
+  "schema_version": 1,
+  "compositions": [
+    {
+      "id": "tyagaraja_samaja_vara_gamana",
+      "title": "Samaja Vara Gamana",
+      "raga": "Hindolam",
+      "composer": "Tyagaraja",
+      "tala": "Adi",
+      "kalai": null,
+      "version": "Peri Sriramamurthy",
+      "url": "https://www.shivkumar.org/music/samajavaragamana.htm",
+      "archive": "Shivkumar Kalyanaraman Carnatic Music Krithi Archive",
+      "accessed": "2026-10-27",
+      "encoding": "cp1252",
+      "sha256": "e4e45d803e3a6f1e0bee8069ac9b1b44d33ee53053da76d84b32d40fd5756f6e",
+      "file": "samajavaragamana.html",
+      "rights_note": "Traditional composition; modern transcription reuse terms not specified. Lyrics, translations and audio not included.",
+      "split": "train",
+      "group_id": "tyagaraja_samaja_vara_gamana",
+      "representation": "pitch_class_attacks",
+      "octaves": "unspecified; not inferred",
+      "timing": "source punctuation and underlines retained; not validated or trained",
+      "review": "source-text extraction and scale checked; no musician or listening validation",
+      "passages": [
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p33",
+          "section": "pallavi",
+          "source_paragraph": 33,
+          "source_spans": [
+            {
+              "text": "M ;  G S  N D  N N  | S ;  ; S | M G  M ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "M1",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "N2",
+            "S",
+            "S",
+            "M1",
+            "G2",
+            "M1"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p36",
+          "section": "pallavi",
+          "source_paragraph": 36,
+          "source_spans": [
+            {
+              "text": "mggm  mg S  s s n d  , n N  | S ;  ; S | M G  g m d n  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "M1",
+            "G2",
+            "G2",
+            "M1",
+            "M1",
+            "G2",
+            "S",
+            "S",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "N2",
+            "S",
+            "S",
+            "M1",
+            "G2",
+            "G2",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p39",
+          "section": "pallavi",
+          "source_paragraph": 39,
+          "source_spans": [
+            {
+              "text": "S ;  n d M  m g S  n d N  | S ;  ; S | M G  M ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "M1",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "M1",
+            "G2",
+            "M1"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p42",
+          "section": "pallavi",
+          "source_paragraph": 42,
+          "source_spans": [
+            {
+              "text": "G , m  D , n  S , n  d m d n | S ;  S , n  | d n s n  d m d n  ||  ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G2",
+            "M1",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p45",
+          "section": "pallavi",
+          "source_paragraph": 45,
+          "source_spans": [
+            {
+              "text": " s m g s  n d M  m g S  n d N  | S ;  ; S | M G  M ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "M1",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "M1",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "M1",
+            "G2",
+            "M1"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p48",
+          "section": "pallavi",
+          "source_paragraph": 48,
+          "source_spans": [
+            {
+              "text": "G mg GM",
+              "underlined": true
+            },
+            {
+              "text": " ",
+              "underlined": false
+            },
+            {
+              "text": "Dnd D N",
+              "underlined": true
+            },
+            {
+              "text": " S , n d m d n | S ;  S , n  | d n s n  d m d n  ||  ",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G2",
+            "M1",
+            "G2",
+            "G2",
+            "M1",
+            "D1",
+            "N2",
+            "D1",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p51",
+          "section": "pallavi",
+          "source_paragraph": 51,
+          "source_spans": [
+            {
+              "text": "g s s n  n d d m  m g g s   ; d n  | S ;  ; sg | M g g  M ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "G2",
+            "S",
+            "S",
+            "N2",
+            "N2",
+            "D1",
+            "D1",
+            "M1",
+            "M1",
+            "G2",
+            "G2",
+            "S",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "G2",
+            "M1",
+            "G2",
+            "G2",
+            "M1"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p57",
+          "section": "pallavi",
+          "source_paragraph": 57,
+          "source_spans": [
+            {
+              "text": "S g s  ",
+              "underlined": false
+            },
+            {
+              "text": "ndD",
+              "underlined": true
+            },
+            {
+              "text": " M  g s g s   , d N  | S ;  ; ;  | ; ;  ; ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "D1",
+            "M1",
+            "G2",
+            "S",
+            "G2",
+            "S",
+            "D1",
+            "N2",
+            "S"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p66",
+          "section": "anupallavi",
+          "source_paragraph": 66,
+          "source_spans": [
+            {
+              "text": "S ;  M - N  G M  D - N  | S ;  ; ;  | ; ;  n d m g  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "M1",
+            "N2",
+            "G2",
+            "M1",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "G2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p69",
+          "section": "anupallavi",
+          "source_paragraph": 69,
+          "source_spans": [
+            {
+              "text": "S ;  M - N  D N  S - N  | S ;  dn S  | d n S  n d m g  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "M1",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "S",
+            "D1",
+            "N2",
+            "S",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "G2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p72",
+          "section": "anupallavi",
+          "source_paragraph": 72,
+          "source_spans": [
+            {
+              "text": "S ;  M - N  D N  S - N  | S , g  S N  | D N  S - G  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "M1",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "S",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "G2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p75",
+          "section": "anupallavi",
+          "source_paragraph": 75,
+          "source_spans": [
+            {
+              "text": "M ;  m g S  s n D  d n s -g | S , n D , n  | s n d m g m d n ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "M1",
+            "M1",
+            "G2",
+            "S",
+            "S",
+            "N2",
+            "D1",
+            "D1",
+            "N2",
+            "S",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "G2",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p81",
+          "section": "anupallavi",
+          "source_paragraph": 81,
+          "source_spans": [
+            {
+              "text": "M ;  m g S  s n D  d n  s -g | g s n d m d n s | s n d m g m d n ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "M1",
+            "M1",
+            "G2",
+            "S",
+            "S",
+            "N2",
+            "D1",
+            "D1",
+            "N2",
+            "S",
+            "G2",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "G2",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p90",
+          "section": "charanam",
+          "source_paragraph": 90,
+          "source_spans": [
+            {
+              "text": "S ;  M -G  M ;  M ;  | D N  d n s n  | D M  D N  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "M1",
+            "G2",
+            "M1",
+            "M1",
+            "D1",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p93",
+          "section": "charanam",
+          "source_paragraph": 93,
+          "source_spans": [
+            {
+              "text": "S ;  n d M  m g S  D N  | S ;  ; S  | M G  M ;  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "M1",
+            "G2",
+            "S",
+            "D1",
+            "N2",
+            "S",
+            "S",
+            "M1",
+            "G2",
+            "M1"
+          ]
+        },
+        {
+          "id": "tyagaraja_samaja_vara_gamana:p98",
+          "section": "charanam",
+          "source_paragraph": 98,
+          "source_spans": [
+            {
+              "text": "M ;  G - S  , n D  d n s g  | S , n  D , n  | sn d m g m d n  ||",
+              "underlined": false
+            }
+          ],
+          "pitch_classes": [
+            "M1",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "D1",
+            "N2",
+            "S",
+            "G2",
+            "S",
+            "N2",
+            "D1",
+            "N2",
+            "S",
+            "N2",
+            "D1",
+            "M1",
+            "G2",
+            "M1",
+            "D1",
+            "N2"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "paragraph": 54,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 78,
+          "reason": "duplicate pitch-class sequence"
+        },
+        {
+          "paragraph": 96,
+          "reason": "unsupported notation or non-notation text"
+        }
+      ]
+    }
+  ]
+}

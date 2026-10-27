@@ -4,6 +4,7 @@ Only data are downloaded; upstream Python/notebook code is never executed.
 """
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 import argparse
 import hashlib
 import io
@@ -17,7 +18,7 @@ SOURCES = {
     "saraga-metadata.zip": "https://codeload.github.com/MTG/saraga/zip/refs/heads/master",
     "samajavaragamana.html": "https://www.shivkumar.org/music/samajavaragamana.htm",
 }
-ARCHIVE_URL = "https://zenodo.org/api/records/4301737/files/saraga1.5_carnatic.zip/content"
+ARCHIVE_URL = "https://zenodo.org/records/4301737/files/saraga1.5_carnatic.zip"
 TRACK = "Chaitra Sairam at Arkay by Chaitra Sairam/Govardhana Girisham/Govardhana Girisham"
 
 
@@ -32,7 +33,12 @@ class RemoteArchive(io.RawIOBase):
 
     def _range(self, start, end):
         request = Request(self.url, headers={"User-Agent": "Mozilla/5.0", "Range": f"bytes={start}-{end}"})
-        with urlopen(request, timeout=60) as response:
+        try:
+            response = urlopen(request, timeout=60)
+        except HTTPError as exc:
+            detail = exc.read(1200).decode("utf-8", errors="replace")
+            raise ValueError(f"Archive HTTP {exc.code}: {detail}") from None
+        with response:
             match = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+)", response.headers.get("Content-Range", ""))
             if response.status != 206 or not match or (int(match[1]), int(match[2])) != (start, end):
                 raise ValueError("Server did not honor the requested byte range; full archive not downloaded")
