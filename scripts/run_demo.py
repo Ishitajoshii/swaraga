@@ -103,9 +103,9 @@ if __name__ == "__main__":
     try:
         server = create_server(args.port)
     except OSError as exc:
-        parser.exit(1, f"Cannot start on port {args.port}: {exc}. Stop the previous demo or use --port 8766.\n")
+        parser.exit(1, f"Cannot start on port {args.port}: {exc}. Stop the previous server or use --port 8766.\n")
     print(f"Swaraga is ready at http://127.0.0.1:{server.server_port} - Ctrl+C to stop.", flush=True)
-    print("Restart after editing the catalog, annotations, or friend files.", flush=True)
+    print("Restart after updating recordings, annotations, or interface text.", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

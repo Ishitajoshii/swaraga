@@ -115,7 +115,7 @@ def test_review_routes_serve_expected_assets_and_reject_traversal():
     thread.start()
     base = f"http://127.0.0.1:{server.server_port}/review/hindolam/"
     try:
-        assert b"How does Hindolam feel?" in urlopen(base).read()
+        assert b"Explore Hindolam" in urlopen(base).read()
         assert b"localStorage" in urlopen(base + "review.js").read()
         assert len(json.load(urlopen(base + "review.json"))["items"]) == 6
         rejected = [f"vocal-{n}-{part}.wav" for n in range(1, 4) for part in ("seed", "response", "combined")]

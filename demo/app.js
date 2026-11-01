@@ -2,7 +2,7 @@
 const $ = id => document.getElementById(id);
 let state, kind = "symbolic", renderVersion = 0;
 const players = ["seed", "response", "combined"];
-const mediaError = () => { $("error").textContent = "Audio could not be loaded. Check the selected files and restart the local demo."; $("error").hidden = false; };
+const mediaError = () => { $("error").textContent = "This audio is unavailable. Try another phrase or check that the recording is installed."; $("error").hidden = false; };
 for (const part of players) {
   const audio = $(part + "Audio");
   audio.addEventListener("play", () => players.forEach(other => { if (other !== part) $(other + "Audio").pause(); }));
@@ -11,7 +11,7 @@ for (const part of players) {
 async function json(url) {
   const result = await fetch(url);
   const value = await result.json();
-  if (!result.ok) throw new Error(value.error || "Unable to load the demo.");
+  if (!result.ok) throw new Error(value.error || "Unable to load Swaraga.");
   return value;
 }
 function options(select, records) {
@@ -47,7 +47,7 @@ function timed(part, record) {
   if (a.level === "phrase") {
     notes(part, a[part + "_notation"].split(/\s+/));
     $(part + "Audio").ontimeupdate = null;
-    $(part + "Beat").textContent = "Supplied phrase notation · octave marks and note/tala timing unverified.";
+    $(part + "Beat").textContent = "Phrase notation · synchronized note and tala highlighting unavailable.";
     return;
   }
   const events = a[part + "_events"];
@@ -99,20 +99,20 @@ async function render() {
   if (vocal) {
     const preparedCount = state.recordings.filter(r => r.split === "bank").length;
     const timedCount = state.recordings.filter(r => r.annotation.level !== "phrase").length;
-    $("recordingStatus").textContent = `${preparedCount} prepared pairs available. ${timedCount} seeds have reviewed note and tala timing and can be checked for a compatible recorded response. Retrieval lists only those seeds.`;
+    $("recordingStatus").textContent = `${preparedCount} phrase pairs · ${timedCount} openings with timing annotations for response matching.`;
   }
   $("responseControl").hidden = true;
   $("metadata").textContent = "";
-  $("modeLabel").textContent = vocal ? "RECORDED VOCAL PHRASES" : "SYMBOLIC CONTINUATION";
-  $("modeTitle").textContent = vocal ? "Continue in your voice" : "Find the next phrase";
+  $("modeLabel").textContent = vocal ? "RECORDED VOCAL PHRASES" : "GENERATE A PHRASE";
+  $("modeTitle").textContent = vocal ? "Explore the vocal library" : "Find the next phrase";
   $("explanation").textContent = state.text[vocal ? "vocal_explanation" : "symbolic_explanation"];
-  $("emptyText").textContent = vocal ? state.text.empty_catalog : "Symbolic examples are unavailable. See the asset messages below.";
-  $("empty").querySelector("h2").textContent = vocal ? "Waiting for your voice" : "Examples unavailable";
-  $("disclosure").textContent = vocal ? state.text.limitations : "Synthesized reference tones at Sa = 240 Hz, using equal temperament. No recorded voice or gamakas. Uniform note durations are a playback aid, not a performance transcription.";
-  $("evidence").textContent = vocal ? "Prepared mode plays an approved seed/response pair. Retrieval ranks other recorded phrases; it does not compose new vocal audio. Musical quality still needs listening review." : `B1 n-gram baseline · ${state.training.windows} valid overlapping training windows from ${state.training.compositions} compositions. ${state.training.note}`;
+  $("emptyText").textContent = vocal ? state.text.empty_catalog : "Generated phrases are unavailable. Check playback availability below.";
+  $("empty").querySelector("h2").textContent = vocal ? "Your vocal library is empty" : "Phrases unavailable";
+  $("disclosure").textContent = vocal ? state.text.limitations : "Instrumental reference tones at Sa = 240 Hz. Notes use equal temperament and uniform timing; vocal expression and gamakas are not reproduced.";
+  $("evidence").textContent = vocal ? "Original pairs preserve the recorded continuation. Response matching finds a different phrase with compatible tuning, tempo, and melodic contour." : "Each opening leads to a repeatable eight-note suggestion guided by Mohanam notation and raga constraints. Explore it as a musical starting point.";
   if (vocal && !id && $("vocalMode").value === "retrieval" && state.recordings.length) {
-    $("empty").querySelector("h2").textContent = "Timing review needed";
-    $("emptyText").textContent = "Prepared recordings are available. Retrieval needs recordings with reviewed note and tala timing; choose Prepared example to play the existing pairs.";
+    $("empty").querySelector("h2").textContent = "Matching responses unavailable";
+    $("emptyText").textContent = "Response matching requires note and tala timing annotations. Choose Original phrase pair to listen to the available recordings.";
   }
   if (!id) return;
   $("combinedBlock").hidden = false;
@@ -120,13 +120,13 @@ async function render() {
   $("noResponse").hidden = true;
   $("seedBeat").textContent = "";
   $("responseBeat").textContent = "";
-  $("seedBadge").textContent = vocal ? "OWN RECORDING" : "SYNTHESIZED";
-  $("seedHeading").textContent = vocal ? state.text.seed_label : "Practice seed";
+  $("seedBadge").textContent = vocal ? "RECORDED" : "SYNTHESIZED";
+  $("seedHeading").textContent = vocal ? state.text.seed_label : "Opening phrase";
   $("seedAudio").setAttribute("aria-label", state.text.play_seed);
   $("responseAudio").setAttribute("aria-label", state.text.play_response);
   if (!vocal) {
     const example = state.symbolic.find(r => r.id === id);
-    $("metadata").textContent = `${example.raga} · ${example.tala}\n16 seed positions → 8 generated swaras\nDeterministic n-gram continuation`;
+    $("metadata").textContent = `${example.raga}\n16 opening notes → 8 generated swaras\nEvenly spaced reference notes`;
     $("responseHeading").textContent = "Generated continuation";
     $("responseBadge").textContent = "8 SWARAS";
     $("joinNote").textContent = example.timing_note;
@@ -138,27 +138,27 @@ async function render() {
   }
   const query = state.recordings.find(r => r.id === id);
   const phraseOnly = query.annotation.level === "phrase";
-  const tuning = phraseOnly ? `${query.annotation.shruti_label} · phrase-level playback` : `Sa ${query.annotation.tonic_hz} Hz · ${query.annotation.tempo_bpm} beats/min${query.annotation.seed_beat_map ? " average" : ""}`;
-  $("metadata").textContent = `${query.raga} · ${query.tala}\n${tuning}\nSource take: ${query.source_take}`;
-  if (phraseOnly) $("evidence").textContent = "Ishita reviewed these phrase cuts and joins. Prepared playback uses the original recorded continuation. The swaras shown are supplied phrase notation; note timing, octave alignment and tala phase remain unverified.";
+  const tuning = phraseOnly ? `${query.annotation.shruti_label} · phrase-level playback` : `Sa ${query.annotation.tonic_hz} Hz · ${query.annotation.tempo_bpm.toFixed(1)} beats/min${query.annotation.seed_beat_map ? " average" : ""}`;
+  $("metadata").textContent = `${query.raga} · ${query.tala}\n${tuning}`;
+  if (phraseOnly) $("evidence").textContent = "This pair preserves the original recorded continuation. The displayed notation describes the phrase; exact note timing, octaves, and tala alignment are not verified.";
   setAudio("seed", audioUrl(id, "seed")); timed("seed", query);
   let response = query;
   const prepared = $("vocalMode").value === "prepared";
-  $("responseHeading").textContent = prepared ? "Approved paired response" : "Retrieved recorded response";
-  $("responseBadge").textContent = prepared ? "PREPARED PAIR" : "RETRIEVED";
+  $("responseHeading").textContent = prepared ? "Original continuation" : "Matched continuation";
+  $("responseBadge").textContent = prepared ? "ORIGINAL PAIR" : "MATCHED";
   try {
     if (!prepared) {
       const ranked = await json("/api/rank?id=" + encodeURIComponent(id));
       if (version !== renderVersion) return;
       const previous = $("response").value;
-      options($("response"), ranked.map(r => ({...r, title: `${r.title} · distance ${r.score}`})));
+      options($("response"), ranked.map(r => ({...r, title: r.title})));
       if (ranked.some(r => r.id === previous)) $("response").value = previous;
       if (!ranked.length) {
         notes("response", []);
         $("responseAudio").hidden = true;
         $("combinedBlock").hidden = true;
         $("noResponse").hidden = false;
-        $("noResponse").textContent = phraseOnly ? `${query.title} is ready in Prepared example mode. Its exact note boundaries and tala starting position still need review for retrieval; knowing the tala name and approximate tempo alone does not establish that alignment. Switch to Prepared example to hear this pair, or reselect Retrieval to see the timing-reviewed seeds.` : "No compatible response from another seed family. Try a prepared bank example or add more approved phrases.";
+        $("noResponse").textContent = phraseOnly ? `${query.title} is available as an Original phrase pair. Response matching needs verified note and tala timing for this recording.` : "No matching response is available for this opening. Try another phrase or choose Original phrase pair.";
         return;
       }
       $("responseControl").hidden = false;
@@ -167,9 +167,9 @@ async function render() {
     for (const part of ["response", "combined"]) setAudio(part, audioUrl(id, part, response.id));
     timed("response", response);
     if (!phraseOnly) $("evidence").textContent = prepared
-      ? "Ishita reviewed this recording's note/beat markers and phrase boundary. The tala display follows her changing pace using the reviewed beat map."
-      : "Retrieval selects an existing response from another exercise, using reviewed timing, tuning and contour compatibility. With two eligible exercises there is one alternative per query; this is a small curated demo, not an independent quality evaluation.";
-    $("joinNote").textContent = "Original recorded phrases joined at their annotated boundary. No pitch shifting, time stretching, or crossfade.";
+      ? "Note and tala highlighting follow the recording’s reviewed timing annotations."
+      : "This continuation comes from another recorded exercise with compatible timing, tuning, and contour. Available matches depend on the recordings in the library.";
+    $("joinNote").textContent = "Opening and continuation joined at their annotated boundary, with the original voice and timing preserved.";
     $("download").href = audioUrl(id, "combined", response.id);
     $("download").download = `swaraga-${id}-${response.id}.wav`;
   } catch (error) {
@@ -190,4 +190,4 @@ async function main() {
   $("vocalMode").onchange = () => { fillSeeds(); render(); };
   selectMode("symbolic");
 }
-main().catch(error => { $("error").textContent = error.message + " Start the demo with python scripts/run_demo.py."; $("error").hidden = false; });
+main().catch(error => { $("error").textContent = error.message + " Check that Swaraga is running, then refresh this page."; $("error").hidden = false; });

@@ -22,13 +22,17 @@ PRESETS = [
     {"id": "turn", "title": "Mohanam • returning to Sa", "tokens": "S G3 R2 S R2 G3 P G3 P D2 P G3 R2 G3 R2 S".split()},
 ]
 DEFAULT_TEXT = {
-    "title": "Swaraga", "subtitle": "A small exploration of Carnatic phrase continuation.",
-    "empty_catalog": "Your voice belongs here. Recordings have not been added yet.",
-    "limitations": "A small curated phrase bank; every vocal response is an existing recording.",
-    "vocal_mode": "Recorded vocal response", "symbolic_mode": "Generated swaras",
-    "seed_label": "Your recorded seed phrase", "play_seed": "Play seed", "play_response": "Play response",
-    "vocal_explanation": "Select an approved recorded pair or retrieve a recorded response from another seed family.",
-    "symbolic_explanation": "New swaras from the existing n-gram baseline, with synthesized reference tones.",
+    'title': 'Swaraga',
+    'subtitle': 'Explore Carnatic melodies. Generate a continuation, discover vocal phrases, and hear how the music unfolds.',
+    'seed_label': 'Opening phrase',
+    'vocal_mode': 'Vocal library',
+    'symbolic_mode': 'Generate swaras',
+    'play_seed': 'Play opening phrase',
+    'play_response': 'Play continuation',
+    'empty_catalog': 'No vocal recordings are available in this installation. Add recordings using the recording guide in the README.',
+    'vocal_explanation': 'Listen to an original phrase pair or find a compatible continuation from the library.',
+    'symbolic_explanation': 'Choose an opening phrase and explore its eight-note continuation with instrumental playback.',
+    'limitations': 'Vocal phrases are recorded performances. Matching selects an existing response; it does not synthesize a voice.',
 }
 
 
@@ -47,7 +51,7 @@ class DemoService:
         except (NotImplementedError, AssertionError):
             pass
         except (OSError, SyntaxError, AttributeError, TypeError, KeyError) as exc:
-            self.warnings.append(f"Friend 1 captions need review: {exc}")
+            self.warnings.append(f"Interface text unavailable; using default labels: {exc}")
         self.symbolic = {}
         self.training_count = 0
         self.composition_count = 0
@@ -83,7 +87,7 @@ class DemoService:
                     **preset, "generated": decoded.swaras, "raga": "Mohanam", "tala": "Adi (display context only)",
                     "fallback_steps": decoded.fell_back,
                     "random_seed": 42 + index,
-                    "timing_note": "Distinct, decaying 0.32-second reference notes. Generated runs stay at two repeated pitches when a legal alternative exists; no inferred tala timing or gamakas.",
+                    "timing_note": "Opening and continuation played together with evenly spaced instrumental notes. Timing is illustrative; gamakas are not reproduced.",
                 }
         except (ValueError, OSError, KeyError) as exc:
             self.warnings.append(f"Symbolic mode unavailable: {exc}")

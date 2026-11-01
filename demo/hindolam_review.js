@@ -12,9 +12,9 @@ function node(tag, text, className) {
 }
 function label(item) { return (item.kind === "vocal" ? "V" : "G") + item.id.split("-")[1]; }
 function summary() {
-  $("summary").value = "Hindolam review (" + review.review_id + ")\n" + review.items.filter(eligible).map(item => {
+  $("summary").value = "Hindolam listening notes\n" + review.items.filter(eligible).map(item => {
     const answer = answers[item.id] || {};
-    return label(item) + ": " + (answer.verdict || "Not reviewed") + (answer.comment ? " — " + answer.comment : "");
+    return label(item) + ": " + (answer.verdict || "No rating") + (answer.comment ? " — " + answer.comment : "");
   }).join("\n");
 }
 function save() {
@@ -28,7 +28,7 @@ function player(item, part) {
   audio.src = "/review/hindolam/" + item.paths[part];
   audio.setAttribute("aria-label", label(item) + " " + part);
   audio.addEventListener("play", () => document.querySelectorAll("audio").forEach(other => { if (audio !== other) other.pause(); }));
-  audio.addEventListener("error", () => { $("error").hidden = false; $("error").textContent = "A review clip could not load. Please report its example number."; });
+  audio.addEventListener("error", () => { $("error").hidden = false; $("error").textContent = "This phrase could not load. Try another example or check that its audio is installed."; });
   return audio;
 }
 function card(item) {
@@ -68,13 +68,13 @@ function card(item) {
 }
 $("copy").addEventListener("click", async () => {
   summary();
-  try { await navigator.clipboard.writeText($("summary").value); $("copyStatus").textContent = "Copied. Paste it into chat."; }
-  catch (_) { $("summary").focus(); $("summary").select(); $("copyStatus").textContent = "Select and copy the text below, then paste it into chat."; }
+  try { await navigator.clipboard.writeText($("summary").value); $("copyStatus").textContent = "Listening notes copied."; }
+  catch (_) { $("summary").focus(); $("summary").select(); $("copyStatus").textContent = "Select and copy the summary below."; }
 });
 (async () => {
   try {
     const response = await fetch("/review/hindolam/review.json");
-    if (!response.ok) throw new Error("Review files are unavailable. Run the preparation script first.");
+    if (!response.ok) throw new Error("Hindolam phrases are unavailable in this installation. Return to Swaraga to explore Mohanam.");
     review = await response.json();
     storageKey = review.review_id + ":" + review.items.map(i => i.sha256.combined).join(":");
     try { answers = JSON.parse(localStorage.getItem(storageKey) || "{}"); } catch (_) { answers = {}; }
