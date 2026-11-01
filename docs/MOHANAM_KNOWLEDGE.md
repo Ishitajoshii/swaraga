@@ -1,6 +1,6 @@
-# Mohanam notation expansion
+# Mohanam notation sources
 
-Added on 2026-10-27. The local demo now uses 63 distinct printed notation
+The browser app uses 63 distinct printed notation
 passages, containing 1,874 written swara attacks, from two source-attributed
 Mohanam compositions:
 
@@ -26,8 +26,7 @@ An additional variable-order Markov model learns these sequences when the demo
 starts. Its pitch-class probabilities reweight the existing baseline's candidate
 scores, using a fixed heuristic strength of 0.75 and a positive floor. The
 existing baseline supplies octave candidates; the raga constraints and the
-two-repeated-note playback preference still apply. This is a local demo model
-update, not training the assistant itself or a voice model.
+two-repeated-note playback preference still apply. This supplement models symbolic pitch order; it does not train a voice model.
 
 The demo's 449 legacy overlapping training windows from 15 compositions are
 reported separately from the 63 new passages. The new supplement is consumed
@@ -41,7 +40,7 @@ punctuation and barlines are preserved as source spans, but their duration
 interpretation is not validated. Consequently this addition trains **pitch
 order only**, not octave, beat duration, tala alignment, gamakas or lyrics.
 Instrumental playback still uses uniform reference-note timing. Vocal retrieval
-still uses Ishita's existing approved recordings.
+still uses existing reviewed recordings.
 
 Pitch membership and extraction are checked in code. Source links and hashes
 establish traceability, not expert approval of a transcription. No listening

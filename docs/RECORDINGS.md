@@ -1,81 +1,22 @@
-# Adding Ishita's recordings
+# Recording integration
 
-The catalog now contains six prepared pairs: three from Ishita's Ninnu Kori
-take 29 and one each from practice takes 30, 31 and 32. Ishita reviewed all six
-cuts/joins and said they were good. She subsequently approved the note/beat
-markers and refined boundaries for 30 and 31; these now support timed playback
-and retrieval between the two exercises. The remaining four entries' annotations
-use `level: "phrase"` and `approved_for: "prepared_playback"`: this approval
-covers prepared playback with supplied phrase notation, not note timestamps,
-octave labels, tempo, or tala phase. No timed highlighting is shown for those
-four phrase-only entries. The Ninnu
-Kori pairs overlap within one source group. The practice batch stays grouped
-together for splitting because its exercises share material. All six are
-bank-only examples; only 30 and 31 currently qualify as timed retrieval candidates.
+Swaraga plays existing vocal recordings through a catalog and reviewed annotation
+file. Audio is excluded from Git. A fresh clone supports generated swaras;
+recorded playback requires restoring the catalog's WAV files or registering
+your own recordings. Use audio you are authorized to use and preserve attribution.
 
-Phrase-level annotations require `approved`, `group_id`, `shruti_label`,
-`seed_notation`, `response_notation`, and `review_scope`. They must not contain
-event/tala timing fields. The detailed timing workflow below applies when
-adding fully timed recordings; it is not required for phrase-only playback.
+The reference catalog contains six Mohanam/Adi pairs from four source takes.
+Two have reviewed note/beat annotations and can retrieve each other's responses.
+The other four are phrase-only prepared examples. Related crops remain in the
+same dataset split; these recordings are not an independent evaluation set.
 
-Only the technical owner needs this document; Ishita can send originals and
-the simple notes from `SUBMISSION_TODO.md`.
+## Phrase-only playback
 
-## Practice batch received and approved
-
-This batch uses Mohanam, Adi tala, and Ishita's G# / 5.5 shruti. It contains
-three simple practice exercises written for the demo, each with one opening
-cycle and one continuation cycle. They add contexts outside Ninnu Kori.
-
-Use 60 bpm if comfortable, one swara per beat, eight beats per cycle; keep the
-same tempo across all three. Each pair lasts about 16 seconds, plus lead-in and
-tail. Sing continuously across the arrow. S' means upper Sa; all other notes
-are in the middle octave. R/G/D denote Mohanam's R2/G3/D2.
-
-| File | Opening (8 beats) | Continuation (8 beats) |
-| --- | --- | --- |
-| `mohanam_practice01` | S R G P G R S R | G P D P G R S S |
-| `mohanam_practice02` | G P D S' D P G R | S R G P G R S S |
-| `mohanam_practice03` | S G R S R G P G | P D P G R G R S |
-
-The rows above were received as `Standard recording 30.mp3`, `31.mp3` and
-`32.mp3`, respectively. Ishita approved the prepared cuts and joins. Copies
-named `mohanam_take30/31/32_seed.wav` and `_response.wav` are byte-identical to
-the reviewed drafts; `_cuts.json` files retain source hashes and timestamps.
-Detailed timing and tala alignment still need verification before retrieval.
-No additional recordings are needed for the current prepared-demo milestone.
-
-## Timing review for self-counted tala
-
-Ishita confirmed that takes 30-32 follow her own tala count, not a metronome.
-`scripts/prepare_timing_review.py` prepares draft beat maps for 30 and 31 from
-inspected spectral attacks. Pitch settling is not used as the syllable onset.
-The review is `data/audio/timing_review.html`, with added-click WAVs and proposed
-cuts at the ninth attack. These move the response starts 40 ms earlier for 30
-and 170 ms earlier for 31. The six approved prepared examples remain unchanged.
-
-Ishita confirmed both timing reviews are good, including the response-start
-marker and the repeated ending Sas. Approved records are saved separately as
-`mohanam_take30_timing.json` and `mohanam_take31_timing.json`; original draft
-records remain archived. The active catalog uses the `_timed_seed.wav` and
-`_timed_response.wav` copies, with approved annotations in `annotations.json`.
-Review clicks are not included in playback. Take 32 retains phrase-only playback.
-
-The validator, retrieval phase check, and UI now support optional
-`seed_beat_map` / `response_beat_map` arrays. Each anchor has `onset` in seconds
-and `beat` as elapsed beats from the start of that clip. Both maps must cover
-their clips exactly, increase strictly, and imply 20-300 bpm between anchors.
-Event cycle positions and joins use interpolation through this map. Without
-maps, existing constant-tempo annotations behave as before. `tempo_bpm` is a
-summary average when maps are present, not a fixed playback clock.
-
-The timed annotations identify each practice exercise as its own retrieval `group_id`, with
-the broader `split_group_id: "mohanam_practice_batch01"` retained to prevent
-related exercises entering both bank and evaluation. The three overlapping
-Ninnu Kori pairs remain one source group. No independent evaluation result is
-claimed. Draft timing annotations are not loaded by the main recording bank.
-Retrieval checks pass in both directions, 30 to 31 and 31 to 30. This is one
-alternative per query, not a test of ranking quality across a large candidate bank.
+For a reviewed pair without note-level timing, set `level: "phrase"`,
+`approved: true`, and `approved_for: "prepared_playback"`. Supply `group_id`,
+`shruti_label`, `seed_notation`, `response_notation`, and `review_scope`.
+Do not include event or tala timing fields in a phrase-only annotation. These
+entries support prepared playback, not timed highlighting or retrieval.
 
 ## 1. Keep originals, trim copies
 
@@ -97,16 +38,15 @@ inspect the actual recording before accepting the result. Level handling only
 attenuates peaks above 0.95; it does not boost quiet noise, denoise, correct
 clipping, pitch-shift, or stretch time. Seed and response get the same gain.
 
-M4A/MP3 conversion is supported **when FFmpeg is on PATH**. The MP3 conversion
-path has now been exercised with `Standard recording 29.mp3`; its original
-hash and conversion metadata are in `data/audio/ninnu_kori_take29_intake.json`.
-The installed Windows FFmpeg needed access outside the sandbox. M4A conversion
-has not yet been exercised. Subsequent cuts use the decoded PCM WAV working copy.
+M4A/MP3 conversion requires **FFmpeg on PATH**. MP3 conversion has been
+verified; the M4A path has not yet been exercised. Subsequent cuts use the
+decoded PCM WAV working copy. Source hashes and conversion metadata are
+retained in the intake records.
 
-## 2. Friend 2 enters the simple catalog
+## 2. Register the recording
 
 Add real dictionaries to `RECORDINGS` in `team_tasks/recording_catalog.py`.
-All eight fields are required; retain the function TODO for Friend 2.
+All eight fields are required.
 
 | Field | Meaning |
 | --- | --- |
@@ -115,13 +55,13 @@ All eight fields are required; retain the function TODO for Friend 2.
 | `raga`, `tala` | Exact supplied musical names |
 | `seed_path`, `response_path` | Relative paths inside `data/audio/`, with `.wav` extension |
 | `source_take` | Original take identity, shared by all crops from that take |
-| `split` | `bank` or `evaluation`, assigned by the technical owner |
+| `split` | `bank` or `evaluation`, assigned by the dataset maintainer |
 
 Keep all takes/crops from the same composition or seed family in one split.
 The technical annotation's `group_id` enforces this more broadly than take ID.
 Never put the same material into both splits under different filenames.
 
-## 3. Technical owner adds timing annotations
+## 3. Add reviewed timing annotations
 
 `data/audio/annotations.json` is an object keyed by catalog ID. Each entry needs:
 
@@ -167,8 +107,8 @@ response at 60 bpm (do not add this as a real recording):
 Annotate silence explicitly, including lead-in/tail silence; events must cover
 each clip without overlaps (40 ms tolerance). Cycle phase is checked against
 tempo/onset (0.12 beat tolerance), and paired clips must join within 0.15 beats.
-This is a constant-tempo, manually annotated demo. Expressive timing requires
-careful annotation or a later variable-tempo extension; do not fake alignment.
+Without beat maps, timing is derived from constant tempo. For expressive
+timing, supply reviewed beat maps as described below.
 Gamakas remain in the original audio; these events are coarse swara labels,
 not a reconstruction of its pitch trajectory.
 
@@ -179,7 +119,7 @@ python scripts/check_demo.py
 python scripts/run_demo.py
 ```
 
-Restart the app after catalog/annotation/friend-file edits. Invalid or
+Restart the app after catalog or annotation edits. Invalid or
 unapproved entries are excluded and reported. Cross-split group/take leakage
 blocks the entire recording bank until corrected. Missing or corrupt audio is
 reported instead of becoming a selectable recording.
@@ -195,11 +135,29 @@ The complete WAV concatenates the selected seed and response without crossfade.
 Listen for clicks, mismatched loudness, inappropriate melodic joins, and timing
 errors; passing structural validation does not establish musical quality.
 
-## 5. Review, export, package
 
-- Listen to three showcase pairs, confirm the displayed notes, and approve them.
-- Download the complete WAVs in the app and keep a separate backup.
-- Record team listening feedback in `docs/SUBMISSION_NOTES.md`.
-- Run `python scripts/package_demo.py` to make a local snapshot; real audio
-  under `data/audio/` is included even though it is ignored by Git.
-- Save originals and the final demo video separately; the package excludes originals.
+## Variable-tempo beat maps
+
+For reviewed expressive timing, provide both `seed_beat_map` and
+`response_beat_map`. Each is an array of anchors with `onset` in clip-relative
+seconds and `beat` in elapsed beats. Both maps must start at onset/beat zero,
+cover their clips exactly, increase strictly, and imply 20-300 bpm between
+anchors. Event cycle positions and join checks interpolate through these maps.
+`tempo_bpm` remains a summary average; it is not the playback clock when maps
+are present. Keep draft annotations separate from `annotations.json`.
+
+Use `split_group_id` when multiple retrieval groups share related source
+material. It prevents related exercises entering both bank and evaluation
+while allowing distinct exercises to be considered as retrieval candidates.
+
+## Export and package
+
+Listen to prepared and retrieved phrases before approving them. The automated
+checker verifies technical integrity, not musical quality or recording rights.
+Download complete WAVs in the app, or run `python scripts/check_demo.py` for
+backups. It exits nonzero while catalog audio is missing or invalid.
+
+`python scripts/package_demo.py` creates a local source/audio ZIP after a
+successful check. It includes audio under `data/audio/`, even though those files
+are ignored by Git. It excludes original-recording backups and personal notes.
+Keep originals separately and review the ZIP before distributing it.

@@ -1,29 +1,25 @@
-# Hindolam listening review
+# Hindolam extension
 
-Prepared 2026-10-27. Open <http://127.0.0.1:8765/review/hindolam/> after starting
-`python scripts/run_demo.py`.
+The optional Hindolam review page is available at
+<http://127.0.0.1:8765/review/hindolam/> while the app is running. Its audio
+assets must be prepared separately; they are not included in a Git clone.
 
-## Correction after Ishita's content review
+Three instrumental examples each continue a 16-note opening with eight notes,
+using the n-gram baseline and Hindolam notation prior. The page supports separate
+and combined playback, browser-local listening feedback, and an exportable summary.
 
-- **V1–V3 are rejected.** Ishita identified lyric content: these are not the
-  swaram-only vocals required for this pipeline. The page omits their players
-  and review controls, the server refuses their WAV URLs, and rebuilding retains
-  their rejected status. Files and hashes remain only for audit provenance.
-- G1–G3: three deterministic Hindolam instrumental continuations, 16 seed notes
-  followed by 8 generated notes, using the established n-gram baseline plus the
-  new Hindolam notation prior.
-- A page with combined and separate playback, optional per-example feedback,
-  browser-local persistence, and a copy-to-chat summary.
+## Vocal content status
 
-The active approved vocal bank remains separate from pending review assets.
-No Ishita approval, exact vocal transcription or tala alignment has been inferred.
-The vocal pipeline is incomplete. A replacement needs sung swara syllables
-throughout each selected excerpt, with no sahitya, spoken instruction, or
-non-swara singing. A title, notation sheet, low-energy boundary or successful
-pitch extraction does not verify that condition. Record the evidence for the
-exact source intervals before setting `swara_only_verified: true`; then prepare
-transcription/alignment and request final listening review. The instrumental
-examples remain optional to review and cannot approve vocal content.
+The archived V1-V3 excerpts contain lyrics and were rejected for swaram-only
+retrieval. Their players are hidden, the server refuses their WAV URLs, and
+rebuilding preserves the rejection. Hashes and diagnostic files remain for
+provenance. There are currently no approved Hindolam vocal examples.
+
+A replacement must contain sung swara syllables throughout the selected interval,
+with reviewed transcription and alignment before entering the active bank.
+A lesson title, notation sheet, low-energy cut, or successful pitch extraction
+does not establish swaram-only content. Instrumental feedback does not approve
+vocal material.
 
 ## Sources and representation
 
@@ -67,38 +63,15 @@ source grouping, review gating, and local HTTP asset restrictions. Human musical
 quality, sung syllable content and precise tala alignment remain outside these
 automated checks. Passing them did not make the vocal sources suitable.
 
-## Saraga investigation
 
-The downloaded MTG metadata archive contains one exact Hindolam match:
-Chaitra Sairam's **Govardhana Girisham**, Rupaka, MBID
-`93f38e28-f411-4b06-9494-91232649a635`. Its tonic value and 83 manually annotated
-sama timestamps were obtained. Two substring matches were Margahindolam and
-excluded. The selected recording's audio/pitch download was blocked by Zenodo
-HTTP 403, reporting unusual traffic from this network.
+## Optional Saraga metadata
 
-**None of those Saraga timestamps or tonic values are applied to the archive
-rendition.** The fallback has its own source hash, cuts and analysis. The optional
-Saraga downloader remains available, but its live range-download path has not
-succeeded here. No Saraga audio is included in this review.
-
-## Replacement source search (unverified candidates)
-
-The archive separates the [Samaja Vara Gamana lesson](https://www.shivkumar.org/music/samajavaragamana-detailed.mp3)
-from the rejected rendition. Its lesson label alone does not prove swaram-only
-content or identify safe intervals; exact vocal content has not been checked.
-The [manodharma index](https://www.shivkumar.org/music/manodharma/index.html)
-also explicitly lists two Hindolam swarakalpana recordings by Semmangudi
-Srinivasa Iyer:
-
-- [Govardhana, Tisai 1960](https://www.shivkumar.org/music/manodharma/ragas/hindolam/08c-govardhana-hindolam-swarakalpana-ssi-tisai1960.mp3)
-- [Govardhana, C12](https://www.shivkumar.org/music/manodharma/ragas/hindolam/22b_FILLER_govardhana_hindolam-swarakalpana-ssi-c12.mp3)
-
-These are discovery leads, not accepted audio. The web reader could resolve
-the links but could not fetch their MP3 content. Swarakalpana passages may return
-to lyrics; the whole track cannot be assumed swaram-only. No exact intervals or
-syllable transcription have been verified. The archive author's permission for
-his own rendition must not be assumed to cover these third-party performances.
-No replacement has been promoted or sent for listening approval.
+The source-fetching script also supports Saraga metadata. No Saraga audio is
+included. The metadata investigation identified Chaitra Sairam's Hindolam
+performance of Govardhana Girisham (Rupaka), but audio/pitch downloads were
+blocked by the upstream host. Its tonic and timestamps are not applied to the
+separate archive rendition. Source recordings must retain their own alignment
+and provenance; the optional live download path remains unverified.
 
 ## Reproduction and files
 

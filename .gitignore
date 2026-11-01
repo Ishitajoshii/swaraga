@@ -8,3 +8,15 @@ data/audio/**/*.wav
 data/audio/**/*.m4a
 data/audio/**/*.mp3
 .demo-artifacts/
+
+# Local planning, submission notes, and assistant instructions
+/PRD.md
+/SUBMISSION_TODO.md
+/docs/DEMO_RUNSHEET.md
+/docs/SUBMISSION_NOTES.md
+/reports/pre_recording_verification.md
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+/.notes/
+/docs/local/
