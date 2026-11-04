@@ -1,0 +1,5 @@
+Figure 1. GRU training and validation cross-entropy loss versus epoch for the T2 next-token prediction task (16 context notes, 8 target notes; seed 42). Loss is computed only over the unmasked target positions. The lowest validation loss occurs at epoch 7; early stopping ends training at epoch 17.
+
+Figure 2. GRU training and validation next-token accuracy versus epoch for the same run. Accuracy is 100 times the number of correct argmax predictions divided by the total number of unmasked target tokens (8 per window), using teacher forcing. Context and padding positions are excluded.
+
+Run details: 466 training windows; 42 validation windows. Training metrics are recorded during optimization with dropout enabled; validation metrics are recorded after each epoch with dropout disabled. Loss retains the existing experiment's mean-of-batch-means aggregation; accuracy is aggregated over all target tokens. The dotted line marks the epoch selected by validation loss, not validation accuracy. JSON/CSV epoch indices start at 0; figure epoch numbers start at 1.

@@ -13,7 +13,10 @@ information than 466 independent examples (~907 swaras in total).
 from __future__ import annotations
 
 import random
+import csv
+import json
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
 
 from .models.neural import TorchModel, _require_torch
@@ -43,6 +46,30 @@ class TrainResult:
     best_epoch: int
     epochs_run: int
     history: List[Dict[str, float]] = field(default_factory=list)
+
+    def save_history(self, path: Path, config: TrainConfig, **metadata) -> None:
+        """Persist metrics and run settings; epoch indices are zero-based."""
+        path.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "architecture": self.model.architecture,
+            "config": config.__dict__,
+            "epoch_index_base": 0,
+            "accuracy_definition": "100 * correct argmax predictions / unmasked target tokens",
+            "train_metrics": "Online training pass, with dropout enabled",
+            "validation_metrics": "End-of-epoch evaluation, with dropout disabled",
+            "loss_aggregation": "Mean of batch mean cross-entropy losses (existing experiment convention)",
+            "best_epoch": self.best_epoch,
+            "best_val_loss": self.best_val_loss,
+            "epochs_run": self.epochs_run,
+            **metadata,
+            "history": self.history,
+        }
+        path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        if self.history:
+            with path.with_suffix(".csv").open("w", newline="", encoding="utf-8") as handle:
+                writer = csv.DictWriter(handle, fieldnames=list(self.history[0]))
+                writer.writeheader()
+                writer.writerows(self.history)
 
     @property
     def overfit_gap(self) -> float:
@@ -99,13 +126,14 @@ def encode_batch(windows: Sequence[Window], degree_vocab: DegreeVocab,
     )
 
 
-def _epoch(net, batches, loss_fn, optimizer=None) -> float:
+def _epoch(net, batches, loss_fn, optimizer=None) -> Tuple[float, float]:
     """One pass. Passing an optimizer makes it a training pass."""
     torch, _ = _require_torch()
     training = optimizer is not None
     net.train(training)
 
     total, count = 0.0, 0
+    correct, target_count = 0, 0
     for sequences, targets, ragas, talas, composers in batches:
         with torch.set_grad_enabled(training):
             logits = net(sequences, ragas, talas, composers)
@@ -119,7 +147,10 @@ def _epoch(net, batches, loss_fn, optimizer=None) -> float:
             optimizer.step()
         total += float(loss.detach())
         count += 1
-    return total / max(count, 1)
+        mask = targets != PAD_INDEX
+        correct += int(((logits.detach().argmax(dim=-1) == targets) & mask).sum())
+        target_count += int(mask.sum())
+    return total / max(count, 1), 100.0 * correct / max(target_count, 1)
 
 
 def _batches(windows: Sequence[Window], degree_vocab, condition_vocab,
@@ -156,24 +187,27 @@ def train(model: TorchModel, train_windows: Sequence[Window],
     history: List[Dict[str, float]] = []
 
     for epoch in range(config.epochs):
-        train_loss = _epoch(
+        train_loss, train_accuracy = _epoch(
             net,
             _batches(train_windows, model.degree_vocab, condition_vocab,
                      config.batch_size, model.use_composer, True, rng),
             loss_fn, optimizer,
         )
-        val_loss = (
+        val_loss, val_accuracy = (
             _epoch(net,
                    _batches(val_windows, model.degree_vocab, condition_vocab,
                             config.batch_size, model.use_composer, False, rng),
                    loss_fn)
-            if val_windows else train_loss
+            if val_windows else (train_loss, train_accuracy)
         )
 
         history.append({"epoch": epoch, "train_loss": train_loss,
-                        "val_loss": val_loss})
+                        "val_loss": val_loss, "train_accuracy": train_accuracy,
+                        "val_accuracy": val_accuracy})
         if config.verbose:
-            print(f"  epoch {epoch:3d}  train {train_loss:.4f}  val {val_loss:.4f}")
+            print(f"  epoch {epoch + 1:3d}  train {train_loss:.4f}  val {val_loss:.4f}"
+                  f"  train acc {train_accuracy:.2f}%  val acc {val_accuracy:.2f}%",
+                  flush=True)
 
         if val_loss < best_loss - 1e-5:
             best_loss, best_epoch = val_loss, epoch

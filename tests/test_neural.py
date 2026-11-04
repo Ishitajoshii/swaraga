@@ -189,6 +189,26 @@ def test_loss_is_masked_to_the_continuation(data) -> None:
     n_context = len(window.context_degrees)
     assert (targets[0][:n_context - 1] == PAD_INDEX).all()
     assert (targets[0][n_context - 1:] != PAD_INDEX).any()
+    assert int((targets != PAD_INDEX).sum()) == 8
+
+
+def test_accuracy_excludes_masked_positions_and_weights_tokens() -> None:
+    """Unequal batches must be pooled by token count, ignoring context/padding."""
+    import torch
+    from swaraga.train import _epoch
+
+    class FixedNet(torch.nn.Module):
+        def forward(self, sequences, *conditions):
+            return torch.nn.functional.one_hot(sequences, num_classes=3).float() * 4
+
+    # 2/2 correct targets in the first batch, 0/1 in the second: 66.67%, not 50%.
+    batches = [
+        (torch.tensor([[2, 1, 2]]), torch.tensor([[PAD_INDEX, 1, 2]]), None, None, None),
+        (torch.tensor([[2, 2, 2]]), torch.tensor([[PAD_INDEX, 1, PAD_INDEX]]), None, None, None),
+    ]
+    _, accuracy = _epoch(FixedNet(), batches,
+                         torch.nn.CrossEntropyLoss(ignore_index=PAD_INDEX))
+    assert accuracy == pytest.approx(100 * 2 / 3)
 
 
 def test_same_seed_is_reproducible(data) -> None:

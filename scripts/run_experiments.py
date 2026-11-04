@@ -111,7 +111,12 @@ def run_rung(frame: pd.DataFrame, rung: str, seed: int,
         val = parts["val"]
         for architecture in ARCHITECTURES:
             model = TorchModel(architecture=architecture, seed=seed)
-            train_model(model, train, val, TrainConfig(seed=seed))
+            train_config = TrainConfig(seed=seed)
+            result = train_model(model, train, val, train_config)
+            result.save_history(
+                config.REPORTS_DIR / "training_history" / f"{rung}_{architecture}_seed{seed}.json",
+                train_config, rung=rung, train_windows=len(train), val_windows=len(val),
+            )
             results = []
             for index, window in enumerate(test):
                 row = by_id[window.record_id]
